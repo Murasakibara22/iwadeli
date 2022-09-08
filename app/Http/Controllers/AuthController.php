@@ -15,7 +15,7 @@ class AuthController extends Controller
             'nom' => 'required|string|max:100',
                 'prenom' => 'required|string|max:255',
                 'contact' => 'required|string|max:15',
-                'role' => 'required|string|max:15',
+                //'role' => 'required|string|max:15',
                             'password' => 'required|string|min:8',
             ]);
 
@@ -23,7 +23,7 @@ class AuthController extends Controller
                     'nom' => $validatedData['nom'],
                     'prenom' => $validatedData['prenom'],
                     'contact' => $validatedData['contact'],
-                    'role' => $validatedData['role'],
+                   // 'role' => $validatedData['role'],
                         'password' => Hash::make($validatedData['password']),
             ]);
 
