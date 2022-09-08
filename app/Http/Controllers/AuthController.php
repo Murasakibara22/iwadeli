@@ -13,7 +13,6 @@ class AuthController extends Controller
     {
             $validatedData = $request->validate([
             'nom' => 'required|string|max:100',
-                'prenom' => 'required|string|max:255',
                 'contact' => 'required|string|max:15',
                 'role' => 'required|string|max:15',
                             'email' => 'required|string|email|max:255|unique:users',
@@ -22,7 +21,6 @@ class AuthController extends Controller
 
             $user = User::create([
                     'nom' => $validatedData['nom'],
-                    'prenom' => $validatedData['prenom'],
                     'contact' => $validatedData['contact'],
                     'role' => $validatedData['role'],
                         'email' => $validatedData['email'],
