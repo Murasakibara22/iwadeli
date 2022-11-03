@@ -87,8 +87,9 @@ class LivreurController extends Controller
     public function countCourse(){
         $livreur = Livreur::query()
              ->select('nom_livreurs', 'prenom_livreurs','lieudedepart',)
+             ->count('*')
              ->join('orders', 'orders.id_livreurs', '=',  'livreurs.id')
-             ->where('orders.id_livreurs', '=', '3')
+             ->groupBy('livreurs.prenom_livreurs')
              ->get();
 
  

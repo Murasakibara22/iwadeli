@@ -49,6 +49,7 @@ class OrderController extends Controller
           $order->contactdudestinataire  = $request->contactdudestinataire;
           $order->montant  = $request->montant;
           $order->id_livreurs  = $request->id_livreurs;
+          $order->status  = $request->status;
   
           $order->update();
   

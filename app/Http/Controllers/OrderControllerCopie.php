@@ -27,10 +27,8 @@ class OrderControllerCopie extends Controller
           $order->contactdudestinataire  = $request->contactdudestinataire;
           $order->montant  = $request->montant;
           $order->id_users  = $request->id_users;
-
   
-         $order->save() ? event(new OrderRealTimeEvent("en attente de livreur")) : null ;
-
+         $order->save() ? event(new OrderRealTimeEvent("ConfirmOrder")) : null ;
   
           return 200;
   

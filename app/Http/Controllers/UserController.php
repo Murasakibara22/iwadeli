@@ -50,4 +50,10 @@ class UserController extends Controller
         
                 return 'Utilisateur Supprimer';
             }
+
+
+    function search($name)
+    {
+        return User::where("nom","like","%".$name."%")->get();
+    }
 }

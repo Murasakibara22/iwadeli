@@ -52,6 +52,7 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function(){
 
     Route::get('/returnUser', [UserController::class, 'UserWhOrder'])->middleware('auth:sanctum');
 
+    Route::get('search/{name}', [UserController::class, 'search'])->middleware('auth:sanctum');//effectuer une recherche sur une lettre dans le nom d'un utilisateurs
     
 Route::post('/add', [OrderController::class, 'create'])->middleware('auth:sanctum');//recuperer l'id du livreur et l'envoyer en base de Order (lorsque l'admin accepte avec l'id du livreur)
 
