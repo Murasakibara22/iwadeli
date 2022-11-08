@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Livreur;
 use Illuminate\Http\Request;
+use Intervention\Image\Image;
+use Image as InterventionImage;
 
 class LivreurController extends Controller
 {
@@ -22,7 +24,16 @@ class LivreurController extends Controller
         $livreur->nom_livreurs = $request->nom_livreurs;
         $livreur->prenom_livreurs = $request->prenom_livreurs;
         $livreur->contact = $request->contact;
-        $livreur->photo = $request->photo;
+        if (request()->file('photo')) {
+            $img = request()->file('photo');
+                $messi = md5($img->getClientOriginalExtension().time().$request->email).".".$img->getClientOriginalExtension();
+                $source = $img;
+                $target = 'images/User/'.$messi;
+                InterventionImage::make($source)->fit(212,207)->save($target);
+                $user->photo   =  $messi;
+        }else{
+            $user->photo   = "default.jpg";
+        }
     
 
         $livreur->save();
