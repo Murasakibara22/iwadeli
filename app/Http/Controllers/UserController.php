@@ -25,6 +25,20 @@ class UserController extends Controller
             }
 
 
+            function change($id){
+                $users = User::find($id);
+                if(!is_null($users)){
+                    return response()->json([
+                        'user' => $user,
+                         200
+                    ]);
+                }else{
+                    return response()->json([
+                        'user' => 'Not found',
+                    ]);
+                }
+            }
+
             public function updateUser(Request  $request , $id){
 
                 $user          =  User::find($id);
