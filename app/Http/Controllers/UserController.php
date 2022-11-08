@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Image;
+use Image as InterventionImage;
 
 class UserController extends Controller
 {
@@ -15,7 +17,6 @@ class UserController extends Controller
              ->join('orders', 'users.id', '=',  'orders.id_users')
              ->get();
         
-
          return response()->json([
                  'user' => $user,
                   200
@@ -31,6 +32,16 @@ class UserController extends Controller
                 $user->prenom  = $request->prenom;
                 $user->email  = $request->email;
                 $user->contact  = $request->contact;
+                if (request()->file('photo')) {
+                    $img = request()->file('photo');
+                        $messi = md5($img->getClientOriginalExtension().time().$request->email).".".$img->getClientOriginalExtension();
+                        $source = $img;
+                        $target = 'images/User/'.$messi;
+                        InterventionImage::make($source)->fit(212,207)->save($target);
+                        $user->photo   =  $messi;
+                }else{
+                    $user->photo   = "default.jpg";
+                }
 
                 $user->update();
         

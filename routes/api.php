@@ -37,7 +37,7 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/addCopie', [OrderControllerCopie::class, 'createTest'])->middleware('auth:sanctum');//recuperer les commandes et envoyer sur le Tableau de bord (users qui passe la commande)
 
 
-Route::get('/modifyUser/{id}', [UserController::class, 'updateUser'])->middleware('auth:sanctum');//admin and users
+Route::put('/modifyUser/{id}', [UserController::class, 'updateUser'])->middleware('auth:sanctum');//admin and users
 
 Route::get('/destroyUser/{id}', [UserController::class, 'destroyUser'])->middleware('auth:sanctum');//admin and users
 
