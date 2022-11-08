@@ -30,6 +30,13 @@ class OrderController extends Controller
           $order->montant  = $request->montant;
           $order->id_users  = $request->id_users;
           $order->id_livreurs  = $request->id_livreurs;
+          if($request->nature){
+            $order->nature = $request->nature;
+          }else{
+            $order->nature = "moto";
+          }
+
+          $order->contact = Auth()->user()->contact;
   
           $order->save();
           //$order->save() ? event(new OrderRealTimeEvent("livraison en cours")): null;
@@ -50,6 +57,13 @@ class OrderController extends Controller
           $order->montant  = $request->montant;
           $order->id_livreurs  = $request->id_livreurs;
           $order->status  = $request->status;
+          if($request->nature){
+            $order->nature = $request->nature;
+          }else{
+            $order->nature = "moto";
+          }
+
+          $order->contact = Auth()->user()->contact;
   
           $order->update();
   
@@ -83,7 +97,8 @@ class OrderController extends Controller
   
   
       //toutes les commandes du jours
-      public function todayR(){
+      public function todayR()
+      {
           $order = Order::whereDate('created_at', Carbon::today())->get();
   
           return $order;

@@ -27,6 +27,14 @@ class OrderControllerCopie extends Controller
           $order->contactdudestinataire  = $request->contactdudestinataire;
           $order->montant  = $request->montant;
           $order->id_users  = $request->id_users;
+
+          if($request->nature){
+            $order->nature = $request->nature;
+          }else{
+            $order->nature = "moto";
+          }
+
+          $order->contact = Auth()->user()->contact;
   
          $order->save() ? event(new OrderRealTimeEvent("ConfirmOrder")) : null ;
   

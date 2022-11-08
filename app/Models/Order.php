@@ -20,7 +20,8 @@ class Order extends Model
         'montant',	
         'id_users',	
         'id_livreurs',
-        'status',
+        'nature',
+        'contact',
         'created_at',
         'updated_at'
     ];

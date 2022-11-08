@@ -17,6 +17,7 @@ class CreateOrderCopiesTable extends Migration
             $table->bigincrements('id');
             $table->string('details');
             $table->string('lieudedepart');
+            $table->string('nature')->default('moto');
             $table->string('lieudelivraison');
             $table->string('montant');
             $table->string('contactdudestinataire');

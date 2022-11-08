@@ -17,6 +17,8 @@ class OrderCopie extends Model
         'contactdudestinataire',
         'montant',	
         'id_users',	
+        'nature',
+        'contact',
         'created_at',
         'updated_at'
     ];
