@@ -49,8 +49,9 @@ class OrderControllerCopie extends Controller
              ->join('users', 'order_copies.id_users', '=',  'users.id')
              ->get();
  
+             dd($orderCopie);
          return response()->json([
-                 'order' => $orderCopie
+                 'orderCopie' => $orderCopie
              ]);
      }
 
