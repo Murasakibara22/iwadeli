@@ -11,6 +11,14 @@ class UserController extends Controller
 {
     
 
+    function getUser(){
+        $user = User::OrderBy('nom','ASC')->get();
+
+        return response()->json([
+            'user' => $user,
+             200
+        ]);
+    }
 
     public function UserWhOrder(){
         $user = User::query()
