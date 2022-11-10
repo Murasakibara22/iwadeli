@@ -45,7 +45,7 @@ class OrderControllerCopie extends Controller
 
       public function listAllCopie(){
         $orderCopie = OrderCopie::query()
-             ->select('order_copies.id','details', 'users.name','lieudedepart','lieudelivraison', 'contactdudestinataire','montant', 'users.contact','order_copies.created_at as date')
+             ->select('order_copies.id','details', 'users.name as nom','lieudedepart','lieudelivraison', 'contactdudestinataire','montant', 'users.contact','order_copies.created_at as date')
              ->join('users', 'order_copies.id_users', '=',  'users.id')
              ->get();
  
