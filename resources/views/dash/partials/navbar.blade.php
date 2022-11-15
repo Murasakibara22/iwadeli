@@ -10,20 +10,20 @@
             <!-- Logo light -->
             <a href="/dashboard" class="logo-light">
                 <span class="logo-lg">
-                    <img src="../assets/images/logo/Jiam_s3-removebg-preview.png" alt="logo" height="22">
+                    <img src="../logo/Jiam_s3-removebg-preview.png" alt="logo" height="22">
                 </span>
                 <span class="logo-sm">
-                    <img src="../assets/images/logo/Jiam_s5-removebg-preview.png" alt="small logo" height="22">
+                    <img src="../logo/Jiam_s5-removebg-preview.png" alt="small logo" height="22">
                 </span>
             </a>
 
             <!-- Logo Dark -->
             <a href="/dashboard" class="logo-dark">
                 <span class="logo-lg">
-                    <img src="../assets/images/logo/Jiam_s2-removebg-preview.png" alt="dark logo" height="22">
+                    <img src="../logo/Jiam_s2-removebg-preview.png" alt="dark logo" height="22">
                 </span>
                 <span class="logo-sm">
-                    <img src="../assets/images/logo/Jiam_s4-removebg-preview.png" alt="small logo" height="22">
+                    <img src="../logo/Jiam_s4-removebg-preview.png" alt="small logo" height="22">
                 </span>
             </a>
         </div>
