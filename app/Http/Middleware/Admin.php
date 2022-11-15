@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class AdminEnsure
+class Admin
 {
     /**
      * Handle an incoming request.
@@ -19,7 +19,7 @@ class AdminEnsure
         if($request->user()->role === $roles){ 
             return $next($request);
          }else{
-            return redirect()->view('welcome');
+            return redirect('/');
          }
 
         
