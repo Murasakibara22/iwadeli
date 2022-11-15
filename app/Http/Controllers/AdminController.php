@@ -16,6 +16,9 @@ class AdminController extends Controller
         return view('dashboard');
     }
 
+    public function store(){
+        return view('registre');
+    }
 
 
 

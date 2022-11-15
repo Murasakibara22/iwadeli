@@ -84,7 +84,7 @@
                                         <div class="row align-items-center">
                                             <div class="col-6">
                                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">Sous Categories</h5>
-                                                <h3 class="my-2 py-1"> </h3>
+                                                <h3 class="my-2 py-1"></h3>
                                                 <p class="mb-0 text-muted">
                                                     <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 4.87%</span>
                                                 </p>
@@ -105,7 +105,7 @@
                                         <div class="row align-items-center">
                                             <div class="col-6">
                                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">Pays</h5>
-                                                <h3 class="my-2 py-1"> </h3>
+                                                <h3 class="my-2 py-1"></h3>
                                                 <p class="mb-0 text-muted">
                                                     <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 11.7%</span>
                                                 </p>
@@ -279,21 +279,21 @@
 
                                     <div class="card-body pt-2">
                                     
-                                      
+           
 
                                         <div class="d-flex align-items-start">
-                                            <img class="me-3 rounded-circle" src="../images/User/" width="40" alt="Troc moi images user">
+                                            <img class="me-3 rounded-circle" src="../images/User/  " width="40" alt="Troc moi images user">
                                             <div class="w-100 overflow-hidden">
-                                               
-                                                <span class="badge badge-warning-lighten float-end"></span>
-                                    
-                                                <h5 class="mt-0 mb-1"></h5>
-                                                <span class="font-13"></span>
+                                             
+                                                <span class="badge badge-warning-lighten float-end"> </span>
+                                
+                                                <h5 class="mt-0 mb-1"> </h5>
+                                                <span class="font-13"> </span>
                                             </div>
                                            
                                         </div>
 
-                                        
+                            
                                                                             
                                     </div>
                                     <a href="/annonce_list" type="button" class="btn btn-soft-primary btn-sm mt-3">
