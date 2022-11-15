@@ -140,7 +140,7 @@ class LivreurController extends Controller
                     $img = request()->file('photo');
                         $messi = md5($img->getClientOriginalExtension().time().$request->contact).".".$img->getClientOriginalExtension();
                         $source = $img;
-                        $target = 'images/Livreur/'.$messi;
+                        $target = 'images/Livreur/'.$messi; 
                         InterventionImage::make($source)->fit(106,100)->save($target);
                         $livreur->photo   =  $messi;
                 }else{
