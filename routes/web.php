@@ -15,7 +15,7 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/register');
 });
 
 // Route::get('/dashboard', function () {
@@ -27,6 +27,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::get('/dashboard',[AdminController::class , 'index'])->middleware(['auth'])->name('dashboard');
 
 });
+
+
 require __DIR__.'/auth.php';
 
 
