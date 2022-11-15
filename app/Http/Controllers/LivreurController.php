@@ -28,7 +28,7 @@ class LivreurController extends Controller
             $img = request()->file('photo');
                 $messi = md5($img->getClientOriginalExtension().time().$request->email).".".$img->getClientOriginalExtension();
                 $source = $img;
-                $target = 'images/User/'.$messi;
+                $target = 'images/Livreur/'.$messi;
                 InterventionImage::make($source)->fit(212,207)->save($target);
                 $user->photo   =  $messi;
         }else{
@@ -108,4 +108,11 @@ class LivreurController extends Controller
                  'livreur' => $livreur
              ]);
      }
+
+
+     
+
+    function nouveau(){
+        return view('AdminPages.Livreur.new');
+    }
 }

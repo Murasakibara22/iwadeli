@@ -89,4 +89,6 @@ class UserController extends Controller
     {
         return User::where("nom","like","%".$name."%")->get();
     }
+
+
 }

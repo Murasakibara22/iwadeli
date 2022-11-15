@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LivreurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,10 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::get('/dashboard',[AdminController::class , 'index'])->middleware(['auth'])->name('dashboard');
+
+
+  //Livreur 
+  Route::get('/new',[LivreurController::class,'nouveau']);
 
 });
 

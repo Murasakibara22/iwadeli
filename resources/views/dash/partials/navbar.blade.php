@@ -451,9 +451,9 @@
             </li>
             <li class="side-nav-item">
                 <a  
-                    class="side-nav-link" href="/new_espaccepub">
+                    class="side-nav-link" href="/new">
                     <i class="uil-briefcase"></i>
-                    <span> Espaces Publicitaires  </span>
+                    <span> Livreurs</span>
                    
                 </a>
             </li>
