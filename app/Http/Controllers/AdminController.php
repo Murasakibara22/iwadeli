@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\dash;
+namespace App\Http\Controllers;
 
 use App\Models\Pays;
 use App\Models\User;
