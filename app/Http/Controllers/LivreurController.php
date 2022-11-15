@@ -161,4 +161,16 @@ class LivreurController extends Controller
             }
         }
     }
+
+    public function listAllLiv(){
+
+        $livreur = Livreur::OrderBy('nom_livreurs','ASC')->get();
+
+        if(isset($livreur)) {
+          
+           return view('AdminPages.Livreur.list',compact('livreur'));
+        }else{
+            return redirect()->back()->with('AucunLivreur', "Aucun Livreur n'est enregistrer");
+        }
+    }
 }

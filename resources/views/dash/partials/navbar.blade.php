@@ -451,7 +451,7 @@
             </li>
             <li class="side-nav-item">
                 <a  
-                    class="side-nav-link" href="/new">
+                    class="side-nav-link" href="/newLivreur">
                     <i class="uil-briefcase"></i>
                     <span> Livreurs</span>
                    

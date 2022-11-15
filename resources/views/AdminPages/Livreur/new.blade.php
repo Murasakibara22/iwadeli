@@ -48,7 +48,7 @@
 
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Ajouter un nouveau Livreur <a href="#" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-circuit"></i> Liste des Livreurs</button> </a></h4>
+                                    <h4 class="page-title">Ajouter un nouveau Livreur <a href="/listAllLivreur" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-circuit"></i> Liste des Livreurs</button> </a></h4>
                                     
                                 </div>
                             </div>
