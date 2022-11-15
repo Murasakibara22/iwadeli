@@ -13,21 +13,29 @@
 
             <div class="content-page">
                 <div class="content">
-                @if ( session('PaysSuccesSsave'))
-                    <!-- Basic Toast -->
-                  <div class="toast fade show  ms-7 bg-success align-center" role="alert" aria-live="assertive" aria-atomic="true">
-                      <div class="toast-header">
-                          <img src="assets/images/logo-dark-sm.png" alt="Trocmoi" height="12" class="me-1" />
-                          <strong class="me-auto">succes</strong>
-                          <small>Maintenant</small>
-                          <button type="button" class="ms-2 mb-1 btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                      </div>
-                      <div class="toast-body">
-                         Pays Sauvegarder avec succes.
-                      </div>
-                  </div> <!--end toast-->
+                @if ( session('EnrgSuccess'))
+                    <div class="alert alert-success">
+                    Le livreur a ete sauvegarder avec succes
+                    </div>
+                    @endif
 
-                  @endif
+                @if ( session('pb'))
+                    <div class="alert alert-warning">
+                    Un probleme est survenue veuillez reprendre l'enregistrement
+                    </div>
+                    @endif
+
+                @if ( session('champsNotField'))
+                    <div class="alert alert-danger">
+                    Tous les champs ne sont pas correctement Remplis
+                    </div>
+                    @endif
+
+                @if ( session('ExistLivreur'))
+                    <div class="alert alert-info">
+                    Le livreur Existe deja !
+                    </div>
+                    @endif
                     <!-- Start Content-->
                     <div class="container-fluid">
 
@@ -83,7 +91,7 @@
                                         <div class="tab-pane show active" id="input-types-preview">
                                             <div class="row">
                                                  <div class="col-lg-11 mt-4 ms-1">
-                                                    <form action="" method="POST" enctype="multipart/form-data">
+                                                    <form action="{{ route('createNewLivreurs') }}" method="POST" enctype="multipart/form-data">
                                                       @csrf 
                                                       @method('POST')
                                                         <div class="mb-3">

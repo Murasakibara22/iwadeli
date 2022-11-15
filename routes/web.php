@@ -30,6 +30,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
 
   //Livreur 
   Route::get('/new',[LivreurController::class,'nouveau']);
+  Route::post('/createNewLivreur',[LivreurController::class,'createNewLivreur'])->name('createNewLivreurs');
 
 });
 

@@ -26,13 +26,13 @@ class LivreurController extends Controller
         $livreur->contact = $request->contact;
         if (request()->file('photo')) {
             $img = request()->file('photo');
-                $messi = md5($img->getClientOriginalExtension().time().$request->email).".".$img->getClientOriginalExtension();
+                $messi = md5($img->getClientOriginalExtension().time().$request->contact).".".$img->getClientOriginalExtension();
                 $source = $img;
                 $target = 'images/Livreur/'.$messi;
                 InterventionImage::make($source)->fit(212,207)->save($target);
-                $user->photo   =  $messi;
+                $livreur->photo   =  $messi;
         }else{
-            $user->photo   = "default.jpg";
+            $livreur->photo   = "default.jpg";
         }
     
 
@@ -112,7 +112,53 @@ class LivreurController extends Controller
 
      
 
+     //GET
     function nouveau(){
         return view('AdminPages.Livreur.new');
+    }
+
+    //POST
+    public function createNewLivreur(Request $request)
+    {
+        $exist = Livreur::where('contact', $request->contact)->orWhere('prenom_livreurs',$request->prenom_livreurs)->get();
+        if ($exist and $exist->count() > 0) {
+
+            return redirect()->back()->with('ExistLivreur',"Le livreur Existe deja");
+        }else{
+            $validateData = $request->validate([
+                'nom_livreurs' => ['required'],
+                'prenom_livreurs' => ['required'],
+                'contact' => ['required'],
+            ]);
+
+            if($validateData){
+                $livreur   = new Livreur;
+                $livreur->nom_livreurs = $request->nom_livreurs;
+                $livreur->prenom_livreurs = $request->prenom_livreurs;
+                $livreur->contact = $request->contact;
+                if (request()->file('photo')) {
+                    $img = request()->file('photo');
+                        $messi = md5($img->getClientOriginalExtension().time().$request->contact).".".$img->getClientOriginalExtension();
+                        $source = $img;
+                        $target = 'images/Livreur/'.$messi;
+                        InterventionImage::make($source)->fit(212,207)->save($target);
+                        $livreur->photo   =  $messi;
+                }else{
+                    $livreur->photo   = "default.jpg";
+                }
+
+               
+                $livreur->save();
+
+                if($livreur->save()){
+                    return redirect()->back()->with('EnrgSuccess', "Le livreur a ete sauvegarder avec succes ");
+                }else{
+                    return redirect()->back()->with('pb',"Un probleme est survenue veuillez reprendre l'enregistrement");
+                }
+
+            }else{
+                return redirect()->back()->with('champsNotField',"Tous les champs ne sont pas correctement Remplis");
+            }
+        }
     }
 }
