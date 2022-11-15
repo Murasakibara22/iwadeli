@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::get('/', function () {
 
 
 
-Route::middleware(['auth', 'role:admin'])->group(function(){
+// Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::get('/dashboard',[AdminController::class , 'index'])->middleware(['auth'])->name('dashboard');
 
-});
+// });
