@@ -37,7 +37,7 @@
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span>Connecter vous ici</span>
-			<input type="email" placeholder="Email" name="email" />
+			<input type="text" placeholder="Email" name="contact" />
 			<input type="password" placeholder="Mot de passe" name="password"  />
 			<a href="#">Mot de passe Oublier ?</a>
 			<button>Connexion</button>
