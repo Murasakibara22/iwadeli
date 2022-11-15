@@ -348,112 +348,31 @@
             <li class="side-nav-item">
                 <a href="/new_Categorie" class="side-nav-link">
                     <i class="uil-calender"></i>
-                    <span> Categories </span>
+                    <span> Utilisateurs Inscripts </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
                 <a href="/new_SousCat" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
-                    <span> Sous-Categories </span>
+                    <span> Commandes </span>
                 </a>
             </li>
 
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarCrm" aria-expanded="false" aria-controls="sidebarCrm"
-                    class="side-nav-link">
-                    <i class="uil uil-tachometer-fast"></i>
-                    <span class="badge bg-danger text-white float-end">New</span>
-                    <span> Utilisateurs </span>
-                </a>
-                <div class="collapse" id="sidebarCrm">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="/addUser">Ajouter</a>
-                        </li>
-                        <li>
-                            <a href="/Utilisateurs_list"> Liste des utilisateurs</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail"
-                    class="side-nav-link">
-                    <i class="uil-envelope"></i>
-                    <span> Abonnements </span>
-                    <span class="menu-arrow"></span>
-                    
-                </a>
-                <div class="collapse" id="sidebarEmail">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="/">Abonnés</a>
-                        </li>
-                        <li>
-                            <a href="/">ajoutez</a>
-                        </li>
-                        <li>
-                            <a href="#">Time Limited</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-
-            <li class="side-nav-item">
-                <a  
-                    class="side-nav-link" href="/pays_list">
-                    <i class="uil-briefcase"></i>
-                    <span> Pays </span>
-                   
-                </a>
-            </li>
-
-            <li class="side-nav-item">
-                <a  
-                    class="side-nav-link" href="/equipe_list">
-                    <i class="uil-briefcase"></i>
-                    <span> Notre Equipe </span>
-                   
-                </a>
-            </li>
-
-            <li class="side-nav-item">
-                <a href="/ville_list" class="side-nav-link">
-                    <i class="uil-rss"></i>
-                    <span> Villes  </span>
-                </a>
-            </li>
-
-            <li class="side-nav-item">
-                <a href="/annonce_list" class="side-nav-link">
-                    <i class="uil-rss"></i>
-                    <span> Annonces  </span>
-                </a>
-            </li>
-
-            <li class="side-nav-item">
-                <a  
-                    class="side-nav-link" href="/partenaire_list">
-                    <i class="uil-briefcase"></i>
-                    <span> Nos Partenaires </span>
-                   
-                </a>
-            </li>
-            <li class="side-nav-item">
-                <a  
-                    class="side-nav-link" href="/new_following">
-                    <i class="uil-briefcase"></i>
-                    <span> Type d'Abonnement  </span>
-                   
-                </a>
-            </li>
             <li class="side-nav-item">
                 <a  
                     class="side-nav-link" href="/newLivreur">
                     <i class="uil-briefcase"></i>
                     <span> Livreurs</span>
+                   
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a  
+                    class="side-nav-link" href="/newLivreur">
+                    <i class="uil-briefcase"></i>
+                    <span> Nos Membres</span>
                    
                 </a>
             </li>
