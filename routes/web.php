@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 
 // Route::middleware(['auth', 'roles:admin'])->group(function(){
-  Route::get('/dashboard',[AdminController::class , 'index'])->middleware(['auth'])->name('dashboard');
+  Route::get('/dashboard',[AdminController::class , 'index'])->name('dashboard');
 
 // });
