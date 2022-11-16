@@ -14,7 +14,7 @@ class AdminController extends Controller
 {
     public function index(){
         $today = date('j M, Y', strtotime(Carbon::today())  );
-        $com = Order::all();
+        $com = Order::OrderBy('created_at','DESC')->take(5)->get();
         $comV = Order::Where('status',1)->get();
         $comT = Order::Where('terminate',1)->get();
 
