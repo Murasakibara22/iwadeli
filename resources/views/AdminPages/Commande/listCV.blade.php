@@ -97,8 +97,8 @@
                         <th scope="col">N.U.C</th>
                         <th scope="col">Contact</th>
                         <th scope="col">livrer par </th>
-                        <th scope="col">Avamcement</th>
                         <th scope="col">Nature</th>
+                        <th scope="col">Avamcement</th>
                         <th scope="col">suprimer</th>
                         </tr>
                     </thead>
