@@ -62,8 +62,8 @@
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-6">
-                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">Annonces</h5>
-                                                <h3 class="my-2 py-1"></h3>
+                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">Toutes les commandes</h5>
+                                                <h3 class="my-2 py-1">{{$comAll}}</h3>
                                                 <p class="mb-0 text-muted">
                                                     <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> 5.38%</span>
                                                 </p>
@@ -83,8 +83,8 @@
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-6">
-                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">Sous Categories</h5>
-                                                <h3 class="my-2 py-1"></h3>
+                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">Commandes Valider</h5>
+                                                <h3 class="my-2 py-1">{{$comAllValidate}}</h3>
                                                 <p class="mb-0 text-muted">
                                                     <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 4.87%</span>
                                                 </p>
@@ -104,8 +104,8 @@
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-6">
-                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">Pays</h5>
-                                                <h3 class="my-2 py-1"></h3>
+                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">Commande Terminer</h5>
+                                                <h3 class="my-2 py-1">{{$comAllTerminer}}</h3>
                                                 <p class="mb-0 text-muted">
                                                     <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 11.7%</span>
                                                 </p>
@@ -265,7 +265,7 @@
                             <div class="col-xl-4 col-lg-6">
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between align-items-center">
-                                        <h4 class="header-title">Annonces du jour</h4>
+                                        <h4 class="header-title">Commandes du jour</h4>
                                         <div class="dropdown">
                                             <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="mdi mdi-dots-vertical"></i>
@@ -280,23 +280,37 @@
                                     <div class="card-body pt-2">
                                     
            
-
-                                        <div class="d-flex align-items-start">
-                                            <img class="me-3 rounded-circle" src="../images/User/  " width="40" alt="Troc moi images user">
+                                        @foreach($com as $comm)
+                                        @if( date('j M, Y', strtotime($comm->created_at))  ==  $today)
+                                        <div class="d-flex align-items-start mt-2">
+                                            <img class="me-3 rounded-circle" src="../images/User/ " width="40" alt=" user">
                                             <div class="w-100 overflow-hidden">
                                              
-                                                <span class="badge badge-warning-lighten float-end"> </span>
-                                
-                                                <h5 class="mt-0 mb-1"> </h5>
-                                                <span class="font-13"> </span>
+                                            @if($comm->terminate  == 0  && $comm->status  == 0)
+                                                <span class="badge badge-danger-lighten float-end">En Attente </span>
+                                                @elseif($comm->terminate  == 0  && $comm->status  == 1)
+                                                <span class="badge badge-warning-lighten float-end">En Cour </span>
+                                                @elseif($comm->terminate  == 1  && $comm->status  == 1)
+                                                <span class="badge badge-success-lighten float-end">Terminer</span>
+                                                @else
+                                                <span class="badge badge-info-danger float-end">En Attente </span>
+                                                @endif
+
+
+                                                @foreach($comm->user()->get()  as $utili)
+                                                <h5 class="mt-0 ">{{$utili->nom}} , {{$utili->contact}}</h5>
+                                                @endforeach
+                                                <span class="font-13"> {{$comm->nature}}</span>
                                             </div>
                                            
                                         </div>
+                                        @endif
+                                        @endforeach
 
                             
                                                                             
                                     </div>
-                                    <a href="/annonce_list" type="button" class="btn btn-soft-primary btn-sm mt-3">
+                                    <a href="/listAllCom" type="button" class="btn btn-soft-primary btn-sm mt-3">
                                                 Voir tous
                                             </a>
                                     <!-- end card-body -->
