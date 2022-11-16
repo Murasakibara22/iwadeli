@@ -346,7 +346,7 @@
             <li class="side-nav-title side-nav-item">Nos listes</li>
 
             <li class="side-nav-item">
-                <a href="/new_Categorie" class="side-nav-link">
+                <a href="/listAllUs" class="side-nav-link">
                     <i class="uil-calender"></i>
                     <span> Utilisateurs Inscripts </span>
                 </a>
@@ -370,7 +370,7 @@
 
             <li class="side-nav-item">
                 <a  
-                    class="side-nav-link" href="/newLivreur">
+                    class="side-nav-link" href="/membres">
                     <i class="uil-briefcase"></i>
                     <span> Nos Membres</span>
                    

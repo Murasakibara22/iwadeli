@@ -70,7 +70,7 @@
 
 
 
-                                <div class="col-lg-12 grid-margin stretch-card">
+                      <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
                             <h4 class="card-title">Liste de tous les livreurs
@@ -89,7 +89,7 @@
                                             </div>
                 
                 </h4>
-                  <p class="card-description">
+                  <p class="card-description mt-3">
                     Vous avez la possibilité de  <code>modifier</code> ou de <code>suprimer  </code> un Livreur
                   </p>
                 

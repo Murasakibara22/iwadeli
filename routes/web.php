@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LivreurController;
 
@@ -36,6 +37,11 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::put('/UpdaLivreur/{id}',[LivreurController::class,'updateL'])->name('updateLi')->whereNumber('id');
   Route::get('/deleteLiv/{id}',[LivreurController::class, 'deleteL'])->whereNumber('id');
   Route::delete('/destroyLiv/{id}',[LivreurController::class,'destroyL'])->name('destroyLi')->whereNumber('id');
+
+  //Utilisateurs
+  Route::get('/listAllUs',[UserController::class,'listAllU']);
+  Route::get('/newUser',[UserController::class,'nouveau']);
+  Route::post('/createNewUser',[UserController::class,'createNewUser'])->name('createNewUsers');
 
 });
 
