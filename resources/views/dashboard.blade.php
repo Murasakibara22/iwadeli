@@ -182,7 +182,7 @@
                             <div class="col-xl-4 col-lg-12">
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between align-items-center">
-                                        <h4 class="header-title">Utilisateurs</h4>
+                                        <h4 class="header-title">Inscrits Aujourd'hui</h4>
                                       
                                     </div>
 
@@ -191,25 +191,25 @@
                                             <table class="table table-striped table-sm table-nowrap table-centered mb-0">
                                                 <thead>
                                                     <tr>
-                                                        <th>User</th>
+                                                        <th>Nom et prenoms </th>
                                                        
-                                                        <th>NBP</th>
+                                                        <th>Contact</th>
                                                      
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @foreach($user as $users)
-                                                       
+                                                    @if( date('j M, Y', strtotime($users->created_at))  ==  $today)
                                                     <tr>
                                                         <td>
                                                             <h5 class="font-15 mb-1 fw-normal">{{$users->nom}}</h5>
                                                             <span class="text-muted font-13">{{$users->prenom}}</span>
                                                         </td>
                                                        
-                                                        <td>49</td>
+                                                        <td>{{$users->contact}}</td>
                                                        
                                                     </tr>
-                                                   
+                                                   @endif
                                                     @endforeach
                                                 </tbody>
                                             </table>

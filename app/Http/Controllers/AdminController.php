@@ -17,10 +17,7 @@ class AdminController extends Controller
         $com = Order::OrderBy('created_at','DESC')->take(5)->get();
         $comV = Order::Where('status',1)->get();
         $comT = Order::Where('terminate',1)->get();
-        $user = User::query()
-                ->select('*')
-                ->join('orders','orders.id_users','=','users.id')
-                ->get();
+        $user = User::all();
 
 
 
