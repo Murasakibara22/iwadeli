@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\LivreurController;
 
 /*
@@ -43,6 +44,12 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::get('/newUser',[UserController::class,'nouveau']);
   Route::post('/createNewUser',[UserController::class,'createNewUser'])->name('createNewUsers');
 
+
+
+  //commande
+  Route::get('/listAllCom',[OrderController::class,'listAllC']);
+  //associer un livreurs a une commande
+  Route::put('/valideComm',[OrderController::class,'valideCommWithLivreur'])->name('valideCommWithLivreurs');
 });
 
 

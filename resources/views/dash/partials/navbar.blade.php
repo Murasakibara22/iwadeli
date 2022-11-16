@@ -353,7 +353,7 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="/new_SousCat" class="side-nav-link">
+                <a href="/listAllCom" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
                     <span> Commandes </span>
                 </a>
@@ -374,6 +374,13 @@
                     <i class="uil-briefcase"></i>
                     <span> Nos Membres</span>
                    
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="#" class="side-nav-link">
+                    <i class="uil-comments-alt"></i>
+                    <span> Commandes Valider </span>
                 </a>
             </li>
         </ul>

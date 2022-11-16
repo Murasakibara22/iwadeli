@@ -21,7 +21,7 @@ class Order extends Model
         'id_users',	
         'id_livreurs',
         'nature',
-        'contact',
+        'status',
         'created_at',
         'updated_at'
     ];

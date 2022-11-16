@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Order;
+use App\Models\Livreur;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -18,8 +19,7 @@ class OrderController extends Controller
               'lieudelivraison' => 'required',
               'contactdudestinataire'=> 'required',
               'montant' => 'required',
-              'id_users' => 'required',
-              'id_livreurs' => 'required',      
+              'id_users' => 'required',     
       ]);
   
           $order  = new Order;
@@ -29,19 +29,21 @@ class OrderController extends Controller
           $order->contactdudestinataire  = $request->contactdudestinataire;
           $order->montant  = $request->montant;
           $order->id_users  = $request->id_users;
-          $order->id_livreurs  = $request->id_livreurs;
+          $order->status  = 0;
           if($request->nature){
             $order->nature = $request->nature;
           }else{
             $order->nature = "moto";
           }
 
-          $order->contact = Auth()->user()->contact;
+        // $order->contact = $request->contact;  
   
           $order->save();
           //$order->save() ? event(new OrderRealTimeEvent("livraison en cours")): null;
   
-          return 200;
+          return response()->json([
+            'order' => $order
+          ]);
   
           
       }
@@ -172,4 +174,34 @@ class OrderController extends Controller
           ]);
       }
       
+
+
+      public function listAllC(){
+        $commande = Order::where('id_livreurs',null)->OrderBy('created_at','DESC')->get();
+        $livreur = Livreur::all();
+        return view('AdminPages.Commande.list',compact('commande','livreur'));
+      }
+
+
+      //valider une commande avec l'id de l'utilisateur
+      public function valideCommWithLivreur(Request $request){
+        $com = Order::where('id',$request->id_com)->first();
+        if(!is_null($com)){
+
+            $com->id_livreurs = $request->id_livreurs;
+            $com->status = 1;
+
+            
+            $com->update();
+            if($com->update()){
+                return redirect()->back()->with('Valide',"La commande a ete valider");
+            }else{
+                return redirect()->back()->with('NotValide',"La commande n'a pas pu etre valider , verifier si le livreur n'a pas deja une commande en cours");
+            }
+
+
+        }else{
+            return redirect()->back()->with('NotFound',"La commande selectionner n'a pas ete trouver ");
+        }
+      }
 }
