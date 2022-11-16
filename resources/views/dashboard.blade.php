@@ -65,7 +65,13 @@
                                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">Toutes les commandes</h5>
                                                 <h3 class="my-2 py-1">{{$comAll}}</h3>
                                                 <p class="mb-0 text-muted">
-                                                    <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> 5.38%</span>
+                                                    @if($commandeTCount <  $commandeHCount)
+                                                    <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> Baisse</span>
+                                                    @elseif($commandeTCount >  $commandeHCount)
+                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> good</span>
+                                                    @else
+                                                    <span class="text-secondary me-2"><i class="mdi mdi-arrow-down-bold"></i>meme</span>
+                                                    @endif
                                                 </p>
                                             </div>
                                             <div class="col-6">
