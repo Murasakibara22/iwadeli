@@ -17,13 +17,17 @@ class AdminController extends Controller
         $com = Order::OrderBy('created_at','DESC')->take(5)->get();
         $comV = Order::Where('status',1)->get();
         $comT = Order::Where('terminate',1)->get();
+        $user = User::query()
+                ->select('*')
+                ->join('orders','orders.id_users','=','users.id')
+                ->get();
 
 
 
         $comAllValidate = count($comV);
         $comAllTerminer = count($comT);
         $comAll = count($com);
-        return view('dashboard', compact('comAll','comAllValidate','comAllTerminer','com','today'));
+        return view('dashboard', compact('comAll','comAllValidate','comAllTerminer','com','today','user'));
     }
 
     public function store(){

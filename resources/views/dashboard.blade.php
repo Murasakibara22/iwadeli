@@ -182,7 +182,7 @@
                             <div class="col-xl-4 col-lg-12">
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between align-items-center">
-                                        <h4 class="header-title">Meilleurs publicateurs</h4>
+                                        <h4 class="header-title">Utilisateurs</h4>
                                       
                                     </div>
 
@@ -193,66 +193,24 @@
                                                     <tr>
                                                         <th>User</th>
                                                        
-                                                        <th>N'b de publication</th>
-                                                        <th></th>
+                                                        <th>NBP</th>
+                                                     
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach($user as $users)
+                                                       
                                                     <tr>
                                                         <td>
-                                                            <h5 class="font-15 mb-1 fw-normal">Jeremy Young</h5>
-                                                            <span class="text-muted font-13">Senior Sales Executive</span>
+                                                            <h5 class="font-15 mb-1 fw-normal">{{$users->nom}}</h5>
+                                                            <span class="text-muted font-13">{{$users->prenom}}</span>
                                                         </td>
                                                        
                                                         <td>49</td>
-                                                        <td class="table-action">
-                                                            <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="font-15 mb-1 fw-normal">Thomas Krueger</h5>
-                                                            <span class="text-muted font-13">Senior Sales Executive</span>
-                                                        </td>
-                                                        
-                                                        <td>83</td>
-                                                        <td class="table-action">
-                                                            <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="font-15 mb-1 fw-normal">Pete Burdine</h5>
-                                                            <span class="text-muted font-13">Senior Sales Executive</span>
-                                                        </td>
-                                                    
-                                                        <td>62</td>
-                                                        <td class="table-action">
-                                                            <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="font-15 mb-1 fw-normal">Mary Nelson</h5>
-                                                            <span class="text-muted font-13">Senior Sales Executive</span>
-                                                        </td>
                                                        
-                                                        <td>258</td>
-                                                        <td class="table-action">
-                                                            <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                        </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h5 class="font-15 mb-1 fw-normal">Kevin Grove</h5>
-                                                            <span class="text-muted font-13">Senior Sales Executive</span>
-                                                        </td>
-                                                       
-                                                        <td>73</td>
-                                                        <td class="table-action">
-                                                            <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                                        </td>
-                                                    </tr>
+                                                   
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div> <!-- end table-responsive-->
