@@ -46,6 +46,7 @@ Route::get('/cancelCopie/{id}', [OrderControllerCopie::class, 'CancelCopie'])->m
 
 Route::post('/logout', [AuthController::class, 'Logout'])->middleware('auth:sanctum');//deconnexion avec le login
 
+Route::get('/getUsers', [UserController::class, 'getUser']);
 
 
 //admin
@@ -53,7 +54,7 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function(){
 
     Route::get('/returnUser', [UserController::class, 'UserWhOrder'])->middleware('auth:sanctum');
 
-    Route::get('/getUsers', [UserController::class, 'getUser'])->middleware('auth:sanctum');
+
 
     Route::get('search/{name}', [UserController::class, 'search'])->middleware('auth:sanctum');//effectuer une recherche sur une lettre dans le nom d'un utilisateurs
     
