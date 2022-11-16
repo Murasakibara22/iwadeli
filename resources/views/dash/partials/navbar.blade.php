@@ -378,7 +378,7 @@
             </li>
 
             <li class="side-nav-item">
-                <a href="#" class="side-nav-link">
+                <a href="/listAllComValide" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
                     <span> Commandes Valider </span>
                 </a>

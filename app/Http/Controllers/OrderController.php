@@ -35,15 +35,14 @@ class OrderController extends Controller
           }else{
             $order->nature = "moto";
           }
-
-        // $order->contact = $request->contact;  
+  
   
           $order->save();
           //$order->save() ? event(new OrderRealTimeEvent("livraison en cours")): null;
   
           return response()->json([
             'order' => $order
-          ]);
+          ],200);
   
           
       }
@@ -65,7 +64,7 @@ class OrderController extends Controller
             $order->nature = "moto";
           }
 
-          $order->contact = Auth()->user()->contact;
+        //   $order->contact = Auth()->user()->contact;
   
           $order->update();
   
@@ -176,6 +175,7 @@ class OrderController extends Controller
       
 
 
+      //liste des commandes non valide
       public function listAllC(){
         $commande = Order::where('id_livreurs',null)->OrderBy('created_at','DESC')->get();
         $livreur = Livreur::all();
@@ -203,5 +203,11 @@ class OrderController extends Controller
         }else{
             return redirect()->back()->with('NotFound',"La commande selectionner n'a pas ete trouver ");
         }
+      }
+
+      //liste des commandes valide
+      public function listAllCV(){
+        $commande = Order::OrderBy('created_at','DESC')->get();
+        return view('AdminPages.Commande.listCV',compact('commande'));
       }
 }

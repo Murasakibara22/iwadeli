@@ -50,6 +50,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::get('/listAllCom',[OrderController::class,'listAllC']);
   //associer un livreurs a une commande
   Route::put('/valideComm',[OrderController::class,'valideCommWithLivreur'])->name('valideCommWithLivreurs');
+
+  Route::get('/listAllComValide',[OrderController::class,'listAllCV']);
 });
 
 

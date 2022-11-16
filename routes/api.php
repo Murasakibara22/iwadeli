@@ -31,7 +31,7 @@ Route::post('/inscription', [AuthController::class, 'register']);
 
 
 
-Route::post('/add', [OrderController::class, 'create']);//recuperer l'id du livreur et l'envoyer en base de Order (lorsque l'admin accepte avec l'id du livreur)
+Route::post('/add', [OrderController::class, 'create'])->middleware('auth:sanctum');//recuperer l'id du livreur et l'envoyer en base de Order (lorsque l'admin accepte avec l'id du livreur)
 
 
 Route::post('/addCopie', [OrderControllerCopie::class, 'createTest'])->middleware('auth:sanctum');//recuperer les commandes et envoyer sur le Tableau de bord (users qui passe la commande)
