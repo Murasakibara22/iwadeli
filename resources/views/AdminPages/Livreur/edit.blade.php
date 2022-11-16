@@ -80,7 +80,7 @@
                                 Voulez-vous Modifier Les informations de <span class="text-danger"> {{$livreur->nom_livreurs}} </span> ?
                                 </div>
                      <div class="row " style="width: 100%; margin-left: 0.4em; height: 83%;">
-                            <img src="../dashStyle/assets/images/iwaEnrliv.gif" class="w-100 h-100" alt="">
+                            <img src="../dashStyle/assets/images/modifyL.gif" class="w-100 h-100" alt="">
                         </div>
             </div> 
 
