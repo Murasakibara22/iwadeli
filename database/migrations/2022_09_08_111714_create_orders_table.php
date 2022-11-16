@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('lieudelivraison');
             $table->string('montant');
             $table->Boolean('status')->default(0);
+            $table->Boolean('terminate')->default(0);
             $table->string('contactdudestinataire');
             $table->timestamps();
             $table->unsignedBigInteger('id_users');

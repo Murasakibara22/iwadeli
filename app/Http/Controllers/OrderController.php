@@ -207,7 +207,29 @@ class OrderController extends Controller
 
       //liste des commandes valide
       public function listAllCV(){
-        $commande = Order::OrderBy('created_at','DESC')->get();
+        $commande = Order::Where('terminate',0)->OrderBy('created_at','DESC')->get();
         return view('AdminPages.Commande.listCV',compact('commande'));
+      }
+
+
+      //PUT terminer une commande
+      public function TerminateCommWithLivreur(Request $request){
+        $com = Order::where('id',$request->id_com)->first();
+        if(!is_null($com)){
+
+            $com->terminate = 1;
+
+            
+            $com->update();
+            if($com->update()){
+                return redirect()->back()->with('Valide',"La commande est Terminer");
+            }else{
+                return redirect()->back()->with('NotValide',"La commande n'a pas pu etre valider , verifier si le livreur n'a pas deja une commande en cours");
+            }
+
+
+        }else{
+            return redirect()->back()->with('NotFound',"La commande selectionner n'a pas ete trouver ");
+        }
       }
 }

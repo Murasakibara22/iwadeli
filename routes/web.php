@@ -52,6 +52,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::put('/valideComm',[OrderController::class,'valideCommWithLivreur'])->name('valideCommWithLivreurs');
 
   Route::get('/listAllComValide',[OrderController::class,'listAllCV']);
+
+  Route::put('/valideCommTer',[OrderController::class,'TerminateCommWithLivreur'])->name('TerminateCommWithLivreurs');
 });
 
 

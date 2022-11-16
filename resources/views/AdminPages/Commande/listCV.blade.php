@@ -10,7 +10,7 @@
                 <div class="content">
                 @if ( session('Valide'))
                     <div class="alert alert-success">
-                    La commande a ete valider
+                    La commande est Terminer
                     </div>
                     @endif
                   
@@ -97,7 +97,7 @@
                         <th scope="col">N.U.C</th>
                         <th scope="col">Contact</th>
                         <th scope="col">livrer par </th>
-                        <th scope="col">Valider</th>
+                        <th scope="col">Avamcement</th>
                         <th scope="col">Nature</th>
                         <th scope="col">suprimer</th>
                         </tr>
@@ -124,13 +124,21 @@
                         </td>
                         @endforeach
 
-                            <td>
-                                oui
-                            </td>
-             
                         <td>
                             {{$commandes->nature}}
                         </td>
+   <!-- Terminer une commande -->
+                        <form action=" {{ route('TerminateCommWithLivreurs') }}"  method="POST">
+                            @csrf
+                            @method('PUT')
+                            
+
+                              <input type="hidden" value="{{$commandes->id}}"  name="id_com">
+
+                                    <td>
+                                    <button type="submit" class="btn btn-success"><i class="mdi mdi"> Terminer</i> </button> 
+                                    </td>
+                        </form>
                          <td>
                             <a href="/deleteLiv/{{$commandes->id}}"> <button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i> </button> </a> 
                         </td>
