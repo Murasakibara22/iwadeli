@@ -32,6 +32,8 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::get('/newLivreur',[LivreurController::class,'nouveau']);
   Route::post('/createNewLivreur',[LivreurController::class,'createNewLivreur'])->name('createNewLivreurs');
   Route::get('/listAllLivreur',[LivreurController::class,'listAllLiv']);
+  Route::get('/changeLivreur/{id}',[LivreurController::class,'change'])->whereNumber('id');
+  Route::put('/UpdaLivreur/{id}',[LivreurController::class,'updateL'])->name('updateLi')->whereNumber('id');
 
 });
 

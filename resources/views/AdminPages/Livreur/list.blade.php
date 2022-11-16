@@ -8,9 +8,9 @@
 
             <div class="content-page">
                 <div class="content">
-                @if ( session('ModifyAnnonceSuccess'))
+                @if ( session('ModifySuccess'))
                     <div class="alert alert-success">
-                    L'annonce a ete modifier avec success
+                    Le livreur selectionner a ete modifer avec succes
                     </div>
                     @endif
                 @if ( session('supprimer'))
@@ -27,14 +27,14 @@
                     @endif
                  @if ( session('NotExist'))
                     <div class="alert alert-danger">
-                    L'Annonce n'existe pas
+                    Le Livreur selectionner n'existe pas
                     </div>
 
                     @endif
 
-                    @if ( session('NotModifyAnnonceSuccess'))
+                    @if ( session('NotModifySuccess'))
                     <div class="alert alert-warning">
-                    L'annonce n'a pas ete modifer veuillez rafraichir la page
+                    les informations du livreur n'ont pas pu etre  modifer 
                     </div>
                     @endif
 
@@ -143,7 +143,7 @@
                         <td>{{ date('j M, Y', strtotime($livreurs->created_at)) }}</td>
                         <td></td>
                         <td>
-                            <a href="/annonces_edit/"><button type="button" class="btn btn-info"><i class="mdi mdi-keyboard"></i> </button> </a> 
+                            <a href="/changeLivreur/{{$livreurs->id}}"><button type="button" class="btn btn-info"><i class="mdi mdi-keyboard"></i> </button> </a> 
                             </td>
                         <td>
                             <a href="/annonces_delete/"> <button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i> </button> </a> 

@@ -173,4 +173,42 @@ class LivreurController extends Controller
             return redirect()->back()->with('AucunLivreur', "Aucun Livreur n'est enregistrer");
         }
     }
+
+    function change($id){
+        $livreur = Livreur::where('id',$id)->first();
+        if(!is_null($livreur)){
+            return view('AdminPages.Livreur.edit',compact('livreur'));
+        }else{
+            return redirect()->back()->with('NotExist', "Le Livreur selectionner n'existe pas ");
+        }
+
+    }
+
+    public function updateL(Request $request, $id){
+        $livreur = Livreur::where('id',$id)->first();
+        if(!is_null($livreur))
+        {
+            $livreur->nom_livreurs = $request->nom_livreurs;
+            $livreur->prenom_livreurs = $request->prenom_livreurs;
+            $livreur->contact = $request->contact;
+            if (request()->file('photo')) {
+                $img = request()->file('photo');
+                    $messi = md5($img->getClientOriginalExtension().time().$request->contact).".".$img->getClientOriginalExtension();
+                    $source = $img;
+                    $target = 'images/Livreur/'.$messi; 
+                    InterventionImage::make($source)->fit(106,100)->save($target);
+                    $livreur->photo   =  $messi;
+            }
+
+            
+            $livreur->update();
+            if($livreur->update()){
+                return redirect('/listAllLivreur')->with('ModifySuccess', "Le livreur selectionner a ete modifer avec succes");
+            }else{
+                return redirect('/listAllLivreur')->with('NotModifySuccess', "les informations du livreur n'ont pas pu etre  modifer ");
+            }
+        }else{
+            return redirect()->back()->with('NotExist', "Le Livreur selectionner n'existe pas ");
+        }
+    }
 }
