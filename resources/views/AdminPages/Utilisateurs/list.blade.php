@@ -104,7 +104,7 @@
                                             <tr>
                                                 <td class="table-user">
                                                     <img src="../images/User/{{$users->photo}}" alt="table-user" class="me-2 rounded-circle" />
-                                                    {{$users->name}}
+                                                    {{$users->nom}}
                                                 </td>
                                                 <td>{{$users->prenom}}</td>
                                                 <td>{{$users->contact}}</td>
