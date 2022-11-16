@@ -211,4 +211,27 @@ class LivreurController extends Controller
             return redirect()->back()->with('NotExist', "Le Livreur selectionner n'existe pas ");
         }
     }
+
+
+    //delete
+    public function deleteL($id){
+        $livreur = Livreur::where('id',$id)->first();
+
+        if(isset($livreur)) { 
+            return view('AdminPages.Livreur.delete',compact('livreur'));
+        }else{
+            return redirect()->back()->with('NotExist', "Le Livreur selectionner n'existe pas ");
+        }
+    }
+
+
+    public function destroyL($id){
+        $livreur = Livreur::find($id);
+        if(isset($livreur)) { 
+            $livreur->delete();
+            return redirect('/listAllLivreur')->with('DeleteSuccess',"Le livreur a ete supprimer");
+        }else{
+            return redirect()->back()->with('NotExist', "Le Livreur selectionner n'existe pas ");
+        }
+    }
 }

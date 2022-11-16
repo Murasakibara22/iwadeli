@@ -13,9 +13,9 @@
                     Le livreur selectionner a ete modifer avec succes
                     </div>
                     @endif
-                @if ( session('supprimer'))
+                @if ( session('DeleteSuccess'))
                     <div class="alert alert-success">
-                    L'Annonce a ete supprimer avec success
+                    Le livreur a ete supprimer
                     </div>
 
                     @endif
@@ -146,7 +146,7 @@
                             <a href="/changeLivreur/{{$livreurs->id}}"><button type="button" class="btn btn-info"><i class="mdi mdi-keyboard"></i> </button> </a> 
                             </td>
                         <td>
-                            <a href="/annonces_delete/"> <button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i> </button> </a> 
+                            <a href="/deleteLiv/{{$livreurs->id}}"> <button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i> </button> </a> 
                         </td>
                         </tr>
                         @endforeach
