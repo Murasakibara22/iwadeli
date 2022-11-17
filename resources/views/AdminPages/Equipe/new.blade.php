@@ -10,7 +10,7 @@
                 <div class="content">
                 @if ( session('saveSuccessequipe'))
                     <div class="alert alert-success">
-                    Utilisateurs sauvegarder avec succès
+                    Un Membre a été enregistrer
                     </div>
 
                     @endif
