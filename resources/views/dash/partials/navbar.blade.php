@@ -23,7 +23,7 @@
                     <img src="../logo/Jiam_s2-removebg-preview.png" alt="dark logo" height="22">
                 </span>
                 <span class="logo-sm">
-                    <img src="../logo/Jiam_s4-removebg-preview.png" alt="small logo" height="22">
+                    <img src="../logo/Jiam_s2-removebg-preview.png" alt="small logo" height="22">
                 </span>
             </a>
         </div>
@@ -298,7 +298,7 @@
             <img src="../logo/Jiam_s2-removebg-preview.png" alt="logo" height="130">
         </span>
         <span class="logo-sm">
-            <img src="../logo/Jiam_s4-removebg-preview.png" alt="small logo" height="50">
+            <img src="../logo/Jiam_s2-removebg-preview.png" alt="small logo" height="50">
         </span>
     </a>
 
