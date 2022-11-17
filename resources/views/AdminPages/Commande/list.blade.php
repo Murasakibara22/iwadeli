@@ -172,8 +172,8 @@
                                 </td>
                     </form>
                         
-                         <td>
-                            <a href="/deleteLiv/{{$commandes->id}}"> <button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i> </button> </a> 
+                         <td class="table-user">
+                            <a href="/deleteLiv/{{$commandes->id}}"> <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle" /> </a> 
                         </td>
                         </tr>
                         @endforeach

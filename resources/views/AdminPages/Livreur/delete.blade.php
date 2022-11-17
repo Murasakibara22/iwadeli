@@ -23,10 +23,20 @@
                     </div>
 
                     <div class="shadow-lg p-3 mb-5 bg-body rounded">Voulez vous vraiment suprimer {{$livreur->nom_livreurs}} 
-                    <button type="submit"  class="btn btn-danger float-end">oui suprimer</button>
-                    <a href="{{ url('/Annonce_list/') }}" class="float-end me-3"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">non fermer </button>  </a>  
+                    <button type="submit"  class="btn btn-danger float-end mt-3" >oui suprimer</button>
+                    <a href="{{ url('/Annonce_list/') }}" class="float-end me-2 mb-4 mt-3"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">non fermer </button>  </a> 
+                    
+                    
+                    <div class="col-md-6 mt-5" style="margin: auto;" >
+                    
+                     <div class="row " style="width: 100%; margin-left: 0.4em; height: 85%;">
+                            <img src="../dashStyle/assets/images/deletUs.gif" class="w-100 h-100" alt="">
+                        </div>
+            </div>
                     </div>
                     </form>
+
+
 
 
                     </div> <!-- container -->

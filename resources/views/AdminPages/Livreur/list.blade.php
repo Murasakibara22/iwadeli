@@ -145,8 +145,8 @@
                         <td>
                             <a href="/changeLivreur/{{$livreurs->id}}"><button type="button" class="btn btn-info"><i class="mdi mdi-keyboard"></i> </button> </a> 
                             </td>
-                        <td>
-                            <a href="/deleteLiv/{{$livreurs->id}}"> <button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i> </button> </a> 
+                        <td class="table-user">
+                            <a href="/deleteLiv/{{$livreurs->id}}"> <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle" /> </a> 
                         </td>
                         </tr>
                         @endforeach
