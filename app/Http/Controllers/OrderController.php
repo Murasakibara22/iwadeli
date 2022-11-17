@@ -232,4 +232,11 @@ class OrderController extends Controller
             return redirect()->back()->with('NotFound',"La commande selectionner n'a pas ete trouver ");
         }
       }
+
+      //commande terminer la vue
+
+      public function listAllComTerm(){
+        $commande =  Order::Where('terminate',1)->OrderBy('updated_at','DESC')->get();
+        return view('AdminPages.Commande.listCT',compact('commande'));
+      }
 }

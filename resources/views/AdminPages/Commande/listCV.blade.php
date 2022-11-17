@@ -57,7 +57,7 @@
 
 
                   <p class="card-description mt-3">
-                    Vous avez la possibilité de  <code>modifier</code> ou de <code>suprimer  </code> un Livreur
+                    Vous avez la possibilité de  <code>Terminer</code> ou de <code>suprimer  </code> une Commande
                   </p>
                 
                     <!-- Fitrage -->
@@ -97,7 +97,7 @@
                         <th scope="col">N.U.C</th>
                         <th scope="col">Contact</th>
                         <th scope="col">livrer par </th>
-                        <th scope="col">Nature</th>
+                        <th scope="col">Engins</th>
                         <th scope="col">Avamcement</th>
                         <th scope="col">suprimer</th>
                         </tr>

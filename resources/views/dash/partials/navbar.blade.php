@@ -383,6 +383,13 @@
                     <span> Commandes Valider </span>
                 </a>
             </li>
+
+            <li class="side-nav-item">
+                <a href="/listAllComTerminer" class="side-nav-link">
+                    <i class="uil-comments-alt"></i>
+                    <span> Commandes effectuer </span>
+                </a>
+            </li>
         </ul>
         <!--- End Sidemenu -->
 

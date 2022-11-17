@@ -51,9 +51,14 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   //associer un livreurs a une commande
   Route::put('/valideComm',[OrderController::class,'valideCommWithLivreur'])->name('valideCommWithLivreurs');
 
+  //commande valider
   Route::get('/listAllComValide',[OrderController::class,'listAllCV']);
-
+  //Terminer une commande
   Route::put('/valideCommTer',[OrderController::class,'TerminateCommWithLivreur'])->name('TerminateCommWithLivreurs');
+
+
+  //commande terminer
+  Route::get('/listAllComTerminer',[OrderController::class,'listAllComTerm']);
 });
 
 

@@ -6,16 +6,16 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
-     <div class="content-page">
-        <div class="content">
-                @if ( session('ModifySuccess'))
+            <div class="content-page">
+                <div class="content">
+                @if ( session('Valide'))
                     <div class="alert alert-success">
-                    Le livreur selectionner a ete modifer avec succes
+                    La commande a ete valider
                     </div>
                     @endif
-                @if ( session('DeleteSuccess'))
-                    <div class="alert alert-success">
-                    Le livreur a ete supprimer
+                @if ( session('NotValide'))
+                    <div class="alert alert-warning">
+                    La commande n'a pas pu etre valider , verifier si le livreur n'a pas deja une commande en cours
                     </div>
 
                     @endif
@@ -25,9 +25,9 @@
                     </div>
 
                     @endif
-                 @if ( session('NotExist'))
+                 @if ( session('NotFound'))
                     <div class="alert alert-danger">
-                    Le Livreur selectionner n'existe pas
+                    La commande selectionner n'a pas ete trouver
                     </div>
 
                     @endif
@@ -49,7 +49,7 @@
                   
 
                     <!-- Start Content-->
-             <div class="container-fluid">
+                    <div class="container-fluid">
 
                      <!-- start page title -->
                      <div class="row">
@@ -60,8 +60,8 @@
                                             
                                         </ol>
                                     </div>
-                                    <h4 class="page-title"> Utilisateurs Inscrits
-                                    <a href="/newUser" class="float-end"><button type="button" class="btn btn-success rounded-pill ms-5"><i class="uil-plus"></i> Ajoutez un Utilisateur</button> </a>
+                                    <h4 class="page-title"> Listes des Utilisateurs
+                                    <a href="/" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Ajoutez un Utilisateurs</button> </a>
                                 </h4>
                                 </div>
                             </div>
@@ -69,13 +69,13 @@
                         <!-- end page title -->
 
 
-                <div class="col-lg-12 grid-margin stretch-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Liste de tous les livreurs
-                            </h4>
 
-                            <div class="app-search dropdown float-end mt-3">
+                      <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                            <h4 class="card-title">Liste de tous les utilisateurs</h4>
+
+                            <div class="app-search dropdown float-end mt-3 mb-2">
                                                 <form action="">
                                                     <div class="input-group">
                                                         <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
@@ -84,57 +84,72 @@
                                                         <button class="input-group-text btn btn-primary" type="submit">recherche</button>
                                                     </div>
                                                 </form>
+
+                                              
                                             </div>
-
-
-
-
-                            <table class="table table-striped table-centered mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>photo et noms</th>
-                                                <th>Prenoms</th>
-                                                <th>contact</th>
-                                                <th>email</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach($user as $users)
-                                            <tr>
-                                                <td class="table-user">
-                                                    <img src="../images/User/{{$users->photo}}" alt="table-user" class="me-2 rounded-circle" />
-                                                    {{$users->nom}}
-                                                </td>
-                                                <td>{{$users->prenom}}</td>
-                                                <td>{{$users->contact}}</td>
-                                                <td>{{$users->email}}</td>
-                                                <td class="table-action">
-                                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                                                    <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                </td>
-                                            </tr>
-                                          @endforeach
-                                        </tbody>
-                                    </table>
-
+                 
+                                            <p class="card-description mt-3 mb-3">
+                    Vous avez la possibilité de  <code>modifier</code> ou de <code>suprimer  </code> un Livreur
+                  </p>
+                    <!-- Fitrage -->
+                  <div class="mb-1 col-12">
                 
-
-
-
                 
-                        </div>
-                    </div>
-                </di>
+              </div>
 
 
 
 
 
+         <div class="table-responsive col-12">
+                  <table class="table">
+                    <thead class="thead-dark">
+                        <tr class="bg-white">
+                        <th scope="col">photos</th>
+                        <th scope="col">Noms</th>
+                        <th scope="col">Prenoms</th>
+                        <th scope="col">contact</th>
+                        <th scope="col">Email </th>
+                        <th scope="col">Inscrit le</th>
+                        <th scope="col">modifer</th> 
+                        <th scope="col">Supprimer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($user as $users)
+                        <tr>
+                               <td class="table-user" >
+                               <img src="../images/User/{{$users->photo}}" alt="table-user" class="me-2 rounded-circle" />
+                              </td>
+                               
+                        <td class="fw-bold">{{$users->nom}}</td>
+                        <td>{{$users->prenom}}</td>
+                        <td>{{$users->contact}}</td>
+                        <td>{{$users->email}}</td>
+               
+                        <td>{{date('j M, Y', strtotime($users->created_at))}}</td>
+                        <td>
+                        <a href="/deleteLiv/"> <button type="button" class="btn btn-info"><i class="mdi mdi-keyboard"></i> </button> </a> 
+                        </td>
+                         <td>
+                            <a href="/deleteLiv/"> <button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i> </button> </a> 
+                        </td>
+                        </tr>
+                    </tbody>
+                    @endforeach
+                    </table>
 
+
+                </div>
+                </div>
+              </div>
             </div>
-         </div>
-    </div>
+
+
+
+                     </div>
+                </div>
+            </div>
 
 
 
