@@ -80,7 +80,7 @@ Route::post('/newEquipe', [EquipeController::class, 'ajoutTeam'])->name('addEqui
 Route::get('/equipe_list', [EquipeController::class, 'listAll']);
 
 Route::get('/equipe_edit/{slug}', [EquipeController::class, 'change']);
-
+ 
 Route::put('/equipEdit/{slug}', [EquipeController::class, 'modifyEquipe'])->name('modifierEquipe');
 
 Route::get('/equipe_delete/{slug}', [EquipeController::class, 'supprime']);
