@@ -371,7 +371,7 @@
 
             <li class="side-nav-item">
                 <a  
-                    class="side-nav-link" href="/membres">
+                    class="side-nav-link" href="/new_equipe">
                     <i class="uil-briefcase"></i>
                     <span> Nos Membres</span>
                    
