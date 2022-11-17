@@ -9,18 +9,18 @@
             <div class="content-page">
                 <div class="content">
                 @if ( session('Valide'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success mt-1">
                     La commande a ete valider
                     </div>
                     @endif
                 @if ( session('NotValide'))
-                    <div class="alert alert-warning">
+                    <div class="alert alert-warning mt-1">
                     La commande n'a pas pu etre valider , verifier si le livreur n'a pas deja une commande en cours
                     </div>
 
                     @endif
                 @if ( session('successDele'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success mt-1">
                     Utilisateur Supprimer
                     </div>
 
@@ -32,20 +32,20 @@
 
                     @endif
                  @if ( session('NotExist'))
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger mt-1">
                     L'utilisateur spécifier n'existe pas
                     </div>
 
                     @endif
 
-                    @if ( session('NotModifySuccess'))
-                    <div class="alert alert-warning">
-                    les informations du livreur n'ont pas pu etre  modifer 
+                    @if ( session('Nodetails'))
+                    <div class="alert alert-warning mt-1">
+                    No Details found. veuillez rechercher selon le nom ou le prenom !
                     </div>
                     @endif
 
                     @if ( session('erreur'))
-                    <div class="alert alert-warning">
+                    <div class="alert alert-warning mt-1">
                     l'un des champs n'est pas correctement remplis
                     </div>
 
@@ -82,7 +82,7 @@
                             <h4 class="card-title">Liste de tous les utilisateurs</h4>
 
                             <div class="app-search dropdown float-end mt-3 mb-2">
-                                                <form action="">
+                                                <form action="{{ route('findSearch') }}">
                                                     <div class="input-group">
                                                         <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
                                                         <span class="mdi mdi-magnify search-icon"></span>

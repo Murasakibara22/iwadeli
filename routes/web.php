@@ -48,7 +48,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::put('/updaUser/{id}',[UserController::class,'updateU'])->name('updateUse')->whereNumber('id');
   Route::get('/deleteUs/{id}',[UserController::class,'deleteU'])->whereNumber('id');
   Route::delete('/destroyUs/{id}',[UserController::class,'destroyU'])->name('desctroyUse')->whereNumber('id');
-
+  Route::get('/findSearch', [UserController::class , 'findSearch'])->name('findSearch');
 
 
   //commande

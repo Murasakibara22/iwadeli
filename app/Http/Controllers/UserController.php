@@ -221,4 +221,17 @@ class UserController extends Controller
                 return redirect('/listAllUs')->with('NotExist', "L'utilisateur spécifier n'existe pas");
             }
     }
+
+
+    //recherche d'un utilisateur
+    public function findSearch(Request $request)
+        {			
+            $search = $request->search;		
+            $user = User::where( 'nom', 'LIKE', '%' . $search . '%' )->orWhere( 'prenom', 'LIKE', '%' . $search . '%' )->get();
+            if (count ($user) > 0 && isset($user)){
+            return view ( 'AdminPages.Utilisateurs.search')->with('user',$user);
+            }else{
+            return redirect( '/listAllUs')->with( 'Nodetails','No Details found. Try to search again !' );	
+            }	
+        }
 }
