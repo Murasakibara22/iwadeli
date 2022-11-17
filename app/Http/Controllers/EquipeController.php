@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Image;
+use Image as InterventionImage;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Equipe;
+use Illuminate\Support\Str;
 
 class EquipeController extends Controller
 {
