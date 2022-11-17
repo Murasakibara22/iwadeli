@@ -23,6 +23,15 @@
     </head>
 
     <body>
+
+    <!-- Pre-loader -->
+    <div id="preloader">
+            <div id="status">
+                <div class="bouncing-loader"><div ></div><div ></div><div ></div></div>
+            </div>
+        </div>
+        <!-- End Preloader-->
+
         <!-- Begin page -->
         <div class="wrapper">
 
@@ -546,6 +555,16 @@
         
         <!-- App js -->
         <script src="{{ asset('dashStyle/assets/js/app.min.js') }}"></script>
+
+
+        <!-- Apex Charts js -->
+        <script src="{{ asset('dashStyle/assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+
+        <!-- Todo js -->
+        <script src="{{ asset('dashStyle/assets/js/ui/component.todo.js') }}"></script>
+
+        <!-- CRM Dasboard Demo App js -->
+        <script src="{{ asset('dashStyle/assets/js/pages/demo.crm-dashboard.js') }}"></script>
        
 
     </body>

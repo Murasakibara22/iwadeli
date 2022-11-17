@@ -35,110 +35,128 @@
                         </div>
                         <!-- end page title -->
 
-                        <div class="row">
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Toutes </h5>
-                                                <h3 class="my-2 py-1">{{$countAllOrder}}</h3>
-                                                <p class="mb-0 text-muted">
-                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 3.27%</span>
-                                                </p>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <div id="campaign-sent-chart" data-colors="#727cf5"></div>
-                                                </div>
-                                            </div>
-                                        </div> <!-- end row-->
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-        
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">C.D.J</h5>
-                                                <h3 class="my-2 py-1">{{$comAll}}</h3>
-                                                <p class="mb-0 text-muted">
-                                                    @if($commandeTCount <  $commandeHCount)
-                                                    <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> Baisse</span>
-                                                    @elseif($commandeTCount >  $commandeHCount)
-                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> good</span>
-                                                    @else
-                                                    <span class="text-secondary me-2"><i class="mdi mdi-arrow-down-bold"></i>meme</span>
-                                                    @endif
-                                                </p>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <div id="new-leads-chart" data-colors="#0acf97"></div>
-                                                </div>
-                                            </div>
-                                        </div> <!-- end row-->
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
+                                 <div class="row">
+                                    <div class="col-md-6 col-xl-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row align-items-center">
+                                                    <div class="col-6">
+                                                        <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Toutes les commandes</h5>
+                                                        <h3 class="my-2 py-1">{{$countAllOrder}}</h3>
+                                                        <p class="mb-0 text-muted">
+                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 3.27%</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="text-end">
+                                                            <div id="campaign-sent-chart" data-colors="#727cf5"></div>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end row-->
+                                            </div> <!-- end card-body -->
+                                        </div> <!-- end card -->
+                                    </div> <!-- end col -->
 
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">Commandes Valider</h5>
-                                                <h3 class="my-2 py-1">{{$comAllValidate}}</h3>
-                                                <p class="mb-0 text-muted">
-                                                @if($resultPourcentageCVT <  $resultPourcentageCVH)
-                                                    <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> {{$resultPourcentageCVT}}%</span>
-                                                    @elseif($resultPourcentageCVT >  $resultPourcentageCVH)
-                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCVT}}%</span>
-                                                    @else
-                                                    <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCVT}}%</span>
-                                                    @endif
-                                                </p>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <div id="deals-chart" data-colors="#727cf5"></div>
-                                                </div>
-                                            </div>
-                                        </div> <!-- end row-->
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
+                                    <div class="col-md-6 col-xl-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row align-items-center">
+                                                    <div class="col-6">
+                                                        <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">C.D.J</h5>
+                                                        <h3 class="my-2 py-1">{{$comAll}}</h3>
+                                                        <p class="mb-0 text-muted">
+                                                            @if($commandeTCount <  $commandeHCount)
+                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> Baisse</span>
+                                                            @elseif($commandeTCount >  $commandeHCount)
+                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> good</span>
+                                                            @else
+                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-down-bold"></i>meme</span>
+                                                            @endif
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="text-end">
+                                                        @if($commandeTCount <  $commandeHCount)
+                                                            <div id="new-leads-chart" data-colors="#F73131"></div>
+                                                            @elseif($commandeTCount >  $commandeHCount)
+                                                            <div id="new-leads-chart" data-colors="#0acf97"></div>
+                                                            @else
+                                                            <div id="new-leads-chart" data-colors="#C1C1C1"></div>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end row-->
+                                            </div> <!-- end card-body -->
+                                        </div> <!-- end card -->
+                                    </div> <!-- end col -->
 
-                            <div class="col-md-6 col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">Commande Terminer</h5>
-                                                <h3 class="my-2 py-1">{{$comAllTerminer}}</h3>
-                                                <p class="mb-0 text-muted">
-                                                @if($resultPourcentageCTT <  $resultPourcentageCTH)
-                                                    <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> {{$resultPourcentageCTT}}%</span>
-                                                    @elseif($resultPourcentageCTT >  $resultPourcentageCTH)
-                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCTT}}%</span>
-                                                    @else
-                                                    <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCTT}}%</span>
-                                                    @endif
-                                                </p>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="text-end">
-                                                    <div id="booked-revenue-chart" data-colors="#0acf97"></div>
-                                                </div>
-                                            </div>
-                                        </div> <!-- end row-->
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card -->
-                            </div> <!-- end col -->
-                        </div>
-                        <!-- end row -->
+                                    <div class="col-md-6 col-xl-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row align-items-center">
+                                                    <div class="col-6">
+                                                        <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">Commandes Valider</h5>
+                                                        <h3 class="my-2 py-1">{{$comAllValidate}}</h3>
+                                                        <p class="mb-0 text-muted">
+                                                            @if($resultPourcentageCVT <  $resultPourcentageCVH)
+                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> {{$resultPourcentageCVT}}%</span>
+                                                            @elseif($resultPourcentageCVT >  $resultPourcentageCVH)
+                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCVT}}%</span>
+                                                            @else
+                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCVT}}%</span>
+                                                            @endif
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="text-end">
+                                                        @if($resultPourcentageCVT <  $resultPourcentageCVH)
+                                                            <div id="deals-chart" data-colors="#F73131"></div>
+                                                            @elseif($resultPourcentageCVT >  $resultPourcentageCVH)
+                                                            <div id="deals-chart" data-colors="#0acf97">Augmentation</div>
+                                                            @else
+                                                            <div id="deals-chart" data-colors="#727cf5">Stable</div>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end row-->
+                                            </div> <!-- end card-body -->
+                                        </div> <!-- end card -->
+                                    </div> <!-- end col -->
+
+                                    <div class="col-md-6 col-xl-3">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row align-items-center">
+                                                    <div class="col-6">
+                                                        <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">Commande Terminer</h5>
+                                                        <h3 class="my-2 py-1">{{$comAllTerminer}}</h3>
+                                                        <p class="mb-0 text-muted">
+                                                            @if($resultPourcentageCTT <  $resultPourcentageCTH)
+                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> {{$resultPourcentageCTT}}%</span>
+                                                            @elseif($resultPourcentageCTT >  $resultPourcentageCTH)
+                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCTT}}%</span>
+                                                            @else
+                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCTT}}%</span>
+                                                            @endif
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="text-end">
+                                                        @if($resultPourcentageCTT <  $resultPourcentageCTH)
+                                                            <div id="booked-revenue-chart" data-colors="#F73131">Chute</div>
+                                                            @elseif($resultPourcentageCTT >  $resultPourcentageCTH)
+                                                            <div id="booked-revenue-chart" data-colors="#0acf97">Augmentation</div>
+                                                            @else
+                                                            <div id="booked-revenue-chart" data-colors="#727cf5">stable</div>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- end row-->
+                                            </div> <!-- end card-body -->
+                                        </div> <!-- end card -->
+                                    </div> <!-- end col -->
+                                </div>
+                                <!-- end row -->
 
                         <div class="row">
                            
@@ -182,9 +200,9 @@
                                             </div>
                                         </div>
 
-                                        <div dir="ltr">
+                                        <!-- <div dir="ltr">
                                             <div id="dash-revenue-chart" class="apex-charts" data-colors="#0acf97,#fa5c7c"></div>
-                                        </div>
+                                        </div> -->
 
                                     </div>
                                     <!-- end card body-->
