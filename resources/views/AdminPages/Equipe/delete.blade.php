@@ -22,9 +22,9 @@
   vous allez suprimer {{$equipe->nom}} ?
 </div>
 
-<div class="shadow-lg p-3 mb-5 bg-body rounded">Voulez vous vraiment suprimer {{$equipe->nom}} 
-<button type="submit"  class="btn btn-danger ">oui suprimer</button>
-<a href="{{ url('/equipe_list/') }}"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">non fermer </button>  </a> 
+<div class="shadow-lg p-3 mb-5 bg-body rounded"> <h4 class="mb-3 fs-3">Voulez vous vraiment suprimer {{$equipe->nom}} </h4>
+<button type="submit"  class="btn btn-danger mt-2">oui suprimer</button>
+<a href="{{ url('/equipe_list/') }}"><button type="button" class="btn btn-secondary mt-2" data-bs-dismiss="modal">non fermer </button>  </a> 
 
 <div class="col-md-6 mt-5" style="margin: auto;" >
                     
