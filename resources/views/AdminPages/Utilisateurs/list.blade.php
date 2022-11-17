@@ -135,7 +135,7 @@
                
                         <td>{{date('j M, Y', strtotime($users->created_at))}}</td>
                         <td class="table-user">
-                        <a href="/changeNewUser/{{$users->id}}"> <img src="../dashStyle/assets/images/roudedEdit.gif" alt="table-user" class="me-2 rounded-circle w-100 h-100" /></a> 
+                        <a href="/changeNewUser/{{$users->id}}"> <img src="../dashStyle/assets/images/roudedEdit.gif" alt="table-user" class="me-2 rounded-circle " /></a> 
                         </td>
                          <td  class="table-user">
                             <a href="/deleteUs/{{$users->id}}">  <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle" /></a> 
