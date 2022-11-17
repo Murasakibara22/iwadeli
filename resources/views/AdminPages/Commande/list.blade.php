@@ -61,7 +61,7 @@
                                         </ol>
                                     </div>
                                     <h4 class="page-title"> Nos Commande Non valider
-                                    <a href="/newLivreur" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande Valider</button> </a>
+                                    <a href="/listAllComValide" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande Valider</button> </a>
                                 </h4>
                                 </div>
                             </div>

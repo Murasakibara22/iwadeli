@@ -67,7 +67,7 @@
                                         </ol>
                                     </div>
                                     <h4 class="page-title"> Listes des Utilisateurs
-                                    <a href="/" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Ajoutez un Utilisateurs</button> </a>
+                                    <a href="/newUser" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Ajoutez un Utilisateurs</button> </a>
                                 </h4>
                                 </div>
                             </div>
