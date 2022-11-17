@@ -355,6 +355,7 @@
             <li class="side-nav-item">
                 <a href="/listAllCom" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
+                    <span class="badge bg-danger float-end">En Attente</span>
                     <span> Commandes </span>
                 </a>
             </li>
@@ -380,14 +381,15 @@
             <li class="side-nav-item">
                 <a href="/listAllComValide" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
-                    <span> Commandes Valider </span>
+                    <span> Commandes En cour </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
                 <a href="/listAllComTerminer" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
-                    <span> Commandes effectuer </span>
+                    <span class="badge bg-success float-end">terminer</span>
+                    <span> Commandes </span>
                 </a>
             </li>
         </ul>

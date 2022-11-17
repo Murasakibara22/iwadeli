@@ -28,7 +28,7 @@
                                         </ol>
                                     </div>
                                     <h4 class="page-title"> Nos Commandes Valider
-                                    <a href="/listAllComTerminer" class="float-end"><button type="button" class="btn btn-success rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande Terminer</button> </a>
+                                    <a href="/listAllComTerminer" class="float-end"><button type="button" class="btn btn-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande Terminer</button> </a>
                                 </h4>
                                 </div>
                             </div>

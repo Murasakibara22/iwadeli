@@ -27,8 +27,8 @@
                                             
                                         </ol>
                                     </div>
-                                    <h4 class="page-title"> Nos Commandes Valider
-                                    <a href="/newLivreur" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande Valider</button> </a>
+                                    <h4 class="page-title"> Nos Commandes Effectuer
+                                    <a href="/listAllCom" class="float-end"><button type="button" class="btn btn-warning rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande En Attente</button> </a>
                                 </h4>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                       <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                            <h4 class="card-title">Liste de toutes les Associees a un livreur</h4>
+                            <h4 class="card-title">Liste de toutes les commandes effectuees</h4>
 
                             <div class="app-search dropdown float-end mt-3">
                                                 <form action="">
