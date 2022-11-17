@@ -18,7 +18,7 @@ use App\Http\Controllers\LivreurController;
 */
 
 Route::get('/', function () {
-    return redirect('/register');
+    return view('welcome');
 });
 
 // Route::get('/dashboard', function () {
@@ -60,7 +60,11 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   //Terminer une commande
   Route::put('/valideCommTer',[OrderController::class,'TerminateCommWithLivreur'])->name('TerminateCommWithLivreurs');
 
+  //delete une commande
+  Route::get('/deleteCommande/{id}',[OrderController::class,'deleteCommande'])->whereNumber('id');
+  Route::delete('/destroyCommande/{id}',[OrderController::class,'destroyCommande'])->name('destroyCommandes')->whereNumber('id');
 
+  
   //commande terminer
   Route::get('/listAllComTerminer',[OrderController::class,'listAllComTerm']);
 });

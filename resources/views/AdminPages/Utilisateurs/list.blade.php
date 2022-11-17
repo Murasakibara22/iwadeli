@@ -26,7 +26,7 @@
 
                     @endif
                 @if ( session('succesEdit'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success" >
                     L'utilisateur a ete modifier
                     </div>
 

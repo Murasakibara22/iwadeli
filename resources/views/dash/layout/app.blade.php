@@ -546,6 +546,7 @@
         
         <!-- App js -->
         <script src="{{ asset('dashStyle/assets/js/app.min.js') }}"></script>
+       
 
     </body>
 </html>

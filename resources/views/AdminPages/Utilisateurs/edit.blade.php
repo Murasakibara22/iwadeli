@@ -49,7 +49,7 @@
                                             <div class="tab-pane show active" id="input-types-preview">
                                                 <div class="row justify-content-center">
                                                     <div class="col-lg-10">
-                                                    <form action="{{ url('/updaUser',$users->id) }}" method="POST" enctype="multipart/form-data">
+                                                    <form action="{{ route('updateUse',$users->id) }}" method="POST" enctype="multipart/form-data">
                                                       @csrf 
                                                       @method('PUT')
                                                       <!-- Div de Photo -->
@@ -74,7 +74,7 @@
         
                                                             <div class="mb-3">
                                                                 <label for="example-email" class="form-label">Email</label>
-                                                                <input name="email" type="email" id="example-email" class="form-control" value="{{ old($users->email) ?? $users->email }}">
+                                                                <input name="email" type="email" id="example-email" class="form-control" value="">
                                                             </div>
 
                                                             <div class="mb-3">

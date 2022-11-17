@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
      //create une commande
-     public function create(Request $request){
+      public function create(Request $request){
         
         $validatedData = $request->validate([
               'details' => 'required',
@@ -238,5 +238,29 @@ class OrderController extends Controller
       public function listAllComTerm(){
         $commande =  Order::Where('terminate',1)->OrderBy('updated_at','DESC')->get();
         return view('AdminPages.Commande.listCT',compact('commande'));
+      }
+
+
+      //pages delete commande
+      function deleteCommande($id){
+        $commande = Order::where('id',$id)->first();
+
+        if(!is_null($commande)){
+          return view('AdminPages.Commande.delete',compact('commande'));
+        }else{
+          return redirect()->back()->with('NotFound', "La commande selectionner n'existe pas");
+        }
+      }
+
+
+      //destroy commande
+      function destroyCommande($id){
+        $commande = Order::where('id',$id)->first();
+        if(!is_null($commande)){
+          $commande->delete();
+          return redirect('/listAllCom')->with('successDelete', 'La commande a ete supprimer avec succes ');
+        }else{
+          return redirect('/listAllCom')->with('NotFound', "La commande selectionner n'existe pas");
+        }
       }
 }

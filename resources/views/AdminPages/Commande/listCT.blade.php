@@ -132,7 +132,7 @@
                                     </td>
                      
                          <td class="table-user">
-                            <a href="/deleteLiv/{{$commandes->id}}">  <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle " /> </a> 
+                            <a href="/deleteCommande/{{$commandes->id}}">  <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle " /> </a> 
                         </td>
                         </tr>
                         @endforeach
