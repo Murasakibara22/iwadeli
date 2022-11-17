@@ -67,6 +67,26 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   
   //commande terminer
   Route::get('/listAllComTerminer',[OrderController::class,'listAllComTerm']);
+
+
+
+
+  //equipe
+Route::get('/new_equipe', [EquipeController::class, 'nouvelle']);
+
+Route::post('/newEquipe', [EquipeController::class, 'ajoutTeam'])->name('addEquipe');
+
+Route::get('/equipe_list', [EquipeController::class, 'listAll']);
+
+Route::get('/equipe_edit/{slug}', [EquipeController::class, 'change']);
+
+Route::put('/equipEdit/{slug}', [EquipeController::class, 'modifyEquipe'])->name('modifierEquipe');
+
+Route::get('/equipe_delete/{slug}', [EquipeController::class, 'supprime']);
+
+Route::delete('/equipDelete/{slug}', [EquipeController::class, 'supprimeeEquipe'])->name('deleteEquipe'); 
+
+Route::get('/findTeam',[EquipeController::class, 'findSearchEquipe'])->name('findSearchTeam');
 });
 
 
