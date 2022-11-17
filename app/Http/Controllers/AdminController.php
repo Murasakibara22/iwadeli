@@ -17,8 +17,8 @@ class AdminController extends Controller
     public function index(Request $request){
         $today = date('j M, Y', strtotime(Carbon::today())  );
         $com = Order::OrderBy('created_at','DESC')->take(5)->get();
-        $comV = Order::Where('status',1)->get();// toutes les commandes valider
-        $comT = Order::Where('terminate',1)->get();//commande terminer 
+        $comV = Order::whereDate('created_at',Carbon::today())->Where('status',1)->get();// toutes les commandes valider
+        $comT = Order::whereDate('created_at',Carbon::today())->Where('terminate',1)->get();//commande terminer 
         $user = User::all(); //tous les utilisateurs
 
         $AllOrder = Order::all();//toutes les commandes depuis le debut

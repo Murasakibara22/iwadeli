@@ -95,7 +95,7 @@
                                             <div class="card-body">
                                                 <div class="row align-items-center">
                                                     <div class="col-6">
-                                                        <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">Commandes Valider</h5>
+                                                        <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">Com.Valider</h5>
                                                         <h3 class="my-2 py-1">{{$comAllValidate}}</h3>
                                                         <p class="mb-0 text-muted">
                                                             @if($resultPourcentageCVT <  $resultPourcentageCVH)
@@ -128,7 +128,7 @@
                                             <div class="card-body">
                                                 <div class="row align-items-center">
                                                     <div class="col-6">
-                                                        <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">Commande Terminer</h5>
+                                                        <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">C.Terminer</h5>
                                                         <h3 class="my-2 py-1">{{$comAllTerminer}}</h3>
                                                         <p class="mb-0 text-muted">
                                                             @if($resultPourcentageCTT <  $resultPourcentageCTH)
@@ -167,25 +167,11 @@
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                         <h4 class="header-title">Campaigns</h4>
-                                        <div class="dropdown">
-                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-vertical"></i>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end">
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Today</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Yesterday</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Last Week</a>
-                                                <!-- item-->
-                                                <a href="javascript:void(0);" class="dropdown-item">Last Month</a>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
 
                                     <div class="card-body pt-0">
-                                        <div id="dash-campaigns-chart" class="apex-charts" data-colors="#ffbc00,#727cf5,#0acf97"></div>
+                                        <div id="dash-campaigns-chart" class="apex-charts" data-colors="#ffbc00,#727cf5,#F73131"></div>
 
                                         <div class="row text-center mt-3">
                                             <div class="col-sm-4">
