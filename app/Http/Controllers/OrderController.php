@@ -183,13 +183,21 @@ class OrderController extends Controller
       }
 
 
-      //valider une commande avec l'id de l'utilisateur
+      //valider une commande avec l'id du livreur
       public function valideCommWithLivreur(Request $request){
         $com = Order::where('id',$request->id_com)->first();
         if(!is_null($com)){
 
+          $validateData = $request->validate([
+              'id_livreurs' => ['required','integer']
+          ]);
+          if($validateData){
             $com->id_livreurs = $request->id_livreurs;
             $com->status = 1;
+          }else{
+            return redirect('/listAllCom')->with('NotAssociate', "veuillez associer un livreur avant de valider la commande");
+          }
+            
 
             
             $com->update();

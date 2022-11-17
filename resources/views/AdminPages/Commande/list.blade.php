@@ -32,9 +32,9 @@
 
                     @endif
 
-                    @if ( session('NotModifySuccess'))
-                    <div class="alert alert-warning">
-                    les informations du livreur n'ont pas pu etre  modifer 
+                    @if ( session('NotAssociate'))
+                    <div class="alert alert-danger ">
+                    veuillez associer un livreur avant de valider la commande ! 
                     </div>
                     @endif
 
@@ -159,6 +159,7 @@
                         @method('PUT')
                           <td>
                             <select class="form-select mb-3" name="id_livreurs">
+                            <option selected>aucun</option>
                                 @foreach($livreur as $livreurs)
                                 <option name="id_livreurs" value="{{$livreurs->id}}">{{$livreurs->nom_livreurs}}</option>
                                 @endforeach

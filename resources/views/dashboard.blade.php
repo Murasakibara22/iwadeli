@@ -99,11 +99,11 @@
                                                         <h3 class="my-2 py-1">{{$comAllValidate}}</h3>
                                                         <p class="mb-0 text-muted">
                                                             @if($resultPourcentageCVT <  $resultPourcentageCVH)
-                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> {{$resultPourcentageCVT}}%</span>
+                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i>{{sprintf("%.1f", $resultPourcentageCVT)}}%</span>
                                                             @elseif($resultPourcentageCVT >  $resultPourcentageCVH)
-                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCVT}}%</span>
+                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $resultPourcentageCVT)}}%</span>
                                                             @else
-                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCVT}}%</span>
+                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $resultPourcentageCVT)}}%</span>
                                                             @endif
                                                         </p>
                                                     </div>
@@ -132,11 +132,11 @@
                                                         <h3 class="my-2 py-1">{{$comAllTerminer}}</h3>
                                                         <p class="mb-0 text-muted">
                                                             @if($resultPourcentageCTT <  $resultPourcentageCTH)
-                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> {{$resultPourcentageCTT}}%</span>
+                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i>{{sprintf("%.1f", $resultPourcentageCTT)}}%</span>
                                                             @elseif($resultPourcentageCTT >  $resultPourcentageCTH)
-                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCTT}}%</span>
+                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $resultPourcentageCTT)}}%</span>
                                                             @else
-                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCTT}}%</span>
+                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $resultPourcentageCTT)}}%</span>
                                                             @endif
                                                         </p>
                                                     </div>
@@ -160,6 +160,61 @@
 
                         <div class="row">
                            
+                            <!-- end col-->
+    
+                            <div class="row">
+                            <div class="col-lg-5">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h4 class="header-title">Campaigns</h4>
+                                        <div class="dropdown">
+                                            <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="mdi mdi-dots-vertical"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end">
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item">Today</a>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item">Yesterday</a>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item">Last Week</a>
+                                                <!-- item-->
+                                                <a href="javascript:void(0);" class="dropdown-item">Last Month</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body pt-0">
+                                        <div id="dash-campaigns-chart" class="apex-charts" data-colors="#ffbc00,#727cf5,#0acf97"></div>
+
+                                        <div class="row text-center mt-3">
+                                            <div class="col-sm-4">
+                                                <i class="mdi mdi-send widget-icon rounded-circle bg-warning-lighten text-warning"></i>
+                                                <h3 class="fw-normal mt-3">
+                                                    <span>{{$commandeEnCourCount}}</span>
+                                                </h3>
+                                                <p class="text-muted mb-0 mb-2"><i class="mdi mdi-checkbox-blank-circle text-warning"></i>commandes en cours</p>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <i class="mdi mdi-flag-variant widget-icon rounded-circle bg-primary-lighten text-primary"></i>
+                                                <h3 class="fw-normal mt-3">
+                                                    <span>{{$commandeTTCount}}</span>
+                                                </h3>
+                                                <p class="text-muted mb-0 mb-2"><i class="mdi mdi-checkbox-blank-circle text-primary"></i> Commandes finish</p>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <i class="mdi mdi-email-open widget-icon rounded-circle bg-success-lighten text-success"></i>
+                                                <h3 class="fw-normal mt-3">
+                                                    <span>{{$commandeEACount}}</span>
+                                                </h3>
+                                                <p class="text-muted mb-0 mb-2"><i class="mdi mdi-checkbox-blank-circle text-danger"></i> commande En attente</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end card body-->
+                                </div>
+                                <!-- end card -->
+                            </div>
                             <!-- end col-->
     
                             <div class="col-lg-7">
@@ -210,6 +265,8 @@
                                 <!-- end card -->
                             </div>
                             <!-- end col-->
+                        </div>
+                        <!-- end row-->
                         </div>
                         <!-- end row-->
 

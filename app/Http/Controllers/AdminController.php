@@ -22,7 +22,7 @@ class AdminController extends Controller
         $user = User::all(); //tous les utilisateurs
 
         $AllOrder = Order::all();//toutes les commandes depuis le debut
-        $countAllOrder = count($AllOrder);
+        $countAllOrder = count($AllOrder);//total des commandes
 
         $comma =  Order::WhereDate('created_at',Carbon::today())->get();//toutes les commandes du jours
 
@@ -50,8 +50,8 @@ class AdminController extends Controller
         $commandeVTCount = count($commandeVT);//total de toutes les commandes valider de today
 
         //pourcentage des Commande Valider
-        $resultPourcentageCVT = ($commandeVTCount * 100) / 200;
-        $resultPourcentageCVH = ($commandeVHCount * 100) / 200;
+        $resultPourcentageCVT = ($commandeVTCount * 100) / $countAllOrder;
+        $resultPourcentageCVH = ($commandeVHCount * 100) / $countAllOrder;
 
 
 
@@ -65,10 +65,18 @@ class AdminController extends Controller
 
 
          //pourcentage des Commande Valider
-        $resultPourcentageCTT = ($commandeTTCount * 100) / 200;
-        $resultPourcentageCTH = ($commandeTHCount * 100) / 200;
+        $resultPourcentageCTT = ($commandeTTCount * 100) / $countAllOrder;
+        $resultPourcentageCTH = ($commandeTHCount * 100) / $countAllOrder;
+
+        //commandes en cours
+        $commandeEnCour = Order::WhereDate('created_at',Carbon::today())->where('status',1)->where('terminate',0)->get();
+        $commandeEnCourCount = count($commandeEnCour);
+
+        //commandes en Attente de validation
+        $commandeEA = Order::WhereDate('created_at',Carbon::today())->where('status',0)->where('terminate',0)->where('id_livreurs',null)->get();
+        $commandeEACount = count($commandeEA);
                  
-        return view('dashboard', compact('comAll','countAllOrder','comAllValidate','comAllTerminer','com','today','user','commandeHCount','commandeTCount','resultPourcentageCVT','resultPourcentageCVH','resultPourcentageCTT','resultPourcentageCTH'));
+        return view('dashboard', compact('comAll','countAllOrder','commandeTTCount','commandeEACount','comAllValidate','comAllTerminer','com','today','user','commandeHCount','commandeTCount','resultPourcentageCVT','resultPourcentageCVH','resultPourcentageCTT','resultPourcentageCTH','commandeEnCourCount'));
     }
 
     public function store(){
