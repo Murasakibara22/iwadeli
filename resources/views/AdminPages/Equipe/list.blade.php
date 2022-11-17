@@ -44,7 +44,7 @@
                         </div>
                         <!-- end page title -->
 
-                        <div class="app-search dropdown mt-3">
+                        <div class="app-search dropdown mt-2 mb-2">
                                                 <form action="{{ route('findSearchTeam') }}">
                                                     <div class="input-group">
                                                         <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
@@ -78,9 +78,23 @@
                             <p class="mb-0 font-13">{{$equipes->fonction}}</p>
                         </li>
                         <li class="list-inline-item">
-                            <h5 class="mb-1">5482</h5>
                             <p class="mb-0 font-13">{{$equipes->email}}</p>
                         </li>
+                      
+                        <div class="dropdown float-end">
+                                          <a href="#" class="dropdown-toggle text-black arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
+                                              <i class="mdi mdi-dots-vertical font-18"></i>
+                                          </a>
+                                          <div class="dropdown-menu dropdown-menu-end">
+                                              <!-- item-->
+                                              <a href="/equipe_edit/{{$equipes->slug}}" class="dropdown-item"><i class="mdi mdi-pencil me-1"></i>Edit</a>
+                                              <!-- item-->
+                                            
+                                              <a href="/equipe_delete/{{$equipes->slug}}" class="dropdown-item"><i class="mdi mdi-delete me-1"></i>Delete</a>
+
+                                          </div>
+                                      </div>
+                       
                     </ul>
                 </div>
                 <!-- end div-->
