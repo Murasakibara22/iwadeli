@@ -37,16 +37,25 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                        <li><a href="/new_equipe"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-circuit"></i> Ajoutez un membre</button> </a></li>
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title">Listes des membres</h4>
+                                   
+                                    <h4 class="page-title">Listes des membres  <a href="/new_equipe" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-circuit"></i> Ajoutez un membre</button> </a></h4>
                                 </div>
                             </div>
                         </div>
                         <!-- end page title -->
+
+                        <div class="app-search dropdown mt-3">
+                                                <form action="{{ route('findSearchTeam') }}">
+                                                    <div class="input-group">
+                                                        <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
+                                                        <span class="mdi mdi-magnify search-icon"></span>
+                                                        
+                                                
+                                                        <button class="input-group-text btn btn-primary" type="submit">Search</button>
+                                                    </div>
+                                                </form>
+                                              
+                                            </div>
 
                         
                        
@@ -61,7 +70,7 @@
                 </span>
                 <div class="">
                     <h4 class="mt-1 mb-1">{{$equipes->nom}}</h4>
-                    <p class="font-13"> {{$equipes->fonction}}</p>
+                    <p class="font-13"> {{$equipes->prenom}}</p>
             
                     <ul class="mb-0 list-inline">
                         <li class="list-inline-item me-3">
@@ -87,18 +96,7 @@
 
                 </div> <!-- content -->
 
-                                         <div class="app-search dropdown">
-                                                <form action="{{ route('findSearchTeam') }}">
-                                                    <div class="input-group">
-                                                        <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
-                                                        <span class="mdi mdi-magnify search-icon"></span>
-                                                        
-                                                
-                                                        <button class="input-group-text btn btn-primary" type="submit">Search</button>
-                                                    </div>
-                                                </form>
-                                              
-                                            </div>
+                                        
                 <!-- Footer Start -->
                 <footer class="footer">
                     <div class="container-fluid">
