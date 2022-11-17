@@ -171,7 +171,7 @@
                                     </div>
 
                                     <div class="card-body pt-0">
-                                        <div id="dash-campaigns-chart" class="apex-charts" data-colors="#ffbc00,#727cf5,#F73131"></div>
+                                        <div id="dash-campaigns-chart" data-labels="Djon,vivi,moro" class="apex-charts" data-colors="#ffbc00,#727cf5,#F73131"></div>
 
                                         <div class="row text-center mt-3">
                                             <div class="col-sm-4">
