@@ -18,11 +18,11 @@
     @csrf 
     @method('DELETE')
 
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger mt-3" role="alert">
   vous allez suprimer {{$equipe->nom}} ?
 </div>
 
-<div class="shadow-lg p-3 mb-5 bg-body rounded"> <h4 class="mb-3 fs-3">Voulez vous vraiment suprimer {{$equipe->nom}} </h4>
+<div class="shadow-lg p-3 mb-5 bg-body rounded"> <h4 class="mb-3 fs-3">Voulez vous vraiment suprimer <span class="text-info">{{$equipe->nom}} </span></h4>
 <button type="submit"  class="btn btn-danger mt-2">oui suprimer</button>
 <a href="{{ url('/equipe_list/') }}"><button type="button" class="btn btn-secondary mt-2" data-bs-dismiss="modal">non fermer </button>  </a> 
 
