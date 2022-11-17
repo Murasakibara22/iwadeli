@@ -39,6 +39,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::put('/UpdaLivreur/{id}',[LivreurController::class,'updateL'])->name('updateLi')->whereNumber('id');
   Route::get('/deleteLiv/{id}',[LivreurController::class, 'deleteL'])->whereNumber('id');
   Route::delete('/destroyLiv/{id}',[LivreurController::class,'destroyL'])->name('destroyLi')->whereNumber('id');
+  Route::get('/findSearchLivreur', [LivreurController::class , 'findSearchLivreur'])->name('findSearchLivreurs');
 
   //Utilisateurs
   Route::get('/listAllUs',[UserController::class,'listAllU']);

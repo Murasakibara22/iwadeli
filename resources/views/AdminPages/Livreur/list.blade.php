@@ -76,7 +76,7 @@
                             <h4 class="card-title">Liste de tous les livreurs
                     
                                          <div class="app-search dropdown float-end">
-                                                <form action="">
+                                                <form action="{{ route('findSearchLivreurs') }}">
                                                     <div class="input-group">
                                                         <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
                                                         <span class="mdi mdi-magnify search-icon"></span>

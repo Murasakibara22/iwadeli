@@ -234,4 +234,17 @@ class LivreurController extends Controller
             return redirect()->back()->with('NotExist', "Le Livreur selectionner n'existe pas ");
         }
     }
+
+
+    //recherche d'un Livreur
+    public function findSearchLivreur(Request $request)
+        {			
+            $search = $request->search;		
+            $livreur = Livreur::where( 'nom_livreurs', 'LIKE', '%' . $search . '%' )->orWhere( 'prenom_livreurs', 'LIKE', '%' . $search . '%' )->get();
+            if (count ($livreur) > 0 && isset($livreur)){
+            return view ( 'AdminPages.Livreur.search')->with('livreur',$livreur);
+            }else{
+            return redirect( '/listAllLivreur')->with( 'Nodetails','No Details found. Try to search again !' );	
+            }	
+        }
 }
