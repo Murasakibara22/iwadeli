@@ -24,7 +24,14 @@
 
 <div class="shadow-lg p-3 mb-5 bg-body rounded">Voulez vous vraiment suprimer {{$equipe->nom}} 
 <button type="submit"  class="btn btn-danger ">oui suprimer</button>
-<a href="{{ url('/equipe_list/') }}"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">non fermer </button>  </a>  
+<a href="{{ url('/equipe_list/') }}"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">non fermer </button>  </a> 
+
+<div class="col-md-6 mt-5" style="margin: auto;" >
+                    
+                    <div class="row " style="width: 100%; margin-left: 0.4em; height: 85%;">
+                           <img src="../dashStyle/assets/images/deleteMembers.gif" class="w-100 h-100" alt="">
+                       </div>
+           </div>
 </div>
 </form>
 
