@@ -36,12 +36,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li><a href="/equipe_list"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-circuit"></i> Listes de notre equipe</button> </a></li>
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title"> Notre Team </h4>
+                                   
+                                    <h4 class="page-title"> Notre Team  <a href="/equipe_list" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-circuit"></i> Listes de notre equipe</button> </a></h4>
                                 </div>
                             </div>
                         </div>
@@ -122,12 +118,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                <script>document.write(new Date().getFullYear())</script> © Hyper - Coderthemes.com
+                                <script>document.write(new Date().getFullYear())</script> © prumad
                             </div>
                             <div class="col-md-6">
                                 <div class="text-md-end footer-links d-none d-md-block">
                                     <a href="javascript: void(0);">About</a>
-                                    <a href="javascript: void(0);">Support</a>
                                     <a href="javascript: void(0);">Contact Us</a>
                                 </div>
                             </div>
