@@ -18,7 +18,7 @@
     @csrf 
     @method('DELETE')
 
-    <div class="alert alert-danger mt-3" role="alert">
+    <div class="alert alert-danger mt-1" role="alert">
   vous allez suprimer {{$equipe->nom}} ?
 </div>
 

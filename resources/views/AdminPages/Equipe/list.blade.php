@@ -12,19 +12,19 @@
 
                 
                     @if ( session('NotExist'))
-                    <div class="alert alert-dansger">
+                    <div class="alert alert-dansger mt-1">
                     L'utilisateur selectionner n'existe pas , si le probleme persiste veuillez rafraichir votre page
                     </div>
 
                     @endif
                     @if ( session('ModifySccuessequipe'))
-                    <div class="alert alert-warning">
+                    <div class="alert alert-warning mt-1">
                     les informations de l'utilisateur ont ete modifier avec succes
                     </div>
 
                     @endif
                     @if ( session('SupprimerAvecSuccess'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success mt-1">
                     L'utilisateur selectionner a ete supprimer avec success
                     </div>
 
