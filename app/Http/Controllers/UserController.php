@@ -154,7 +154,7 @@ class UserController extends Controller
 
     //page de modification de l'utilsateur
     public function changeUs($id){
-        $users = User::where('id',$id)->first();
+        $users = User::find($id);
         if(!is_null($users )){
             return view('AdminPages.Utilisateurs.edit', compact('users'));
         }else{
