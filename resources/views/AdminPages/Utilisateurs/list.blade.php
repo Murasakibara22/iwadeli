@@ -19,15 +19,21 @@
                     </div>
 
                     @endif
-                @if ( session('SupprimerAvecSuccess'))
+                @if ( session('successDele'))
                     <div class="alert alert-success">
-                    Le partenaire selectionner a ete supprimer avec success
+                    Utilisateur Supprimer
                     </div>
 
                     @endif
-                 @if ( session('NotFound'))
+                @if ( session('succesEdit'))
+                    <div class="alert alert-success">
+                    L'utilisateur a ete modifier
+                    </div>
+
+                    @endif
+                 @if ( session('NotExist'))
                     <div class="alert alert-danger">
-                    La commande selectionner n'a pas ete trouver
+                    L'utilisateur spécifier n'existe pas
                     </div>
 
                     @endif
@@ -38,9 +44,9 @@
                     </div>
                     @endif
 
-                    @if ( session('Nodetails'))
+                    @if ( session('erreur'))
                     <div class="alert alert-warning">
-                    Aucun details trouver. Esaayez encore  !
+                    l'un des champs n'est pas correctement remplis
                     </div>
 
                     @endif
@@ -129,10 +135,10 @@
                
                         <td>{{date('j M, Y', strtotime($users->created_at))}}</td>
                         <td>
-                        <a href="/deleteLiv/"> <button type="button" class="btn btn-info"><i class="mdi mdi-keyboard"></i> </button> </a> 
+                        <a href="/changeNewUser/{{$users->id}}"> <button type="button" class="btn btn-info"><i class="mdi mdi-keyboard"></i> </button> </a> 
                         </td>
                          <td>
-                            <a href="/deleteLiv/"> <button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i> </button> </a> 
+                            <a href="/deleteUs/{{$users->id}}"> <button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i> </button> </a> 
                         </td>
                         </tr>
                     </tbody>

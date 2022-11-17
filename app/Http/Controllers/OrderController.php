@@ -207,7 +207,7 @@ class OrderController extends Controller
 
       //liste des commandes valide
       public function listAllCV(){
-        $commande = Order::Where('terminate',0)->OrderBy('created_at','DESC')->get();
+        $commande = Order::Where('terminate',0)->where('status',1)->OrderBy('created_at','DESC')->get();
         return view('AdminPages.Commande.listCV',compact('commande'));
       }
 

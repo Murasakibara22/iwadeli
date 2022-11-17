@@ -132,7 +132,7 @@ class UserController extends Controller
                             $messi = md5($img->getClientOriginalExtension().time().$request->contact).".".$img->getClientOriginalExtension();
                             $source = $img;
                             $target = 'images/User/'.$messi; 
-                            InterventionImage::make($source)->fit(106,100)->save($target);
+                            InterventionImage::make($source)->fit(212,207)->save($target);
                             $user->photo   =  $messi;
                     }else{
                         $user->photo   = "default.jpg";
@@ -151,4 +151,74 @@ class UserController extends Controller
         }
     }
 
+
+    //page de modification de l'utilsateur
+    public function changeUs($id){
+        $users = User::where('id',$id)->first();
+        if(!is_null($users )){
+            return view('AdminPages.Utilisateurs.edit', compact('users'));
+        }else{
+            return redirect()->back()->with('NotExist',"L'utilisateur selectionner n'existe pas");
+        }
+        
+    }
+
+//PUT un utilisateur
+    public function updateU(Request $request, $id){
+        try{
+            $user = User::where('id',$id)->first();
+            if(isset($user))
+            {
+                $user->nom    = $request->nom;
+                $user->prenom    = $request->prenom;
+                $user->email   = $request->email;
+                $user->contact  = $request->contact;
+                if (request()->file('photo')) {
+                    $img = request()->file('photo');
+                        $messi = md5($img->getClientOriginalExtension().time().$request->email).".".$img->getClientOriginalExtension();
+                        $source = $img;
+                        $target = 'images/User/'.$messi;
+                        InterventionImage::make($source)->fit(212,207)->save($target);
+                        $user->photo   =  $messi;
+                }
+        
+                $user->role    = $request->role;
+                
+                $user->update();
+                    if($user->update()){
+                            return redirect('/listAllUs')->with('succesEdit', 'Utilisateurs modifier');
+                    }else{
+                        return redirect()->back()->with('erreur', "l'un des champs n'est pas correctement remplis");
+                    }
+            }
+
+    }catch(Exception $err){
+        report($err);
+        return redirect()->back()->with('error', "probleme survenue veuillezreessayer plus tard");
+         }
+    }
+
+    //page Utilisateur Delete
+    function deleteU($id)
+    {
+        $UserSearch =  User::where('id',$id)->first();
+        if(!is_null($UserSearch))
+            {
+                return view('AdminPages.Utilisateurs.delete', compact('UserSearch'));
+            }else{
+                return redirect('/listAllUs')->with('NotExist', "L'utilisateur spécifier n'existe pas");
+            }
+    }
+
+
+    function destroyU($id){
+        $user =  User::where('id',$id)->first();
+        if(!is_null($user))
+            {
+                $user->delete();
+                return redirect('/listAllUs')->with('successDele', 'Utilisateur Supprimer');
+            }else{
+                return redirect('/listAllUs')->with('NotExist', "L'utilisateur spécifier n'existe pas");
+            }
+    }
 }

@@ -43,6 +43,10 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::get('/listAllUs',[UserController::class,'listAllU']);
   Route::get('/newUser',[UserController::class,'nouveau']);
   Route::post('/createNewUser',[UserController::class,'createNewUser'])->name('createNewUsers');
+  Route::get('/changeNewUser/{id}',[UserController::class,'changeUs'])->whereNumber('id');
+  Route::put('/updaUser/{id}',[UserController::class,'updateU'])->name('updateUse')->whereNumber('id');
+  Route::get('/deleteUs/{id}',[UserController::class,'deleteU'])->whereNumber('id');
+  Route::delete('/destroyUs/{id}',[UserController::class,'destroyU'])->name('desctroyUse')->whereNumber('id');
 
 
 

@@ -29,7 +29,7 @@
                                           
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">CRM</h4>
+                                    <h4 class="page-title" style="font-family:poppins;">IWA DELIVERY</h4>
                                 </div>
                             </div>
                         </div>
@@ -41,8 +41,8 @@
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-6">
-                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Abonnés </h5>
-                                                <h3 class="my-2 py-1">9,184</h3>
+                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Toutes </h5>
+                                                <h3 class="my-2 py-1">{{$countAllOrder}}</h3>
                                                 <p class="mb-0 text-muted">
                                                     <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 3.27%</span>
                                                 </p>
@@ -62,7 +62,7 @@
                                     <div class="card-body">
                                         <div class="row align-items-center">
                                             <div class="col-6">
-                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">Toutes les commandes</h5>
+                                                <h5 class="text-muted fw-normal mt-0 text-truncate" title="New Leads">C.D.J</h5>
                                                 <h3 class="my-2 py-1">{{$comAll}}</h3>
                                                 <p class="mb-0 text-muted">
                                                     @if($commandeTCount <  $commandeHCount)
@@ -92,7 +92,13 @@
                                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">Commandes Valider</h5>
                                                 <h3 class="my-2 py-1">{{$comAllValidate}}</h3>
                                                 <p class="mb-0 text-muted">
-                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 4.87%</span>
+                                                @if($resultPourcentageCVT <  $resultPourcentageCVH)
+                                                    <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> {{$resultPourcentageCVT}}%</span>
+                                                    @elseif($resultPourcentageCVT >  $resultPourcentageCVH)
+                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCVT}}%</span>
+                                                    @else
+                                                    <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCVT}}%</span>
+                                                    @endif
                                                 </p>
                                             </div>
                                             <div class="col-6">
@@ -113,7 +119,13 @@
                                                 <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">Commande Terminer</h5>
                                                 <h3 class="my-2 py-1">{{$comAllTerminer}}</h3>
                                                 <p class="mb-0 text-muted">
-                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 11.7%</span>
+                                                @if($resultPourcentageCTT <  $resultPourcentageCTH)
+                                                    <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i> {{$resultPourcentageCTT}}%</span>
+                                                    @elseif($resultPourcentageCTT >  $resultPourcentageCTH)
+                                                    <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCTT}}%</span>
+                                                    @else
+                                                    <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i> {{$resultPourcentageCTT}}%</span>
+                                                    @endif
                                                 </p>
                                             </div>
                                             <div class="col-6">
@@ -246,8 +258,9 @@
            
                                         @foreach($com as $comm)
                                         @if( date('j M, Y', strtotime($comm->created_at))  ==  $today)
+                                        @foreach($comm->user()->get()  as $utili)
                                         <div class="d-flex align-items-start mt-2">
-                                            <img class="me-3 rounded-circle" src="../images/User/ " width="40" alt=" user">
+                                            <img class="me-3 rounded-circle" src="../images/User/{{$utili->photo}} " width="40" alt=" user">
                                             <div class="w-100 overflow-hidden">
                                              
                                             @if($comm->terminate  == 0  && $comm->status  == 0)
@@ -261,13 +274,14 @@
                                                 @endif
 
 
-                                                @foreach($comm->user()->get()  as $utili)
+                                               
                                                 <h5 class="mt-0 ">{{$utili->nom}} , {{$utili->contact}}</h5>
-                                                @endforeach
+                                               
                                                 <span class="font-13"> {{$comm->nature}}</span>
                                             </div>
                                            
                                         </div>
+                                        @endforeach
                                         @endif
                                         @endforeach
 
@@ -289,7 +303,7 @@
                                         <div class="d-flex align-items-start align-items-center">
                                             <div class="w-100 overflow-hidden">
                                                 <h2 class="mt-0"><i class="mdi mdi-bullhorn-outline"></i>&nbsp;</h2>
-                                                <h3 class="m-0 fw-normal cta-box-title">Administrer votre site plus facilement <b>Campaign</b> for better outreach </h3>
+                                                <h3 class="m-0 fw-normal cta-box-title">Administrer votre site plus facilement  </h3>
                                             </div>
                                             <img class="ms-3" src="dashStyle/assets/images/svg/email-campaign.svg" width="120" alt="Troc moi images user">
                                         </div>
