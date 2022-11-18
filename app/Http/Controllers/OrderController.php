@@ -278,7 +278,7 @@ class OrderController extends Controller
     public function findSearOrderEA(Request $request)
     {			
         $search = $request->search;		
-        $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $search . '%' )->orWhere( 'lieudelivraison', 'LIKE', '%' . $search . '%' )->where('status',0)->where('id_livreurs',null)->where('terminate',0)->get();
+        $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $search . '%' )->orWhere( 'lieudelivraison', 'LIKE', '%' . $search . '%' )->where('status',0)->where('id_livreurs',NULL)->where('terminate',0)->get();
         if (count ($commande) > 0 && isset($commande)){
           $livreur = Livreur::all();
         return view ( 'AdminPages.SearchAndFiltre.searchorderEA',compact('livreur'))->with('commande',$commande);
