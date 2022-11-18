@@ -9,37 +9,37 @@
             <div class="content-page">
                 <div class="content">
                 @if ( session('Valide'))
-                    <div class="alert alert-success mt-1">
+                    <div class="alert alert-success">
                     La commande a ete valider
                     </div>
                     @endif
                 @if ( session('NotValide'))
-                    <div class="alert alert-warning mt-1">
+                    <div class="alert alert-warning">
                     La commande n'a pas pu etre valider , verifier si le livreur n'a pas deja une commande en cours
                     </div>
 
                     @endif
                 @if ( session('successDelete'))
-                    <div class="alert alert-success mt-1">
+                    <div class="alert alert-success">
                     La commande a ete supprimer avec succes
                     </div>
 
                     @endif
                  @if ( session('NotFound'))
-                    <div class="alert alert-danger mt-1">
+                    <div class="alert alert-danger">
                     La commande selectionner n'a pas ete trouver
                     </div>
 
                     @endif
 
                     @if ( session('NotAssociate'))
-                    <div class="alert alert-danger  mt-1">
+                    <div class="alert alert-danger ">
                     veuillez associer un livreur avant de valider la commande ! 
                     </div>
                     @endif
 
                     @if ( session('Nodetails'))
-                    <div class="alert alert-warning mt-1">
+                    <div class="alert alert-warning">
                     Aucun details trouver. Esaayez En recherchant selon le lieu de depart ou le lieu cible !
                     </div>
 

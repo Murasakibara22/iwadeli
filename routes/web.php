@@ -57,6 +57,13 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   //associer un livreurs a une commande
   Route::put('/valideComm',[OrderController::class,'valideCommWithLivreur'])->name('valideCommWithLivreurs');
 
+  //recherche des commandes en Attentes
+  Route::get('/findSearchOrderEA', [OrderController::class , 'findSearOrderEA'])->name('findSearOrderEAs');
+  //recherche des commandes en En cour
+  Route::get('/findSearchOrderEnCour', [OrderController::class , 'findSearOrderEC'])->name('findSearOrderECs');
+  //recherche des commandes en Effectuer
+  Route::get('/findSearchOrderTerminer', [OrderController::class , 'findSearOrderT'])->name('findSearOrderTs');
+
   //commande valider
   Route::get('/listAllComValide',[OrderController::class,'listAllCV']);
   //Terminer une commande

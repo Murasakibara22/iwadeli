@@ -147,10 +147,10 @@
                           {{$u->contact}}
                           </td> 
                        <td>
-                               <a href="/Utilisateurs-edit/{{$u->slug}}">  <button type="button" class="btn btn-outline-primary">Modifier</button> </a> 
+                               <a href="/changeNewUser/{{$users->id}}">  <button type="button" class="btn btn-outline-primary">Modifier</button> </a> 
                           </td>
                           <td>
-                               <a href="/Userdelete/{{$u->slug }}">  <button type="button" class="btn btn-outline-danger">Suprimer</button> </a> 
+                               <a href="/deleteUs/{{$users->id}}">  <button type="button" class="btn btn-outline-danger">Suprimer</button> </a> 
                           </td>
                         </tr>
                       </tbody>
