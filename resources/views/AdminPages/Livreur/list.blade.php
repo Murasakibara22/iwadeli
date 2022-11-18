@@ -61,7 +61,7 @@
                                         </ol>
                                     </div>
                                     <h4 class="page-title"> Nos Livreurs
-                                    <a href="/newLivreur" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Ajoutez une Annonce</button> </a>
+                                    <a href="/newLivreur" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Ajoutez un Livreur</button> </a>
                                 </h4>
                                 </div>
                             </div>
