@@ -309,7 +309,7 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <!-- item-->
-                                                <a href="/annonce_list" class="dropdown-item">Voir plus</a>
+                                                <a href="/listAllCom" class="dropdown-item">Voir plus</a>
                                             </div>
                                         </div>
                                     </div>
