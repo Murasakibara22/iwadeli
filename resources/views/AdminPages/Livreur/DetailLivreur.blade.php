@@ -98,7 +98,7 @@
                                                  <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between align-items-center">
-                                        <h4 class="header-title">Campaigns</h4>
+                                        <h4 class="header-title">Details</h4>
                                         
                                     </div>
 
