@@ -4,13 +4,13 @@
     <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta charset="utf-8" />
-        <title>Troc Moi</title>
+        <title>IWA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Troc moi une plateforme d'echanges" name="Troc moi" />
-        <meta content="Troc moi" name="Murasakibara" />
+        <meta content="IWA une plateforme d'echanges" name="IWA" />
+        <meta content="IWA" name="Murasakibara" />
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('dashStyle/assets/images/favicon.ico') }}">
+        <link rel="shortcut icon" href="{{ asset('../logo/logo.png') }}">
 
         <!-- Theme Config Js -->
         <script src="{{ asset('dashStyle/assets/js/hyper-config.js') }}"></script>

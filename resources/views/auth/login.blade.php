@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
+	<title>IWA</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="loginStyle/images/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="../logo/logo.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="loginStyle/vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -33,6 +33,15 @@
 				<form class="login100-form validate-form" action="{{ route('login') }}"  method="POST">
                     @csrf
                     @method('POST')
+					<!-- Div de Photo -->
+					<div >
+						<div class="row mb-3 " >
+							<div class="col-4 justify-content-center rounded-pill mt-3" style="margin: auto">
+							<img src="../logo/logo.png" alt="Iwa" height="100%" width="90%" style="box-shadow: 0.2px 0.3px 7px 2px;" class="rounded-pill">
+							</div>
+						</div>
+						</div>
+					<!-- End div photo -->
 					<span class="login100-form-title">
 						Connectez vous
 					</span>
