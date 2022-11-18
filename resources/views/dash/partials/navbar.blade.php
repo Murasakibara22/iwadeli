@@ -298,17 +298,17 @@
             <img src="../logo/Jiam_s2-removebg-preview.png" alt="logo" height="130">
         </span>
         <span class="logo-sm">
-            <img src="../logo/Jiam_s5-removebg-preview.png" alt="small logo" height="60">
+            <img src="../logo/Jiam_s4-removebg-preview.png" alt="small logo" height="60">
         </span>
     </a>
 
     <!-- Logo Dark -->
     <a href="/dashboard" class="logo logo-dark">
         <span class="logo-lg">
-            <img src="../logo/Jiam_s4-removebg-preview.png" alt="dark logo" height="60">
+            <img src="../logo/Jiam_s5-removebg-preview.png" alt="dark logo" height="60">
         </span>
         <span class="logo-sm">
-            <img src="../logo/Jiam_s4-removebg-preview.png" alt="small logo" height="60">
+            <img src="../logo/Jiam_s5-removebg-preview.png" alt="small logo" height="60">
         </span>
     </a>
 
