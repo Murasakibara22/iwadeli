@@ -122,7 +122,7 @@ class LivreurController extends Controller
     //POST
     public function createNewLivreur(Request $request)
     {
-        $exist = Livreur::where('contact', $request->contact)->orWhere('prenom_livreurs',$request->prenom_livreurs)->get();
+        $exist = Livreur::where('contact', $request->contact)->get();
         if ($exist and $exist->count() > 0) {
 
             return redirect()->back()->with('ExistLivreur',"Le livreur Existe deja");
