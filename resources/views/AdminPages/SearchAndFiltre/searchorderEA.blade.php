@@ -9,43 +9,16 @@
             <div class="content-page">
                 <div class="content">
                 @if ( session('Valide'))
-                    <div class="alert alert-success">
-                    La commande a ete valider
-                    </div>
-                    @endif
-                @if ( session('NotValide'))
-                    <div class="alert alert-warning">
-                    La commande n'a pas pu etre valider , verifier si le livreur n'a pas deja une commande en cours
-                    </div>
-
-                    @endif
-                @if ( session('successDelete'))
-                    <div class="alert alert-success">
-                    La commande a ete supprimer avec succes
-                    </div>
-
-                    @endif
-                 @if ( session('NotFound'))
-                    <div class="alert alert-danger">
-                    La commande selectionner n'a pas ete trouver
-                    </div>
-
-                    @endif
-
-                    @if ( session('NotAssociate'))
-                    <div class="alert alert-danger ">
-                    veuillez associer un livreur avant de valider la commande ! 
+                    <div class="alert alert-success mt-1">
+                    La commande est Terminer
                     </div>
                     @endif
 
                     @if ( session('Nodetails'))
-                    <div class="alert alert-warning">
+                    <div class="alert alert-info mt-1">
                     Aucun details trouver. Esaayez En recherchant selon le lieu de depart ou le lieu cible !
                     </div>
-
                     @endif
-
-                    <!--  -->
                   
 
                     <!-- Start Content-->
@@ -60,8 +33,8 @@
                                             
                                         </ol>
                                     </div>
-                                    <h4 class="page-title"> Nos Commande Non valider
-                                    <a href="/listAllComValide" class="float-end"><button type="button" class="btn btn-success rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande Valider</button> </a>
+                                    <h4 class="page-title"> Nos Commandes Effectuer
+                                    <a href="/listAllCom" class="float-end"><button type="button" class="btn btn-warning rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande En Attente</button> </a>
                                 </h4>
                                 </div>
                             </div>
@@ -73,10 +46,10 @@
                       <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                            <h4 class="card-title">Liste de toutes les commandes</h4>
+                            <h4 class="card-title">Liste de toutes les commandes effectuees</h4>
 
-                            <div class="app-search dropdown float-end mt-3 mb-2">
-                                                <form action="{{ route('findSearOrderEAs') }}">
+                            <div class="app-search dropdown float-end mt-3">
+                                                <form action="{{ route('findSearOrderTs') }}">
                                                     <div class="input-group">
                                                         <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
                                                         <span class="mdi mdi-magnify search-icon"></span>
@@ -87,12 +60,14 @@
 
                                               
                                             </div>
-                  <p class="card-description mt-3 mb-3">
-                    Vous avez la possibilité de  <code>modifier</code> ou de <code>suprimer  </code> un Livreur
+
+
+                  <p class="card-description mt-3">
+                    La Liste de toutes les commandes qui <code>viennent </code>  d'etre terminer 
                   </p>
                 
                     <!-- Fitrage -->
-                  <div class="mb-1 col-12">
+                  <div class="mb-1 col-6">
                 
                 <!-- title -->
                 <form action="">
@@ -116,21 +91,21 @@
 
 
 
-         <div class="table-responsive">
+                  <div class="table-responsive">
                   <table class="table">
                     <thead class="thead-dark">
-                        <tr class="bg-warning">
+                        <tr class="bg-info">
                         <th scope="col">depart</th>
                         <th scope="col">arrive</th>
-                        <th scope="col">C.D.D</th>
+                        <th scope="col">CDD</th>
                         <th scope="col">date </th>
                         <th scope="col">prix</th>
-                        <th scope="col">N.U.C</th> 
-                        <th scope="col">Contact</th> 
+                        <th scope="col">N.U.C</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">livrer par </th>
                         <th scope="col">Engins</th>
-                        <th scope="col">Qui effectue ?</th>
-                        <th scope="col">Valider</th>
-                        <th scope="col">Delete</th>
+                        <th scope="col">Avamcement</th>
+                        <th scope="col">suprimer</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -149,40 +124,36 @@
                         <td>{{$utili->contact}}</td>
                         @endforeach
 
+                        @foreach($commandes->livreur()->get() as $livr)
+                        <td>
+                            {{$livr->nom_livreurs}}
+                        </td>
+                        @endforeach
 
                         <td>
                             {{$commandes->nature}}
                         </td>
-                        <!-- Formulaire pour valider la commande -->
-                    <form action=" {{ route('valideCommWithLivreurs') }}"  method="POST">
-                        @csrf
-                        @method('PUT')
-                          <td>
-                            <select class="form-select mb-3" name="id_livreurs">
-                            <option selected>aucun</option>
-                                @foreach($livreur as $livreurs)
-                                <option name="id_livreurs" value="{{$livreurs->id}}">{{$livreurs->nom_livreurs}}</option>
-                                @endforeach
-                            </select>
-                          </td>
 
-                          <input type="hidden" value="{{$commandes->id}}"  name="id_com">
-
-                                <td>
-                                <button type="submit" class="btn btn-success"><i class="mdi mdi"> valider</i> </button> 
-                                </td>
-                    </form>
-                        
+                        @if($commandes->terminate == 1 and $commandes->status == 1)
+                        <td><span class="badge bg-success float-end">terminer</span> </td>
+                        @elseif($commandes->terminate == 0 and $commandes->status == 1)
+                        <td><span class="badge bg-warning float-end">En Cour</span> </td>
+                        @elseif($commandes->terminate == 0 and $commandes->status == 0)
+                        <td><span class="badge bg-danger float-end">En attente</span> </td>
+                        @else
+                        <td><span class="badge bg-danger float-end">En attente</span> </td>
+                        @endif
+                                    
                          <td class="table-user">
-                            <a href="/deleteCommande/{{$commandes->id}}"> <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle" /> </a> 
+                            <a href="/deleteCommande/{{$commandes->id}}">  <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle " /> </a> 
                         </td>
                         </tr>
                         @endforeach
                     </tbody>
                     </table>
 
-
-        </div>
+ 
+                  </div>
                 </div>
               </div>
             </div>

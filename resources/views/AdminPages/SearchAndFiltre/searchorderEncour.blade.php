@@ -14,7 +14,7 @@
                     </div>
                     @endif
 
-                @if ( session('Nodetails'))
+                    @if ( session('Nodetails'))
                     <div class="alert alert-info mt-1">
                     Aucun details trouver. Esaayez En recherchant selon le lieu de depart ou le lieu cible !
                     </div>
@@ -33,8 +33,8 @@
                                             
                                         </ol>
                                     </div>
-                                    <h4 class="page-title"> Nos Commandes Valider
-                                    <a href="/listAllComTerminer" class="float-end"><button type="button" class="btn btn-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande Terminer</button> </a>
+                                    <h4 class="page-title"> Nos Commandes Effectuer
+                                    <a href="/listAllCom" class="float-end"><button type="button" class="btn btn-warning rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande En Attente</button> </a>
                                 </h4>
                                 </div>
                             </div>
@@ -46,10 +46,10 @@
                       <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                            <h4 class="card-title">Liste de toutes les Associees a un livreur</h4>
+                            <h4 class="card-title">Liste de toutes les commandes effectuees</h4>
 
                             <div class="app-search dropdown float-end mt-3">
-                                                <form action=" {{ route('findSearOrderECs') }}">
+                                                <form action="{{ route('findSearOrderTs') }}">
                                                     <div class="input-group">
                                                         <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
                                                         <span class="mdi mdi-magnify search-icon"></span>
@@ -63,7 +63,7 @@
 
 
                   <p class="card-description mt-3">
-                    Vous avez la possibilité de  <code>Terminer</code> ou de <code>suprimer  </code> une Commande
+                    La Liste de toutes les commandes qui <code>viennent </code>  d'etre terminer 
                   </p>
                 
                     <!-- Fitrage -->
@@ -94,7 +94,7 @@
                   <div class="table-responsive">
                   <table class="table">
                     <thead class="thead-dark">
-                        <tr class="bg-success">
+                        <tr class="bg-info">
                         <th scope="col">depart</th>
                         <th scope="col">arrive</th>
                         <th scope="col">CDD</th>
@@ -133,27 +133,26 @@
                         <td>
                             {{$commandes->nature}}
                         </td>
-   <!-- Terminer une commande -->
-                        <form action=" {{ route('TerminateCommWithLivreurs') }}"  method="POST">
-                            @csrf
-                            @method('PUT')
-                            
 
-                              <input type="hidden" value="{{$commandes->id}}"  name="id_com">
-
-                                    <td>
-                                    <button type="submit" class="btn btn-success"><i class="mdi mdi"> Terminer</i> </button> 
-                                    </td>
-                        </form>
+                        @if($commandes->terminate == 1 and $commandes->status == 1)
+                        <td><span class="badge bg-success float-end">terminer</span> </td>
+                        @elseif($commandes->terminate == 0 and $commandes->status == 1)
+                        <td><span class="badge bg-warning float-end">En Cour</span> </td>
+                        @elseif($commandes->terminate == 0 and $commandes->status == 0)
+                        <td><span class="badge bg-danger float-end">En attente</span> </td>
+                        @else
+                        <td><span class="badge bg-danger float-end">En attente</span> </td>
+                        @endif
+                                    
                          <td class="table-user">
-                            <a href="/deleteCommande/{{$commandes->id}}"> <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle " /> </a> 
+                            <a href="/deleteCommande/{{$commandes->id}}">  <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle " /> </a> 
                         </td>
                         </tr>
                         @endforeach
                     </tbody>
                     </table>
 
-
+ 
                   </div>
                 </div>
               </div>

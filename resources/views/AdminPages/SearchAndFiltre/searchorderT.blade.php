@@ -133,10 +133,17 @@
                         <td>
                             {{$commandes->nature}}
                         </td>
-                                    <td>
-                                    Terminer
-                                    </td>
-                     
+
+                        @if($commandes->terminate == 1 and $commandes->status == 1)
+                        <td><span class="badge bg-success float-end">terminer</span> </td>
+                        @elseif($commandes->terminate == 0 and $commandes->status == 1)
+                        <td><span class="badge bg-warning float-end">En Cour</span> </td>
+                        @elseif($commandes->terminate == 0 and $commandes->status == 0)
+                        <td><span class="badge bg-danger float-end">En attente</span> </td>
+                        @else
+                        <td><span class="badge bg-danger float-end">En attente</span> </td>
+                        @endif
+                                    
                          <td class="table-user">
                             <a href="/deleteCommande/{{$commandes->id}}">  <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle " /> </a> 
                         </td>
