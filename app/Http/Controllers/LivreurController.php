@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Livreur;
 use Illuminate\Http\Request;
 use Intervention\Image\Image;
