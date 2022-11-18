@@ -79,8 +79,8 @@
                         <div class="alert alert-success text-dark">
                                 Toutes les informations sur <span class="fw-bold">{{$livreur->nom_livreurs}} , {{$livreur->prenom_livreurs}}</span>
                                 </div>
-                     <div class="row " style="width: 100%; margin-left: 0.4em; height: 83%;">
-                            <img src="../dashStyle/assets/images/iwaEnrliv.gif" class="w-100 h-100" alt="">
+                     <div class="row " style="width: 100%; margin-left: 0.4em; height: 87%;">
+                            <img src="../dashStyle/assets/images/deliverySuccess.gif" class="w-100 h-100" alt="">
                         </div>
             </div> 
 
