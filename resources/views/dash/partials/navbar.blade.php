@@ -23,7 +23,7 @@
                     <img src="../logo/Jiam_s5-removebg-preview.png" alt="dark logo" height="22">
                 </span>
                 <span class="logo-sm">
-                    <img src="../logo/Jiam_s5-removebg-preview.png" alt="small logo" height="22">
+                    <img src="../logo/Jiam_s5-removebg-preview.png" alt="small logo" height="60">
                 </span>
             </a>
         </div>
