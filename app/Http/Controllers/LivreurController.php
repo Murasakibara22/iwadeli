@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Livreur;
 use Illuminate\Http\Request;
 use Intervention\Image\Image;
+use Illuminate\Support\Carbon;
 use Image as InterventionImage;
 
 class LivreurController extends Controller
@@ -163,6 +164,7 @@ class LivreurController extends Controller
         }
     }
 
+    //liste de tous les livreurs 
     public function listAllLiv(){
 
         $livreur = Livreur::OrderBy('nom_livreurs','ASC')->get();
@@ -248,4 +250,52 @@ class LivreurController extends Controller
             return redirect( '/listAllLivreur')->with( 'Nodetails','No Details found. Try to search again !' );	
             }	
         }
-}
+
+
+
+
+        //return les commades effectuees par un livreur 
+        public function detailsLivr($id){
+            $livreur = Livreur::where('id',$id)->firstOrFail();
+            if(!is_null($livreur)){
+                //toutes les commandes effectuer
+                $nombreAll = Order::where('terminate',1)->where('status',1)->get();
+                if(!is_null($nombreAll)){
+                    $allcom= 0 ;
+                    foreach($nombreAll as $nombreAlls){
+                        if($nombreAlls->id_livreurs == $livreur->id){
+                            $allcom++ ;
+                        }
+                    }
+                    
+                }
+                
+            //toutes les commandes effectuer today
+                $order = Order::Where('terminate',1)->where('status',1)->whereDate('created_at', Carbon::today())->get();
+                    if(!is_null($order)){
+                        $n= 0 ;
+                        foreach($order as $orders){
+                            if($orders->id_livreurs == $livreur->id){
+                                $n++ ;
+                            }
+                        }
+                       
+                    }
+
+                    //toutes les commandes effectuer hier
+                $nombrecommHier = Order::where('terminate',1)->where('status',1)->WhereDate('created_at',Carbon::yesterday())->get();
+                if(!is_null($nombrecommHier)){
+                    $countMeHier= 0 ;
+                    foreach($nombrecommHier as $nombrecommHiers){
+                        if($nombrecommHiers->id_livreurs == $livreur->id){
+                            $countMeHier++ ;
+                        }
+                    }
+                   
+                }
+
+                return view('AdminPages.Livreur.DetailLivreur',compact('allcom','countMeHier', 'n', 'livreur'));
+            }
+        }
+
+    }

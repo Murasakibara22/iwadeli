@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function register(Request $request)
+    public function enreg(Request $request)
     {
             $validatedData = $request->validate([
             'nom' => 'required|string|max:100',
@@ -35,7 +35,7 @@ class AuthController extends Controller
         ]);
     }
 
-public function login(Request $request)
+public function connecte(Request $request)
  {
         if (!Auth::attempt($request->only('contact', 'password'))) {
         return response()->json([

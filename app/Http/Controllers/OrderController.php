@@ -288,8 +288,7 @@ class OrderController extends Controller
     }
 
       //recherche dans les Commandes En attente
-    public function findSearOrderEC(Request $request)
-    {			
+    public function findSearOrderEC(Request $request){			
         $search = $request->search;		
         $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $search . '%' )->orWhere( 'lieudelivraison', 'LIKE', '%' . $search . '%' )->where('status',1)->where('terminate',0)->get();
         if (count ($commande) > 0 && isset($commande)){
@@ -301,7 +300,7 @@ class OrderController extends Controller
 
       //recherche dans les Commandes En attente
     public function findSearOrderT(Request $request)
-    {			
+{			
         $search = $request->search;		
         $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $search . '%' )->orWhere( 'lieudelivraison', 'LIKE', '%' . $search . '%' )->where('status',1)->where('terminate',1)->get();
         if (count ($commande) > 0 && isset($commande)){

@@ -127,6 +127,7 @@
                         <th scope="col">contact</th>
                         <th scope="col">date de creation</th>
                         <th scope="col">photo</th>
+                        <th scope="col">details</th>
                         <th scope="col">modifier</th>
                         <th scope="col">suprimer</th>
                         </tr>
@@ -141,7 +142,10 @@
                         <td class="fw-bold"> {{$livreurs->prenom_livreurs}}</td>
                         <td>{{$livreurs->contact}}</td>
                         <td>{{ date('j M, Y', strtotime($livreurs->created_at)) }}</td>
-                        <td></td>
+                        <td>photo</td>
+                        <td>
+                           <a href="/detailsLiv/{{$livreurs->id}}"><button type="button" class="btn btn-warning"><i class="mdi mdi-eye"></i> </button> </a> 
+                        </td>
                         <td>
                             <a href="/changeLivreur/{{$livreurs->id}}"><button type="button" class="btn btn-info"><i class="mdi mdi-keyboard"></i> </button> </a> 
                             </td>

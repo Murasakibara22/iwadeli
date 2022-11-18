@@ -40,6 +40,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   Route::get('/deleteLiv/{id}',[LivreurController::class, 'deleteL'])->whereNumber('id');
   Route::delete('/destroyLiv/{id}',[LivreurController::class,'destroyL'])->name('destroyLi')->whereNumber('id');
   Route::get('/findSearchLivreur', [LivreurController::class , 'findSearchLivreur'])->name('findSearchLivreurs');
+  Route::get('/detailsLiv/{id}',[LivreurController::class,'detailsLivr'])->whereNumber('id'); // details des commades sur le livreur
 
   //Utilisateurs
   Route::get('/listAllUs',[UserController::class,'listAllU']);

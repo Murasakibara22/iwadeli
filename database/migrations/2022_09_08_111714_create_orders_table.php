@@ -28,7 +28,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('id_users')->on('users')->references('id')->onDelete('cascade');
 
             $table->unsignedBigInteger('id_livreurs');
-            $table->foreign('id_livreurs')->on('livreurs')->references('id')->onDelete('cascade');
+            $table->foreign('id_livreurs')->on('livreurs')->references('id')->onDelete('cascade'); //La valeur de id_livreurs doit etre null lors de la creation de la commande
         });
     }
 
