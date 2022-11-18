@@ -17,7 +17,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create()
     {
-        return redirect('/register');
+        return view('auth.login');
     }
 
     /**
