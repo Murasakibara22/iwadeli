@@ -280,7 +280,8 @@ class OrderController extends Controller
         $search = $request->search;		
         $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $search . '%' )->orWhere( 'lieudelivraison', 'LIKE', '%' . $search . '%' )->where('status',0)->get();
         if (count ($commande) > 0 && isset($commande)){
-        return view ( 'AdminPages.SearchAndFiltre.searchorderEA')->with('commande',$commande);
+          $livreur = Livreur::all();
+        return view ( 'AdminPages.SearchAndFiltre.searchorderEA',compact('livreur'))->with('commande',$commande);
         }else{
         return redirect( '/listAllCom')->with( 'Nodetails','No Details found. Try to search again !' );	
         }	
