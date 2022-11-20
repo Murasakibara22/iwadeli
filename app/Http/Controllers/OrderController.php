@@ -299,4 +299,15 @@ class OrderController extends Controller
     }
 
 
+    //La page de toutes les commandes 
+    public function PagesAllCOmmandes(){
+      $livreur = Livreur::OrderBy('created_at','ASC')->get();
+
+      $commande = Order::OrderBy('created_at','DESC')->get();
+      if($commande && $commande->count() > 0 ){
+        return view('AdminPages.Commande.listAll',compact('commande','livreur'));
+      }else{
+        return view('AdminPages.Commande.listAll')->with('NotValues',"Aucune Commande");
+      }
+    }
 }

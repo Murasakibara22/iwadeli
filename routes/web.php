@@ -126,6 +126,9 @@ Route::get('/filtreInAllCEnAttente', [FiltreController::class, 'findSearInOrderE
 //filtre dans le resultat du filtre des CEA
 Route::get('/RangeInAllCEnAttente', [FiltreController::class, 'RangeInAllCEA'])->name('RangeInAllCEAs');
 
+
+/**PAGE DE TOUTES LES COMMANDES */
+Route::get('/AllOrders', [OrderController::class, 'PagesAllCOmmandes']);
 });
 
 

@@ -368,7 +368,7 @@ class FiltreController extends Controller
               $commande = Order::WhereDate('updated_at',Carbon::today())->where('terminate',0)->where('status',0)->where('id_livreurs',NULL)->OrderBy('created_at','DESC')->get();
         
               if (count ($commande) > 0 && isset($commande)){
-                $livreur = Livreur::OrderBy('nom_livreurs','ASC');
+                $livreur = Livreur::OrderBy('nom_livreurs','ASC')->get();
               return view('AdminPages.Filtre.CEA.list',compact('today','livreur','yesterday','typeOfFiltreParent'))->with('commande',$commande);
           }else{
               return redirect()->back()->with( 'Nodetails','No Details found. Esaayez encore  !' );	
@@ -379,7 +379,7 @@ class FiltreController extends Controller
               $commande = Order::WhereDate('updated_at',Carbon::yesterday())->where('terminate',0)->where('status',0)->where('id_livreurs',NULL)->OrderBy('created_at','DESC')->get();
   
               if (count ($commande) > 0 && isset($commande)){
-                $livreur = Livreur::OrderBy('nom_livreurs','ASC');
+                $livreur = Livreur::OrderBy('nom_livreurs','ASC')->get();
                   return view('AdminPages.Filtre.CEA.list',compact('today','livreur','yesterday','typeOfFiltreParent'))->with('commande',$commande);
               }else{
                   return redirect()->back()->with( 'Nodetails','No Details found. Esaayez encore  !' );	
@@ -389,7 +389,7 @@ class FiltreController extends Controller
               $commande = Order::WhereDate('updated_at',Carbon::week())->where('terminate',0)->where('status',0)->where('id_livreurs',NULL)->OrderBy('created_at','DESC')->get();
   
               if (count ($commande) > 0 && isset($commande)){
-                $livreur = Livreur::OrderBy('nom_livreurs','ASC');
+                $livreur = Livreur::OrderBy('nom_livreurs','ASC')->get();
                   return view('AdminPages.Filtre.CEA.list',compact('today','livreur','yesterday','typeOfFiltreParent'))->with('commande',$commande);
               }else{
                   return redirect()->back()->with( 'Nodetails','No Details found. Esaayez encore  !' );	
@@ -399,7 +399,7 @@ class FiltreController extends Controller
               $commande = Order::WhereDate('updated_at',Carbon::Month())->where('terminate',0)->where('status',0)->where('id_livreurs',NULL)->OrderBy('created_at','DESC')->get();
   
               if (count ($commande) > 0 && isset($commande)){
-                $livreur = Livreur::OrderBy('nom_livreurs','ASC');
+                $livreur = Livreur::OrderBy('nom_livreurs','ASC')->get();
                   return view('AdminPages.Filtre.CEA.list',compact('today','livreur','yesterday','typeOfFiltreParent'))->with('commande',$commande);
               }else{
                   return redirect()->back()->with( 'Nodetails','No Details found. Esaayez encore  !' );	
@@ -416,7 +416,7 @@ class FiltreController extends Controller
           $searchs = $request->search;		
           $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $searchs . '%' )->WhereDate('updated_at',Carbon::today())->where('terminate',0)->where('status',0)->where('id_livreurs',NULL)->OrderBy('created_at','DESC')->get();
           if (count ($commande) > 0 && isset($commande)){
-            $livreur = Livreur::OrderBy('nom_livreurs','ASC');
+            $livreur = Livreur::OrderBy('nom_livreurs','ASC')->get();
           return view ( 'AdminPages.Filtre.CEA.listInCEA',compact('today','livreur','yesterday','searchs'))->with('commande',$commande);
           }else{
           return redirect()->back()->with( 'Nodetails','No Details found. Try to search again !' );	
@@ -430,7 +430,7 @@ class FiltreController extends Controller
           $today = date('j M, Y', strtotime(Carbon::today()) );
           $yesterday = date('j M, Y', strtotime(Carbon::yesterday()) );
           $firsstFiltreChoisie = $request->firsstFiltreChoisie;
-          $livreur = Livreur::OrderBy('nom_livreurs','ASC');
+          $livreur = Livreur::OrderBy('nom_livreurs','ASC')->get();
   /**TODAY */
           if($request->firsstFiltreChoisie == "Aujourd'hui"){
                       if($request->FiltrerSelon == "Lieu de Depart"){

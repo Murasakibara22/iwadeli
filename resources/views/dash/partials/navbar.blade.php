@@ -353,6 +353,12 @@
             </li>
 
             <li class="side-nav-item">
+                <a href="/AllOrders" class="side-nav-link">
+                    <i class="uil-comments-alt"></i>
+                    <span> Toutes les commandes </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
                 <a href="/listAllCom" class="side-nav-link">
                     <i class="uil-comments-alt"></i>
                     <span class="badge bg-danger float-end">En Attente</span>
