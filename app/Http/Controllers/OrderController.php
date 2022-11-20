@@ -310,4 +310,14 @@ class OrderController extends Controller
         return view('AdminPages.Commande.listAll')->with('NotValues',"Aucune Commande");
       }
     }
+
+    public function PagesDetailOneOrder($id){
+      $commande = Order::where('id',$id)->first();
+      $livreur = Livreur::OrderBy('created_at','ASC')->get();
+      if(!is_null($commande)){
+        return view('AdminPages.Commande.details',compact('commande','livreur'));
+      }else{
+        return redirect()->back()->with('NotFound', "La commande selectionner n'existe pas");
+      }
+    }
 }

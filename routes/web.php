@@ -129,6 +129,8 @@ Route::get('/RangeInAllCEnAttente', [FiltreController::class, 'RangeInAllCEA'])-
 
 /**PAGE DE TOUTES LES COMMANDES */
 Route::get('/AllOrders', [OrderController::class, 'PagesAllCOmmandes']);
+
+Route::get('/DetailOneOrder/{id}', [OrderController::class, 'PagesDetailOneOrder'])->whereNumber('id');
 });
 
 

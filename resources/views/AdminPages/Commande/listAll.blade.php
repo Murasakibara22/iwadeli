@@ -131,6 +131,7 @@
                         <th scope="col">Qui effectue ?</th>
                         <th scope="col">Validiter</th>
                         <th scope="col">Terminer</th>
+                        <th scope="col">Details</th>
                         <th scope="col">Delete</th>
                         </tr>
                     </thead>
@@ -194,7 +195,7 @@
                     @elseif($commandes->terminate  == 0  && $commandes->status  == 1)
 
                                 <td>
-                                <span class="badge badge-warning-lighten ">En Cour </span></td> 
+                                <span class="badge badge-warning-lighten ">En Cour </span>
                                 </td>
                                  <td>
                                 <button type="submit" class="btn btn-success" disabled><i class="mdi mdi"> valider</i> </button> 
@@ -202,14 +203,14 @@
                       @elseif($commandes->terminate  == 1  && $commandes->status  == 1)
 
                                 <td>
-                                <span class="badge badge-success-lighten ">Terminer </span></td> 
+                                <span class="badge badge-success-lighten ">Terminer </span>
                                 </td>
                                  <td>
                                 <button type="submit" class="btn btn-success" disabled><i class="mdi mdi"> valider</i> </button> 
                                 </td>
                      @else
                                  <td>
-                                <span class="badge badge-secondary-lighten ">Terminer </span></td> 
+                                <span class="badge badge-secondary-lighten ">Terminer </span>
                                 </td>
                                  <td>
                                 <button type="submit" class="btn btn-secondary" disabled><i class="mdi mdi"> valider</i> </button> 
@@ -238,6 +239,11 @@
                                     <button type="submit" class="btn btn-success" disabled><i class="mdi mdi"> Terminer</i> </button> 
                                     </td>
                         @endif
+
+                        <td>
+                            <a href="/DetailOneOrder/{{$commandes->id}}"><i class="mdi mdi-eye"></i></a>
+                        </td>
+
                          <td class="table-user">
                             <a href="/deleteCommande/{{$commandes->id}}"> <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle" /> </a> 
                         </td>
