@@ -73,7 +73,7 @@
                       <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                            <h4 class="card-title">Liste de toutes les commandes</h4>
+                            <h4 class="card-title">Liste de toutes les commandes
 
                             <div class="app-search dropdown float-end mt-3 mb-2">
                                                 <form action="{{ route('findSearInOrderEAs') }}">
@@ -87,29 +87,23 @@
 
                                               
                                             </div>
+                            </h4>
+
+                        
                   <p class="card-description mt-3 mb-3">
-                    Vous avez la possibilité de  <code>modifier</code> ou de <code>suprimer  </code> un Livreur
+                    Vous avez la possibilité de <code>suprimer  </code> une commande
                   </p>
                 
                     <!-- Fitrage -->
                   <div class="mb-1 col-12">
                 
-                  <form action="{{ route ('filtreAllCEAs') }}">
+                <!-- title -->
+          
                   <div class="d-flex  mt-lg-0 ">
-                        <!-- select option -->
-                        <select class="form-select" aria-label="Default select example" name="FiltrerSelon">
-                        <option selected>Filtrer les commandes selon: </option>
-                          <option value="Aujourd'hui">Aujourd'hui</option>
-                          <option value="hier"> hier</option>
-                          <option value="7 derniers jours"> 7 derniers jours</option>
-                          <option value="il y a un Mois"> il y a un Mois</option>
-                        </select>
 
-                        <button type="submit" class="btn btn-dark ms-3">Filtrer </button>
                       
                       </div>
 
-                      </form>
               </div>
 
 
@@ -134,7 +128,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($commande as $commandes)
+                    @foreach($commande as $commandes)
                         <tr>
                                <td class="fw-bold" >
                                <div class="text-truncate" style=" height:20px; width:80px; overflow:hidden;">
@@ -144,19 +138,19 @@
                                
                         <td class="fw-bold">
                         <div class="text-truncate" style=" height:20px; width:90px; overflow:hidden;">
-                             {{$commandes->lieudelivraison}}
-                             </div>
-                            </td>
+                        {{$commandes->lieudelivraison}}
+                        </div>
+                      </td>
                         <td>{{$commandes->contactdudestinataire}}</td>
                         <td>
                         <div class="text-truncate" style=" height:20px; width:90px; overflow:hidden;">
-                            {{ date('j M, Y', strtotime($commandes->created_at)) }}
-                            </div>
+                          {{ date('j M, Y', strtotime($commandes->created_at)) }}
+                          </div>
                         </td>
                         <td>
-                          <div class="text-truncate" style=" height:40px; width:80px; overflow:hidden;">
-                            {{ $commandes->montant }} FCFA
-                            </div>
+                        <div class="text-truncate" style=" height:40px; width:80px; overflow:hidden;">
+                          {{ $commandes->montant }}
+                          </div>
                         </td>
                         @foreach($commandes->user()->get()  as $utili)
                         <td>{{$utili->nom}}</td>

@@ -111,12 +111,20 @@ Route::get('/RangeInAllCterminer', [FiltreController::class, 'RangeInAllCT'])->n
 
 
 
-//dans la page commande terminer
+//dans la page commande En Cour
 Route::get('/filtreAllCEnCour', [FiltreController::class, 'filtreAllCEC'])->name('filtreAllCECs');
 //dans le resultat de la page 
 Route::get('/filtreInAllCEnCour', [FiltreController::class, 'findSearInOrderEC'])->name('findSearInOrderECs');
 //filtre dans le resultat du filtre des CT
 Route::get('/RangeInAllCEnCour', [FiltreController::class, 'RangeInAllCEC'])->name('RangeInAllCECs');
+
+
+//dans la page commande En Attente
+Route::get('/filtreAllCEnAttente', [FiltreController::class, 'filtreAllCEA'])->name('filtreAllCEAs');
+//dans le resultat de la page 
+Route::get('/filtreInAllCEnAttente', [FiltreController::class, 'findSearInOrderEA'])->name('findSearInOrderEAs');
+//filtre dans le resultat du filtre des CEA
+Route::get('/RangeInAllCEnAttente', [FiltreController::class, 'RangeInAllCEA'])->name('RangeInAllCEAs');
 
 });
 

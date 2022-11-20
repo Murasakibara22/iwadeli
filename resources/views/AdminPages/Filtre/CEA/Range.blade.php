@@ -94,17 +94,18 @@
                     <!-- Fitrage -->
                   <div class="mb-1 col-12">
                 
-                  <form action="{{ route ('filtreAllCEAs') }}">
+                <!-- title -->
+                <form action="{{ route('RangeInAllCEAs')}}">
                   <div class="d-flex  mt-lg-0 ">
                         <!-- select option -->
                         <select class="form-select" aria-label="Default select example" name="FiltrerSelon">
-                        <option selected>Filtrer les commandes selon: </option>
-                          <option value="Aujourd'hui">Aujourd'hui</option>
-                          <option value="hier"> hier</option>
-                          <option value="7 derniers jours"> 7 derniers jours</option>
-                          <option value="il y a un Mois"> il y a un Mois</option>
+                          <option selected>Range Par: </option>
+                          <option value="Lieu de Depart">Lieu de Depart</option>
+                          <option value="Lieu de D'arriver"> Lieu de D'arriver</option>
+                          <option value="prix"> prix</option>
                         </select>
 
+                        <input type="hidden" value="{{$firsstFiltreChoisie}}"  name="firsstFiltreChoisie">
                         <button type="submit" class="btn btn-dark ms-3">Filtrer </button>
                       
                       </div>
@@ -134,7 +135,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($commande as $commandes)
+                    @foreach($commande as $commandes)
                         <tr>
                                <td class="fw-bold" >
                                <div class="text-truncate" style=" height:20px; width:80px; overflow:hidden;">
@@ -144,19 +145,19 @@
                                
                         <td class="fw-bold">
                         <div class="text-truncate" style=" height:20px; width:90px; overflow:hidden;">
-                             {{$commandes->lieudelivraison}}
-                             </div>
-                            </td>
+                        {{$commandes->lieudelivraison}}
+                        </div>
+                      </td>
                         <td>{{$commandes->contactdudestinataire}}</td>
                         <td>
                         <div class="text-truncate" style=" height:20px; width:90px; overflow:hidden;">
-                            {{ date('j M, Y', strtotime($commandes->created_at)) }}
-                            </div>
+                          {{ date('j M, Y', strtotime($commandes->created_at)) }}
+                          </div>
                         </td>
                         <td>
-                          <div class="text-truncate" style=" height:40px; width:80px; overflow:hidden;">
-                            {{ $commandes->montant }} FCFA
-                            </div>
+                        <div class="text-truncate" style=" height:40px; width:80px; overflow:hidden;">
+                          {{ $commandes->montant }}
+                          </div>
                         </td>
                         @foreach($commandes->user()->get()  as $utili)
                         <td>{{$utili->nom}}</td>
