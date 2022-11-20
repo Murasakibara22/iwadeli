@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\EquipeController;
+use App\Http\Controllers\FiltreController;
 use App\Http\Controllers\LivreurController;
 
 /*
@@ -63,7 +64,7 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   //recherche des commandes en En cour
   Route::get('/findSearchOrderEnCour', [OrderController::class , 'findSearOrderEC'])->name('findSearOrderECs');
   //recherche des commandes en Effectuer
-  Route::get('/findSearchOrderTerminer', [OrderController::class , 'findSearOrderT'])->name('findSearOrderTs');
+
 
   //commande valider
   Route::get('/listAllComValide',[OrderController::class,'listAllCV']);
@@ -97,6 +98,26 @@ Route::get('/equipe_delete/{slug}', [EquipeController::class, 'supprime']);
 Route::delete('/equipDelete/{slug}', [EquipeController::class, 'supprimeeEquipe'])->name('deleteEquipe'); 
 
 Route::get('/findTeam',[EquipeController::class, 'findSearchEquipe'])->name('findSearchTeam');
+
+/**FILTRE */
+//dans la page commande terminer
+Route::get('/filtreAllCterminer', [FiltreController::class, 'filtreAllCT'])->name('filtreAllCTs');
+//dans le resultat de la page 
+Route::get('/filtreInAllCterminer', [FiltreController::class, 'findSearInOrderT'])->name('findSearInOrderTs');
+//filtre dans le resultat du filtre des CT
+Route::get('/RangeInAllCterminer', [FiltreController::class, 'RangeInAllCT'])->name('RangeInAllCTs');
+//Range dans la recherche du filtre de toutes les commandes Terminer
+// Route::get('/RangeInSearchAllCterminer', [FiltreController::class, 'RangeInSearchAllCT'])->name('RangeInSearchAllCTs');
+
+
+
+//dans la page commande terminer
+Route::get('/filtreAllCEnCour', [FiltreController::class, 'filtreAllCEC'])->name('filtreAllCECs');
+//dans le resultat de la page 
+Route::get('/filtreInAllCEnCour', [FiltreController::class, 'findSearInOrderEC'])->name('findSearInOrderECs');
+//filtre dans le resultat du filtre des CT
+Route::get('/RangeInAllCEnCour', [FiltreController::class, 'RangeInAllCEC'])->name('RangeInAllCECs');
+
 });
 
 

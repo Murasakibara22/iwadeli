@@ -17,8 +17,8 @@ class AdminController extends Controller
     public function index(Request $request){
         $today = date('j M, Y', strtotime(Carbon::today())  );
         $com = Order::OrderBy('created_at','DESC')->take(5)->get();
-        $comV = Order::whereDate('created_at',Carbon::today())->Where('status',1)->get();// toutes les commandes valider
-        $comT = Order::whereDate('created_at',Carbon::today())->Where('terminate',1)->get();//commande terminer 
+        $comV = Order::whereDate('updated_at',Carbon::today())->Where('status',1)->get();// commande valider aujourd'hui  pas une commande d'aujourd'hui qui ont ete valider
+        $comT = Order::whereDate('updated_at',Carbon::today())->Where('terminate',1)->Where('status',1)->get();// commande Terminer aujourd'hui  pas une commande d'aujourd'hui qui ont ete Terminer
         $user = User::all(); //tous les utilisateurs
 
         $AllOrder = Order::all();//toutes les commandes depuis le debut
@@ -49,9 +49,16 @@ class AdminController extends Controller
         $commandeVT = Order::whereDate('created_at',Carbon::today())->where('status',1)->get();
         $commandeVTCount = count($commandeVT);//total de toutes les commandes valider de today
 
+
+
+
+         /**POURCENTAGES DES COMMANDES Valider (TODAYS, YESTERDAY) */
+        
+        $AllOrderV = Order::where('status',1)->get(); //toutes les commandes Valider
+        $resultPourcentageAllOrderV = count($AllOrderV); //poucentage de toutes les commandes Valider
         //pourcentage des Commande Valider
-        $resultPourcentageCVT = ($commandeVTCount * 100) / $countAllOrder;
-        $resultPourcentageCVH = ($commandeVHCount * 100) / $countAllOrder;
+        $resultPourcentageCVT = ($commandeVTCount * 100) / $resultPourcentageAllOrderV;
+        $resultPourcentageCVH = ($commandeVHCount * 100) / $resultPourcentageAllOrderV;
 
 
 
@@ -64,9 +71,19 @@ class AdminController extends Controller
          $commandeTTCount = count($commandeTT);//total de toutes les commandes terminer de today
 
 
-         //pourcentage des Commande Valider
-        $resultPourcentageCTT = ($commandeTTCount * 100) / $countAllOrder;
-        $resultPourcentageCTH = ($commandeTHCount * 100) / $countAllOrder;
+
+        /**POURCENTAGES DES COMMANDES TERMINER (TODAYS, YESTERDAY) */
+
+         $AllOrderT = Order::where('terminate',1)->where('status',1)->get(); //toutes les commandes terminer
+         $resultPourcentageAllOrderT = count($AllOrderT); //poucentage de toutes les commandes terminer
+         //pourcentage des Commande Terminer
+        $resultPourcentageCTT = ($commandeTTCount * 100) / $resultPourcentageAllOrderT;
+        $resultPourcentageCTH = ($commandeTHCount * 100) / $resultPourcentageAllOrderT;
+
+        /**END  POURCENTAGE DES COMMANDES TERMINER */
+
+
+
 
         //commandes en cours
         $commandeEnCour = Order::WhereDate('created_at',Carbon::today())->where('status',1)->where('terminate',0)->get();
@@ -75,7 +92,8 @@ class AdminController extends Controller
         //commandes en Attente de validation
         $commandeEA = Order::WhereDate('created_at',Carbon::today())->where('status',0)->where('terminate',0)->where('id_livreurs',null)->get();
         $commandeEACount = count($commandeEA);
-                 
+
+    
         return view('dashboard', compact('comAll','countAllOrder','commandeTTCount','commandeEACount','comAllValidate','comAllTerminer','com','today','user','commandeHCount','commandeTCount','resultPourcentageCVT','resultPourcentageCVH','resultPourcentageCTT','resultPourcentageCTH','commandeEnCourCount'));
     }
 

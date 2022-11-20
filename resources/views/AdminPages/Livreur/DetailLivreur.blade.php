@@ -77,7 +77,7 @@
 
               <div class="col-md-6 " >
                         <div class="alert alert-success text-dark">
-                                Toutes les informations sur <span class="fw-bold">{{$livreur->nom_livreurs}} , {{$livreur->prenom_livreurs}}</span>
+                                Toutes les livraisons effectuer de <span class="fw-bold">{{$livreur->nom_livreurs}} , {{$livreur->prenom_livreurs}}</span>
                                 </div>
                      <div class="row " style="width: 100%; margin-left: 0.4em; height: 87%;">
                             <img src="../dashStyle/assets/images/deliverySuccess.gif" class="w-100 h-100" alt="">
@@ -98,7 +98,7 @@
                                                  <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between align-items-center">
-                                        <h4 class="header-title">Details</h4>
+                                        <h4 class="header-title">Livraison effectuer</h4>
                                         
                                     </div>
 
@@ -111,14 +111,14 @@
                                                 <h3 class="fw-normal mt-3">
                                                     <span>{{$n}}</span>
                                                 </h3>
-                                                <p class="text-muted mb-0 mb-2"><i class="mdi mdi-checkbox-blank-circle text-warning"></i>C.J</p>
+                                                <p class="text-muted mb-0 mb-2"><i class="mdi mdi-checkbox-blank-circle text-warning"></i>Today</p>
                                             </div>
                                             <div class="col-sm-4">
                                                 <i class="mdi mdi-flag-variant widget-icon rounded-circle bg-primary-lighten text-primary"></i>
                                                 <h3 class="fw-normal mt-3">
                                                     <span>{{$countMeHier}}</span>
                                                 </h3>
-                                                <p class="text-muted mb-0 mb-2"><i class="mdi mdi-checkbox-blank-circle text-primary"></i> C.H</p>
+                                                <p class="text-muted mb-0 mb-2"><i class="mdi mdi-checkbox-blank-circle text-primary"></i>Hier</p>
                                             </div>
                                             <div class="col-sm-4">
                                                 <i class="mdi mdi-email-open widget-icon rounded-circle bg-success-lighten text-success"></i>

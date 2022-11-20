@@ -110,9 +110,9 @@
                                                     <div class="col-6">
                                                         <div class="text-end">
                                                         @if($resultPourcentageCVT <  $resultPourcentageCVH)
-                                                            <div id="deals-chart" data-colors="#F73131"></div>
+                                                            <div id="deals-chart" data-colors="#F73131">Baisse</div>
                                                             @elseif($resultPourcentageCVT >  $resultPourcentageCVH)
-                                                            <div id="deals-chart" data-colors="#0acf97">Augmentation</div>
+                                                            <div id="deals-chart" data-colors="#0acf97">Hausse</div>
                                                             @else
                                                             <div id="deals-chart" data-colors="#727cf5">Stable</div>
                                                             @endif
@@ -145,7 +145,7 @@
                                                         @if($resultPourcentageCTT <  $resultPourcentageCTH)
                                                             <div id="booked-revenue-chart" data-colors="#F73131">Chute</div>
                                                             @elseif($resultPourcentageCTT >  $resultPourcentageCTH)
-                                                            <div id="booked-revenue-chart" data-colors="#0acf97">Augmentation</div>
+                                                            <div id="booked-revenue-chart" data-colors="#0acf97">Hausse</div>
                                                             @else
                                                             <div id="booked-revenue-chart" data-colors="#727cf5">stable</div>
                                                             @endif
@@ -163,10 +163,10 @@
                             <!-- end col-->
     
                             <div class="row">
-                            <div class="col-lg-5">
+                            <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between align-items-center">
-                                        <h4 class="header-title">Campaigns</h4>
+                                        <h4 class="header-title">STATS Commande du jours</h4>
                                         
                                     </div>
 
@@ -182,14 +182,14 @@
                                                 <p class="text-muted mb-0 mb-2"><i class="mdi mdi-checkbox-blank-circle text-warning"></i>commandes en cours</p>
                                             </div>
                                             <div class="col-sm-4">
-                                                <i class="mdi mdi-flag-variant widget-icon rounded-circle bg-primary-lighten text-primary"></i>
+                                                <i class="mdi mdi-flag-variant widget-icon rounded-circle bg-success-lighten text-success"></i>
                                                 <h3 class="fw-normal mt-3">
                                                     <span>{{$commandeTTCount}}</span>
                                                 </h3>
                                                 <p class="text-muted mb-0 mb-2"><i class="mdi mdi-checkbox-blank-circle text-primary"></i> Commandes finish</p>
                                             </div>
                                             <div class="col-sm-4">
-                                                <i class="mdi mdi-email-open widget-icon rounded-circle bg-success-lighten text-success"></i>
+                                                <i class="mdi mdi-email-open widget-icon rounded-circle bg-danger-lighten text-danger"></i>
                                                 <h3 class="fw-normal mt-3">
                                                     <span>{{$commandeEACount}}</span>
                                                 </h3>
@@ -203,7 +203,7 @@
                             </div>
                             <!-- end col-->
     
-                            <div class="col-lg-7">
+                            <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                         <h4 class="header-title">Revenue</h4>

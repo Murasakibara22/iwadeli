@@ -15,8 +15,8 @@
                     @endif
 
                     @if ( session('Nodetails'))
-                    <div class="alert alert-info mt-1">
-                    Aucun details trouver. Esaayez En recherchant selon le lieu de depart  !
+                    <div class="alert alert-warning mt-1">
+                    Aucun details trouver. Esaayez En recherchant selon le lieu de depart ou le lieu cible !
                     </div>
                     @endif
                   
@@ -33,7 +33,7 @@
                                             
                                         </ol>
                                     </div>
-                                    <h4 class="page-title"> Nos Commandes Effectuer
+                                    <h4 class="page-title"> Nos Commandes En cour
                                     <a href="/listAllCom" class="float-end"><button type="button" class="btn btn-warning rounded-pill ms-5"><i class="uil-plus-circle"></i> Commande En Attente</button> </a>
                                 </h4>
                                 </div>
@@ -46,10 +46,10 @@
                       <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                            <h4 class="card-title">Liste de toutes les commandes effectuees</h4>
+                            <h4 class="card-title">Recherches dans la listes des commandes En cour </h4>
 
                             <div class="app-search dropdown float-end mt-3">
-                                                <form action="{{ route('findSearInOrderTs') }}">
+                                                <form action="{{ route('findSearInOrderECs') }}">
                                                     <div class="input-group">
                                                         <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
                                                         <span class="mdi mdi-magnify search-icon"></span>
@@ -63,24 +63,24 @@
 
 
                   <p class="card-description mt-3">
-                    La Liste de toutes les commandes qui <code>viennent </code>  d'etre terminer 
+                   toutes les commandes  <code>En cour</code>  
                   </p>
                 
                     <!-- Fitrage -->
                   <div class="mb-1 col-6">
                 
                 <!-- title -->
-                <form action="{{ route ('filtreAllCTs') }}">
+                <form action="{{ route('RangeInAllCECs')}}">
                   <div class="d-flex  mt-lg-0 ">
                         <!-- select option -->
                         <select class="form-select" aria-label="Default select example" name="FiltrerSelon">
-                        <option selected>Filtrer les commandes selon: </option>
-                          <option value="Aujourd'hui">Aujourd'hui</option>
-                          <option value="hier"> hier</option>
-                          <option value="7 derniers jours"> 7 derniers jours</option>
-                          <option value="il y a un Mois"> il y a un Mois</option>
+                          <option selected>Range Par: </option>
+                          <option value="Lieu de Depart">Lieu de Depart</option>
+                          <option value="Lieu de D'arriver"> Lieu de D'arriver</option>
+                          <option value="prix"> prix</option>
                         </select>
 
+                    <input type="hidden" value="{{$typeOfFiltreParent}}"  name="firsstFiltreChoisie">
                         <button type="submit" class="btn btn-dark ms-3">Filtrer </button>
                       
                       </div>
@@ -94,8 +94,8 @@
 
                   <div class="table-responsive">
                   <table class="table">
-                    <thead class="thead-dark">
-                        <tr class="bg-info">
+                    <thead class="thead-white">
+                        <tr class="bg-success text-dark">
                         <th scope="col">depart</th>
                         <th scope="col">arrive</th>
                         <th scope="col">CDD</th>
@@ -106,30 +106,45 @@
                         <th scope="col">livrer par </th>
                         <th scope="col">Engins</th>
                         <th scope="col">Avamcement</th>
+                        <th scope="col">actions</th>
                         <th scope="col">suprimer</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($commande as $commandes)
+                    @foreach($commande as $commandes)
                         <tr>
                                <td class="fw-bold" >
                                <div class="text-truncate" style=" height:20px; width:80px; overflow:hidden;">
                                     {{$commandes->lieudedepart}}
-                                </div>
+                                    </div>
                               </td>
                                
-                        <td class="fw-bold"> 
+                        <td class="fw-bold">
                         <div class="text-truncate" style=" height:20px; width:100px; overflow:hidden;">
-                          {{$commandes->lieudelivraison}}
-                          </div>
-                        </td>
+                             {{$commandes->lieudelivraison}}
+                             </div>
+                            </td>
                         <td>{{$commandes->contactdudestinataire}}</td>
+                        @if(date('j M, Y', strtotime($commandes->created_at)) == $today)
                         <td>
-                        <div class="text-truncate" style="height:20px; width:100px; overflow:hidden;">
-                          {{ date('j M, Y', strtotime($commandes->created_at)) }}
-                          </div>
+                        <div class="text-truncate" style=" height:20px; width:100px; overflow:hidden;">
+                            Aujourd'hui
+                            </div>
                         </td>
-                        <td>{{ $commandes->montant }}</td>
+                        @elseif(date('j M, Y', strtotime($commandes->created_at)) == $yesterday)
+                        <td>
+                        <div class="text-truncate" style=" height:20px; width:100px; overflow:hidden;">
+                            Hier
+                            </div>
+                        </td>
+                        @else
+                        <td>
+                        <div class="text-truncate" style=" height:20px; width:100px; overflow:hidden;">
+                            {{ date('j M, Y', strtotime($commandes->created_at)) }}
+                            </div>
+                        </td>
+                        @endif
+                        <td>{{ $commandes->montant }} </td>
                         @foreach($commandes->user()->get()  as $utili)
                         <td>{{$utili->nom}}</td>
                         <td>{{$utili->contact}}</td>
@@ -146,10 +161,27 @@
                         <td>
                             {{$commandes->nature}}
                         </td>
-                                    <td>
-                                    Terminer
-                                    </td>
+                        @if($commandes->terminate  == 0  && $commandes->status  == 0)
+                          <td>     <span class="badge badge-danger-lighten ">En Attente </span> </td> 
+                              @elseif($commandes->terminate  == 0  && $commandes->status  == 1)
+                          <td>    <span class="badge badge-warning-lighten ">En Cour </span></td> 
+                                @elseif($commandes->terminate  == 1  && $commandes->status  == 1)
+                            <td>   <span class="badge badge-success-lighten ">Terminer</span></td> 
+                                @else
+                            <td>  <span class="badge badge-info-danger ">En Attente </span></td> 
+                                @endif
                      
+                                <form action=" {{ route('TerminateCommWithLivreurs') }}"  method="POST">
+                            @csrf
+                            @method('PUT')
+                            
+
+                              <input type="hidden" value="{{$commandes->id}}"  name="id_com">
+
+                                    <td>
+                                    <button type="submit" class="btn btn-success"><i class="mdi mdi"> Terminer</i> </button> 
+                                    </td>
+                        </form>
                          <td class="table-user">
                             <a href="/deleteCommande/{{$commandes->id}}">  <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle " /> </a> 
                         </td>

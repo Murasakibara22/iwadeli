@@ -99,10 +99,11 @@
                   <div class="d-flex  mt-lg-0 ">
                         <!-- select option -->
                         <select class="form-select" aria-label="Default select example" name="FindAnnonce">
-                          <option selected>Filtrer selon: </option>
-                          <option value="Prix Le plus bas">Prix Le plus bas</option>
-                          <option value="Prix Le plus eleve"> Prix Le plus eleve</option>
-                          <option value="date recente"> date recente</option>
+                        <option selected>Filtrer selon: </option>
+                          <option value="Aujourd'hui">Aujourd'hui</option>
+                          <option value="hier"> hier</option>
+                          <option value="7 derniers jours"> 7 derniers jours</option>
+                          <option value="il y a un Mois"> il y a un Mois</option>
                         </select>
 
                         <button type="submit" class="btn btn-dark ms-3">Filtrer </button>
