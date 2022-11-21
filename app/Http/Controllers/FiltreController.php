@@ -67,8 +67,10 @@ class FiltreController extends Controller
         $today = date('j M, Y', strtotime(Carbon::today()) );
         $yesterday = date('j M, Y', strtotime(Carbon::yesterday()) );
         $searchs = $request->search;		
-        $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $searchs . '%' )->WhereDate('updated_at',Carbon::today())->where('terminate',1)->where('status',1)->OrderBy('created_at','DESC')->get();
+        $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $searchs . '%' )->where('terminate',1)->where('status',1)->OrderBy('created_at','DESC')->get();
+        dd($commande);
         if (count ($commande) > 0 && isset($commande)){
+            
         return view ( 'AdminPages.Filtre.CT.listInCT',compact('today','yesterday','searchs'))->with('commande',$commande);
         }else{
         return redirect()->back()->with( 'Nodetails','No Details found. Try to search again !' );	
@@ -257,7 +259,7 @@ class FiltreController extends Controller
           $today = date('j M, Y', strtotime(Carbon::today()) );
           $yesterday = date('j M, Y', strtotime(Carbon::yesterday()) );
           $searchs = $request->search;		
-          $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $searchs . '%' )->WhereDate('updated_at',Carbon::today())->where('terminate',0)->where('status',1)->OrderBy('created_at','DESC')->get();
+          $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $searchs . '%' )->where('terminate',0)->where('status',1)->OrderBy('created_at','DESC')->get();
           if (count ($commande) > 0 && isset($commande)){
           return view ( 'AdminPages.Filtre.CEC.listInCEC',compact('today','yesterday','searchs'))->with('commande',$commande);
           }else{
