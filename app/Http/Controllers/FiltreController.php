@@ -68,7 +68,7 @@ class FiltreController extends Controller
         $yesterday = date('j M, Y', strtotime(Carbon::yesterday()) );
         $searchs = $request->search;		
         $commande = Order::where( 'lieudedepart', 'LIKE', '%' . $searchs . '%' )->where('terminate',1)->where('status',1)->OrderBy('created_at','DESC')->get();
-        dd($commande);
+      
         if (count ($commande) > 0 && isset($commande)){
             
         return view ( 'AdminPages.Filtre.CT.listInCT',compact('today','yesterday','searchs'))->with('commande',$commande);
