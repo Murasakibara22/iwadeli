@@ -309,7 +309,7 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end">
                                                 <!-- item-->
-                                                <a href="/listAllCom" class="dropdown-item">Voir plus</a>
+                                                <a href="/AllOrders" class="dropdown-item">Voir plus</a>
                                             </div>
                                         </div>
                                     </div>
@@ -349,7 +349,7 @@
                             
                                                                             
                                     </div>
-                                    <a href="/listAllCom" type="button" class="btn btn-soft-primary btn-sm mt-3">
+                                    <a href="/AllOrders" type="button" class="btn btn-soft-primary btn-sm mt-3">
                                                 Voir tous
                                             </a>
                                     <!-- end card-body -->

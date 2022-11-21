@@ -42,7 +42,7 @@
                                             <div class="col-sm-6">
                                                 <div class="float-end mt-3">
                                                 @foreach($commande->user()->get()  as $utili)
-                                                    <p><b>{{$utili->nom}}, {{$utili->prenom}}</b></p>
+                                                    <p>Nom et prenoms : <b>{{$utili->nom}}, {{$utili->prenom}}</b></p>
                                                     @endforeach
                                                     <p class="text-muted font-13">Please find below a cost-breakdown for the recent work completed. Please make payment at your earliest convenience, and do not hesitate to contact me with any questions.</p>
                                                 </div>
@@ -72,14 +72,14 @@
             
                                         <div class="row mt-4">
                                             <div class="col-sm-4">
-                                                <h6> Address de depart</h6>
+                                                <h4> Address de depart</h4>
                                                 <address>
                                                     {{$commande->lieudedepart}}
                                                 </address>
                                             </div> <!-- end col-->
             
                                             <div class="col-sm-4">
-                                                <h6>Destinations</h6>
+                                                <h4>Destinations</h4>
                                                 <address>
                                                 {{$commande->lieudelivraison}}
                                                 </address>
@@ -105,7 +105,7 @@
                                                         <tr>
                                                             <td>1</td>
                                                             <td>
-                                                            <b>Contact Source</b>
+                                                            <b class="text-info">Contact Source</b>
                                                             @foreach($commande->user()->get()  as $utili)
                                                              <br/>
                                                                 {{$utili->contact}}
@@ -115,7 +115,7 @@
                                                         <tr>
                                                             <td>2</td>
                                                             <td>
-                                                                <b>Livreur Associer</b> 
+                                                                <b class="text-info">Livreur Associer</b> 
                                                                 @foreach($commande->livreur()->get() as $livr)
                                                                 <br/>
                                                                {{$livr->nom_livreurs}}, {{$livr->prenom_livreurs}}
@@ -125,7 +125,7 @@
                                                         <tr>
                                                             <td>3</td>
                                                             <td>
-                                                                <b>Contact dudestinataire</b> <br/>
+                                                                <b class="text-info">Contact dudestinataire</b> <br/>
                                                                 {{$commande->contactdudestinataire}}
                                                             </td>
                                                         </tr>
@@ -140,10 +140,10 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="clearfix pt-3">
-                                                    <h6 class="text-muted">Details:</h6>
-                                                    <small>
+                                                    <h4 class="text-info">Details:</h4>
+                                                    
                                                         {{$commande->details}}
-                                                    </small>
+                                                    
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-sm-6">

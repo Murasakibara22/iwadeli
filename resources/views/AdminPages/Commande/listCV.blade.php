@@ -46,8 +46,7 @@
                       <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                            <h4 class="card-title">Liste de toutes les Associees a un livreur</h4>
-
+                            <h4 class="card-title">Liste de toutes les Associees a un livreur
                             <div class="app-search dropdown float-end mt-3">
                                                 <form action=" {{ route('findSearInOrderECs') }}">
                                                     <div class="input-group">
@@ -60,14 +59,14 @@
 
                                               
                                             </div>
-
+                            </h4>
 
                   <p class="card-description mt-3">
                     Vous avez la possibilité de  <code>Terminer</code> ou de <code>suprimer  </code> une Commande
                   </p>
                 
                     <!-- Fitrage -->
-                  <div class="mb-1 col-6">
+                  <div class="mb-1 col-12">
                 
                 <!-- title -->
                 <form action="{{ route ('filtreAllCECs') }}">

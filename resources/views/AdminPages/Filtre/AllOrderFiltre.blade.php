@@ -91,7 +91,7 @@
 
                            
                   <p class="card-description mt-3 mb-3">
-                  Vous avez la possibilité de  <code>suprimer  </code> une Commande ou de voir les details
+                    Vous avez la possibilité de  <code>suprimer  </code> une Commande ou de voir les details
                   </p>
                 
                     <!-- Fitrage -->
@@ -178,11 +178,27 @@
                              </div>
                             </td>
                         <td>{{$commandes->contactdudestinataire}}</td>
+
+
+                        @if(date('j M, Y', strtotime($commandes->created_at)) == $today)
                         <td>
-                        <div class="text-truncate" style=" height:20px; width:90px; overflow:hidden;">
+                        <div class="text-truncate" style=" height:20px; width:100px; overflow:hidden;">
+                            Aujourd'hui
+                            </div>
+                        </td>
+                        @elseif(date('j M, Y', strtotime($commandes->created_at)) == $yesterday)
+                        <td>
+                        <div class="text-truncate" style=" height:20px; width:100px; overflow:hidden;">
+                            Hier
+                            </div>
+                        </td>
+                        @else
+                        <td>
+                        <div class="text-truncate" style=" height:20px; width:100px; overflow:hidden;">
                             {{ date('j M, Y', strtotime($commandes->created_at)) }}
                             </div>
                         </td>
+                        @endif
                         <td>
                           <div class="text-truncate" style=" height:40px; width:80px; overflow:hidden;">
                             {{ $commandes->montant }} FCFA

@@ -46,8 +46,8 @@
                       <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                            <h4 class="card-title">Recherches dans la listes des commandes Terminer </h4>
-
+                            <h4 class="card-title">Recherches dans la listes des commandes Terminer
+                                
                             <div class="app-search dropdown float-end mt-3">
                                                 <form action="{{ route('findSearInOrderTs') }}">
                                                     <div class="input-group">
@@ -59,7 +59,8 @@
                                                 </form>
 
                                               
-                                            </div>
+                                            </div> </h4>
+
 
 
                   <p class="card-description mt-3">
@@ -67,7 +68,7 @@
                   </p>
                 
                     <!-- Fitrage -->
-                  <div class="mb-1 col-6">
+                  <div class="mb-1 col-10">
                 
                 <!-- title -->
                 <form action="{{ route('RangeInAllCTs')}}">

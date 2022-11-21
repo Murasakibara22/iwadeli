@@ -46,28 +46,27 @@
                       <div class="col-lg-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                            <h4 class="card-title">Recherches dans la listes des commandes En cour </h4>
-
+                            <h4 class="card-title">Recherches dans la listes des commandes En cour 
                             <div class="app-search dropdown float-end mt-3">
-                                                <form action="{{ route('findSearInOrderECs') }}">
-                                                    <div class="input-group">
-                                                        <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
-                                                        <span class="mdi mdi-magnify search-icon"></span>
-                                                        
-                                                        <button class="input-group-text btn btn-primary" type="submit">recherche</button>
-                                                    </div>
-                                                </form>
+                                    <form action="{{ route('findSearInOrderECs') }}">
+                                        <div class="input-group">
+                                            <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
+                                            <span class="mdi mdi-magnify search-icon"></span>
+                                            
+                                            <button class="input-group-text btn btn-primary" type="submit">recherche</button>
+                                        </div>
+                                    </form>
 
-                                              
-                                            </div>
-
+                                    
+                                </div>
+                            </h4>
 
                   <p class="card-description mt-3">
                    toutes les commandes  <code>En cour</code>  
                   </p>
                 
                     <!-- Fitrage -->
-                  <div class="mb-1 col-6">
+                  <div class="mb-1 col-12">
                 
                 <!-- title -->
                 <form action="{{ route('RangeInAllCECs')}}">

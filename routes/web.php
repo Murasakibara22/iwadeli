@@ -127,9 +127,14 @@ Route::get('/filtreInAllCEnAttente', [FiltreController::class, 'findSearInOrderE
 Route::get('/RangeInAllCEnAttente', [FiltreController::class, 'RangeInAllCEA'])->name('RangeInAllCEAs');
 
 
+//filtre dans toutes commandes
+Route::get('/FilterAllCom', [FiltreController::class, 'FilterAllCommande'])->name('FilterAllCommandes');
+/**END FILTRE */
+
+
 /**PAGE DE TOUTES LES COMMANDES */
 Route::get('/AllOrders', [OrderController::class, 'PagesAllCOmmandes']);
-
+//detail commande
 Route::get('/DetailOneOrder/{id}', [OrderController::class, 'PagesDetailOneOrder'])->whereNumber('id');
 });
 
