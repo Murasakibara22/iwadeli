@@ -19,6 +19,8 @@ class FiltreController extends Controller
         $today = date('j M, Y', strtotime(Carbon::today()) );
         $yesterday = date('j M, Y', strtotime(Carbon::yesterday()) );
         $typeOfFiltreParent = $request->FiltrerSelon;
+        $date = Carbon::now()->subDays(7);
+        $dateMonth = Carbon::now()->subDays(30);
         if($request->FiltrerSelon == "Aujourd'hui"){
             $commande = Order::WhereDate('updated_at',Carbon::today())->where('terminate',1)->where('status',1)->OrderBy('created_at','DESC')->get();
       
@@ -39,7 +41,7 @@ class FiltreController extends Controller
                 }
         }
         if($request->FiltrerSelon == "7 derniers jours"){
-            $commande = Order::WhereDate('updated_at',Carbon::week())->where('terminate',1)->where('status',1)->OrderBy('created_at','DESC')->get();
+            $commande = Order::Where('updated_at','>=',$date)->where('terminate',1)->where('status',1)->OrderBy('created_at','DESC')->get();
 
             if (count ($commande) > 0 && isset($commande)){
                 return view('AdminPages.Filtre.CT.list',compact('today','yesterday','typeOfFiltreParent'))->with('commande',$commande);
@@ -48,7 +50,7 @@ class FiltreController extends Controller
                 }
         }
         if($request->FiltrerSelon == "il y a un Mois"){
-            $commande = Order::WhereDate('updated_at',Carbon::Month())->where('terminate',1)->where('status',1)->OrderBy('created_at','DESC')->get();
+            $commande = Order::Where('updated_at','>=',$dateMonth)->where('terminate',1)->where('status',1)->OrderBy('created_at','DESC')->get();
 
             if (count ($commande) > 0 && isset($commande)){
                 return view('AdminPages.Filtre.CT.list',compact('today','yesterday','typeOfFiltreParent'))->with('commande',$commande);
@@ -204,6 +206,8 @@ class FiltreController extends Controller
       //filtre sur toutes les commandes En cour  
       function filtreAllCEC(Request $request)
       {
+        $dateMonth = Carbon::now()->subDays(30);
+        $date = Carbon::now()->subDays(7);
           $today = date('j M, Y', strtotime(Carbon::today()) );
           $yesterday = date('j M, Y', strtotime(Carbon::yesterday()) );
           $typeOfFiltreParent = $request->FiltrerSelon;
@@ -227,7 +231,7 @@ class FiltreController extends Controller
                   }
           }
           if($request->FiltrerSelon == "7 derniers jours"){
-              $commande = Order::WhereDate('updated_at',Carbon::week())->where('terminate',0)->where('status',1)->OrderBy('created_at','DESC')->get();
+              $commande = Order::Where('updated_at','>=',$date)->where('terminate',0)->where('status',1)->OrderBy('created_at','DESC')->get();
   
               if (count ($commande) > 0 && isset($commande)){
                   return view('AdminPages.Filtre.CEC.list',compact('today','yesterday','typeOfFiltreParent'))->with('commande',$commande);
@@ -236,7 +240,7 @@ class FiltreController extends Controller
                   }
           }
           if($request->FiltrerSelon == "il y a un Mois"){
-              $commande = Order::WhereDate('updated_at',Carbon::Month())->where('terminate',0)->where('status',1)->OrderBy('created_at','DESC')->get();
+              $commande = Order::Where('updated_at','>=',$dateMonth)->where('terminate',0)->where('status',1)->OrderBy('created_at','DESC')->get();
   
               if (count ($commande) > 0 && isset($commande)){
                   return view('AdminPages.Filtre.CEC.list',compact('today','yesterday','typeOfFiltreParent'))->with('commande',$commande);
@@ -361,6 +365,8 @@ class FiltreController extends Controller
       //filtre sur toutes les commandes En Attente  
       function filtreAllCEA(Request $request)
       {
+        $dateMonth = Carbon::now()->subDays(30);
+        $date = Carbon::now()->subDays(7);
           $today = date('j M, Y', strtotime(Carbon::today()) );
           $yesterday = date('j M, Y', strtotime(Carbon::yesterday()) );
           $typeOfFiltreParent = $request->FiltrerSelon;
@@ -386,7 +392,7 @@ class FiltreController extends Controller
                   }
           }
           if($request->FiltrerSelon == "7 derniers jours"){
-              $commande = Order::WhereDate('updated_at',Carbon::week())->where('terminate',0)->where('status',0)->where('id_livreurs',NULL)->OrderBy('created_at','DESC')->get();
+              $commande = Order::Where('updated_at','>=',$date)->where('terminate',0)->where('status',0)->where('id_livreurs',NULL)->OrderBy('created_at','DESC')->get();
   
               if (count ($commande) > 0 && isset($commande)){
                 $livreur = Livreur::OrderBy('nom_livreurs','ASC')->get();
@@ -396,7 +402,7 @@ class FiltreController extends Controller
                   }
           }
           if($request->FiltrerSelon == "il y a un Mois"){
-              $commande = Order::WhereDate('updated_at',Carbon::Month())->where('terminate',0)->where('status',0)->where('id_livreurs',NULL)->OrderBy('created_at','DESC')->get();
+              $commande = Order::Where('updated_at','>=',$dateMonth)->where('terminate',0)->where('status',0)->where('id_livreurs',NULL)->OrderBy('created_at','DESC')->get();
   
               if (count ($commande) > 0 && isset($commande)){
                 $livreur = Livreur::OrderBy('nom_livreurs','ASC')->get();
