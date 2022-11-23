@@ -49,6 +49,8 @@ Route::post('/logout', [AuthController::class, 'Logout'])->middleware('auth:sanc
 
 Route::get('/getUsers', [UserController::class, 'getUser']);
 
+Route::get('/return_order_user/{user_id}', [OrderController::class, 'getUserOrder'])->middleware('auth:sanctum')->whereNumber('user_id');
+
 
 //admin
 Route::middleware(['auth:sanctum', 'role:admin'])->group(function(){ 

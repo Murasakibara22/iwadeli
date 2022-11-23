@@ -46,6 +46,24 @@ class OrderController extends Controller
   
           
       }
+
+
+      //liste des commandes d'un utilisateur 
+
+      public function getUserOrder($user_id){
+        $order = Order::where('id_users',$user_id)->get();
+
+        if($commande && $commande->count() > 0){
+          return response()->json([
+            'commande' => $order
+          ]);
+        }else{
+          return response()->json([
+            'message' => "l'utilisateur n'a aucune commande"
+          ]);
+        }
+
+      }
   
       //update one order
       public function updateCom(Request $request, $id){
