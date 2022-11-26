@@ -53,7 +53,7 @@ class OrderController extends Controller
       public function getUserOrder($user_id){
         $order = Order::where('id_users',$user_id)->get();
 
-        if($commande && $commande->count() > 0){
+        if($order && $order->count() > 0){
           return response()->json([
             'commande' => $order
           ]);
