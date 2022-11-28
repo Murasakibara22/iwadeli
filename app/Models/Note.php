@@ -16,7 +16,7 @@ class Note extends Model
         'id_livreurs'
     ];
 
-    public function notes(){
+    public function livreur(){
         $this->belongsTo(Livreur::class, 'id_livreurs');
     }
 }
