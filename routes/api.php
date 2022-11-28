@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\LivreurController;
@@ -29,7 +30,7 @@ Route::post('/connexion', [AuthController::class, 'connecte']);
 Route::post('/inscription', [AuthController::class, 'enreg']);
 
 
-
+Route::get('/note_livreur/{etoiles}/{livreur_id}',[NoteController::class, 'createNote'])->middleware('auth:sanctum')->whereNumber('livreur_id'); //notez un livreur avec des etoiles
 
 
 Route::post('/add', [OrderController::class, 'create']);//recuperer l'id du livreur et l'envoyer en base de Order (lorsque l'admin accepte avec l'id du livreur)
