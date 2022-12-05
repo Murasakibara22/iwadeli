@@ -122,11 +122,11 @@
                   <table class="table">
                     <thead class="thead-dark">
                         <tr class="bg-warning">
+                        <th scope="col">photo</th>
                         <th scope="col">Noms</th>
                         <th scope="col">prenoms</th>
                         <th scope="col">contact</th>
                         <th scope="col">date de creation</th>
-                        <th scope="col">photo</th>
                         <th scope="col">details</th>
                         <th scope="col">modifier</th>
                         <th scope="col">suprimer</th>
@@ -135,6 +135,10 @@
                     <tbody>
                         @foreach($livreur as $livreurs)
                         <tr>
+                        <td class="fw-bold">
+                            <img src="../images/Livreur/{{$livreurs->photo}}" alt="image" width="40 height="10%" class="rounded-5"/>
+                          
+                          </td>
                                <td class="fw-bold" >
                                     {{$livreurs->nom_livreurs}}
                               </td>
@@ -142,7 +146,7 @@
                         <td class="fw-bold"> {{$livreurs->prenom_livreurs}}</td>
                         <td>{{$livreurs->contact}}</td>
                         <td>{{ date('j M, Y', strtotime($livreurs->created_at)) }}</td>
-                        <td>photo</td>
+                        
                         <td>
                            <a href="/detailsLiv/{{$livreurs->id}}"><button type="button" class="btn btn-warning"><i class="mdi mdi-eye"></i> </button> </a> 
                         </td>
