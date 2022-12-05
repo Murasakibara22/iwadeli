@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
@@ -22,6 +23,8 @@ use App\Http\Controllers\LivreurController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/get_all_note_livreur/{livreur_id}',[NoteController::class,'get_all_note_livreur'])->whereNumber('livreur_id');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

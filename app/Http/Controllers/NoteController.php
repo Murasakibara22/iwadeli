@@ -10,38 +10,59 @@ class NoteController extends Controller
 {
 
     
-    public function createNote($etoiles, $livreur_id){
-
-             $note = Note::create([
-                'nbEtoile' => $etoiles,
-                'id_livreurs' => $livreur_id,
-            ]);
-                $livreur = Livreur::find($livreur_id);
+    public function createNote(Request $request,$livreur_id){
+        $livreur = Livreur::find($livreur_id);
+            if(!is_null($livreur)){
+                    $note = new Note;
+                    $note->nbEtoile = $request->nbEtoile;
+                    if($request->details){
+                        $note->details = $request->details;
+                    }else{
+                        $note->details = "Aucun details";
+                    }
+                    $note->id_livreurs = $livreur_id;
+        
+                $note->save();
+                if($note->save()){
+                    $livreur = Livreur::find($livreur_id);
+                    return response()->json([
+                        'note'=> "Vous venez d'attribuer une note de $etoiles /5 au livreur : $livreur->nom_livreurs , $livreur->prenom_livreurs , Merci!!"
+                    ]);
+                }else{
+                    return response()->json([
+                        'status'=> "une erreur c'est produite lors de l'envoie de la note"
+                    ]);
+                }
+            }else{
                 return response()->json([
-                    'note'=> "Vous venez d'attribuer une note de $etoiles /5 au livreur : $livreur->nom_livreurs , $livreur->prenom_livreurs , Merci!!"
+                    'status'=> "Le livreur selectionner n'a pas ete trouver"
                 ]);
-             
+            }
+
+           
+
     }
 
 
 
-    /****A  REPRENDRE 
+    
     //toutes les notes d'un livreur
     public function get_all_note_livreur($livreur_id){
         $livreur = Livreur::where('id',$livreur_id)->firstOrFail();
         if(!is_null($livreur)){
-            //toutes les commandes effectuer
-            $nbNote = Note::all();
-            if(!is_null($nbNote)){
-                foreach($nbNote as $nbNotes){
-                    if($nbNotes->id_livreurs == $livreur->id){
-                        $nbNotes ;
-                    }
-                }
+           
+          
+            // $nbNote = Note::all();
+            // if(!is_null($nbNote)){
+            //     foreach($nbNote as $nbNotes){
+            //         if($nbNotes->id_livreurs == $livreur->id){
+            //             $nbNotes ;
+            //         }
+            //     }
                 
-            }
+            // }
         }
     }
 
-    */
+    
 }
