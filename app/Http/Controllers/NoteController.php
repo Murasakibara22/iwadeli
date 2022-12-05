@@ -22,4 +22,26 @@ class NoteController extends Controller
                 ]);
              
     }
+
+
+
+    /****A  REPRENDRE 
+    //toutes les notes d'un livreur
+    public function get_all_note_livreur($livreur_id){
+        $livreur = Livreur::where('id',$livreur_id)->firstOrFail();
+        if(!is_null($livreur)){
+            //toutes les commandes effectuer
+            $nbNote = Note::all();
+            if(!is_null($nbNote)){
+                foreach($nbNote as $nbNotes){
+                    if($nbNotes->id_livreurs == $livreur->id){
+                        $nbNotes ;
+                    }
+                }
+                
+            }
+        }
+    }
+
+    */
 }
