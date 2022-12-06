@@ -76,8 +76,10 @@ class TemoignageController extends Controller
                 $Temoignage->nom         = $request->nom;
                 $Temoignage->profession  = $request->profession;
                 $Temoignage->slug   = Str::slug("$request->token". Hash::make($request->token),"-");
-                $Temoignage->message     = $request->message;
-      
+
+                if($request->message){
+                    $Temoignage->message     = $request->message;
+                }
                 if (request()->file('photo')) {
                     $img = request()->file('photo');
                         $messi = md5($img->getClientOriginalExtension().time().$request->nom).".".$img->getClientOriginalExtension();
