@@ -9,6 +9,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\FiltreController;
 use App\Http\Controllers\LivreurController;
+use App\Http\Controllers\TemoignageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -137,6 +138,29 @@ Route::get('/RangeInAllCEnAttente', [FiltreController::class, 'RangeInAllCEA'])-
 //filtre dans toutes commandes
 Route::get('/FilterAllCom', [FiltreController::class, 'FilterAllCommande'])->name('FilterAllCommandes');
 /**END FILTRE */
+
+
+
+
+
+
+
+
+
+//ajouter un Temoignage
+Route::get('/addTemoignage', [TemoignageController::class  , 'NewTemoignage']);
+
+Route::post('/addTemoignage', [TemoignageController::class  , 'addTemoignage'])->name('AddTemoignage');
+//lister tous les Temoignages
+Route::get('/Temoignage_list', [TemoignageController::class ,'listAllTemoignage']);
+
+Route::get('/temoignage_edit/{slug}', [TemoignageController::class , 'editTemoignage']);
+
+Route::put('/temoignagEdit/{slug}', [TemoignageController::class , 'editTemoignages'])->name('editSecteurs');
+
+Route::get('temoignagedelet/{slug}', [TemoignageController::class , 'deleteTemoignage']);
+
+Route::delete('/temoignagedestroy/{slug}', [TemoignageController::class , 'destroyTemoignage']);
 
 
 /**PAGE DE TOUTES LES COMMANDES */

@@ -398,6 +398,16 @@
                     <span> Commandes </span>
                 </a>
             </li>
+
+
+            <li class="side-nav-title side-nav-item">IWA Site </li>
+
+            <li class="side-nav-item">
+                <a href="/Temoignage_list" class="side-nav-link">
+                    <i class="uil-clipboard-alt"></i>
+                    <span> Témoignages </span>
+                </a>
+            </li>
         </ul>
         <!--- End Sidemenu -->
 
