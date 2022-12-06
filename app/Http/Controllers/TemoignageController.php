@@ -13,7 +13,7 @@ class TemoignageController extends Controller
 {
     
     public function NewTemoignage(){
-        return view('Temoignage.new');
+        return view('AdminPages.Site.Temoignage.new');
       }
 
       public function addTemoignage(Request $request){
@@ -51,14 +51,14 @@ class TemoignageController extends Controller
 
         public function listAllTemoignage(){
             $Temoignage = Temoignage::all();
-            return view('Temoignage.list', compact('Temoignage'));
+            return view('AdminPages.Site.Temoignage.list', compact('Temoignage'));
         }
 
       public function editTemoignage($slug){
         try{
         $Temoignage = Temoignage::where('slug',$slug)->first();
             if(isset($Temoignage) ){
-                return view('Temoignage.edit', compact('Temoignage')) ;
+                return view('AdminPages.Site.Temoignage.edit', compact('Temoignage')) ;
             }else{
                  return redirect('/Temoignage_list')->with('NotExist', 'pas de tem') ;
                 }
@@ -105,7 +105,7 @@ class TemoignageController extends Controller
         try{
         $Temoignage = Temoignage::where('slug',$slug)->first();
             if(isset($Temoignage)) { 
-                return view('Temoignage.delete', compact('Temoignage')); 
+                return view('AdminPages.Site.Temoignage.delete', compact('Temoignage')); 
             }else
             {
                 return redirect('/Temoignage_list')->with('NotExist', 'pas de tem') ;
