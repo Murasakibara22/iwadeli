@@ -168,7 +168,7 @@
 						<div class="row align-items-center">
 							<div class="col-lg-6 col-md-7">
 								<div class="title-style-one text-center text-md-start">
-									<h2 class="main-title fw-bold tx-dark m0">Que disent<span>nos Clients</span></h2>
+									<h2 class="main-title fw-bold tx-dark m0">Que disent<span class="ms-2"> nos Clients</span></h2>
 								</div> <!-- /.title-style-one -->
 							</div>
 							<div class="col-lg-6 col-md-5 ms-auto d-flex justify-content-center justify-content-sm-end">
