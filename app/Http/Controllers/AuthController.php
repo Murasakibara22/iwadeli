@@ -65,4 +65,33 @@ public function connecte(Request $request)
 
         return response()->json(['message' => 'deconnecter avec succees'], 200);
     }
+
+
+
+    //modifier le Password Utilisateur
+    public function updatePasswordUser(Request $request, $user_id)
+    {
+     
+        $change_password = User::where('id',$user_id)->first();
+
+        if(!is_null($change_password)){
+
+        if ($request->newpassword !== $request->confirmation) {
+            return [
+                'message' => 'Les mots de passe ne correspondent pas'
+            ];
+        }
+
+         $change_password->update([
+            'password' => Hash::make($request->newpassword)
+        ]);
+
+        return $change_password;
+        }else{
+            return response()->json([
+                'user' => "Utilisateurs non trouver"
+            ]);
+        }
+
+    }
 }

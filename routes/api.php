@@ -97,6 +97,9 @@ Route::delete('/deleteLivreur/{id}', [LivreurController::class, 'destroyLivreur'
 Route::get('/total', [LivreurController::class, 'countCourse'])->middleware('auth:sanctum');//admin
 
 
+
+  //modifier son mot de passe
+  Route::post('/change_password_user/{user_id}', [AuthController::class,'updatePasswordUser'])->whereNumber('user_id');
 });
 
 

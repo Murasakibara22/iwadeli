@@ -2,175 +2,161 @@
 
 @section('content')
 
-
-       <!-- ============================================================== -->
+ <!-- ============================================================== -->
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
 
             <div class="content-page">
                 <div class="content">
+                @if ( session('Valide'))
+                    <div class="alert alert-success mt-1">
+                    La commande a ete valider
+                    </div>
+                    @endif
+                @if ( session('NotValide'))
+                    <div class="alert alert-warning mt-1">
+                    La commande n'a pas pu etre valider , verifier si le livreur n'a pas deja une commande en cours
+                    </div>
+
+                    @endif
                 @if ( session('successDele'))
-                    <!-- Basic Toast -->
-                    <div class="toast fade show  ms-15 bg-success align-center" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <img src="./assets/images/logo/freshcart-logo.svg" alt="brand-logo" height="12" class="me-1" />
-                            <strong class="me-auto">succes</strong>
-                            <small>Maintenant</small>
-                            <button type="button" class="ms-2 mb-1 btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-                            Utilisateur Supprimer avec suces .
-                        </div>
-                    </div> <!--end toast-->
+                    <div class="alert alert-success mt-1">
+                    Utilisateur Supprimer
+                    </div>
 
                     @endif
-
                 @if ( session('succesEdit'))
-                    <!-- Basic Toast -->
-                    <div class="toast fade show  ms-7 bg-success align-center" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <img src="./assets/images/logo/freshcart-logo.svg" alt="brand-logo" height="12" class="me-1" />
-                            <strong class="me-auto">succes</strong>
-                            <small>Maintenant</small>
-                            <button type="button" class="ms-2 mb-1 btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-                            Utilisateur Modifier avec suces
-                        </div>
-                    </div> <!--end toast-->
+                    <div class="alert alert-success" >
+                    L'utilisateur a ete modifier
+                    </div>
+
+                    @endif
+                 @if ( session('NotExist'))
+                    <div class="alert alert-danger mt-1">
+                    L'utilisateur spécifier n'existe pas
+                    </div>
 
                     @endif
 
+                    @if ( session('Nodetails'))
+                    <div class="alert alert-warning mt-1">
+                    No Details found. veuillez rechercher selon le nom ou le prenom !
+                    </div>
+                    @endif
 
-                @if ( session('Nodetails'))
-                    <!-- Basic Toast -->
-                    <div class="alert alert-danger mt-2" role="alert">
-                        Utilisateur Non trouver
-                      </div><!--end toast-->
+                    @if ( session('erreur'))
+                    <div class="alert alert-warning mt-1">
+                    l'un des champs n'est pas correctement remplis
+                    </div>
 
                     @endif
+
+                    <!--  -->
+                  
 
                     <!-- Start Content-->
                     <div class="container-fluid">
 
-                        <!-- start page title -->
-                        <div class="row">
+                     <!-- start page title -->
+                     <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"> <a href="/addUser" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-circuit"></i> Ajoutez des Utilisateurs</button> </a></li>
-
+                                            
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Utilisateurs </h4>
+                                    <h4 class="page-title"> Listes des Utilisateurs
+                                    <a href="/newUser" class="float-end"><button type="button" class="btn btn-outline-info rounded-pill ms-5"><i class="uil-plus-circle"></i> Ajoutez un Utilisateurs</button> </a>
+                                </h4>
                                 </div>
                             </div>
                         </div>
                         <!-- end page title -->
 
 
-                        
-                        <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Liste des utilisateurs 
-                  <div class="app-search dropdown mt-2  float-end">
+
+                      <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                            <h4 class="card-title">Liste de tous les utilisateurs</h4>
+
+                            <div class="app-search dropdown float-end mt-3 mb-2">
                                                 <form action="{{ route('findSearch') }}">
                                                     <div class="input-group">
                                                         <input type="search" name= "search" value="{{  request()->search ?? '' }}"  class="form-control dropdown-toggle"  placeholder="Recherche..." id="top-search">
                                                         <span class="mdi mdi-magnify search-icon"></span>
-                                             
-                                                        <button class="input-group-text btn btn-primary" type="submit">Search</button>
+                                                        
+                                                        <button class="input-group-text btn btn-primary" type="submit">recherche</button>
                                                     </div>
                                                 </form>
 
                                               
                                             </div>
-                  </h4>
-                  <p class="card-description">
-                    Vous avez la possibilité de  <code>modifier</code> ou de <code>suprimer  </code> un utilisateur
+                 
+                                            <p class="card-description mt-3 mb-3">
+                    Vous avez la possibilité de  <code>modifier</code> ou de <code>suprimer  </code> un Livreur
                   </p>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>
-                            Photo 
-                          </th>
-                          <th>
-                           Nom
-                          </th>
-                          <th>
-                            prenom
-                          </th>
-                          <th>
-                            role
-                          </th>
-                       
-                          <th>
-                            email
-                          </th>
-                          <th>
-                            Mobile
-                          </th>
-                          <th>
-                            Modifier
-                          </th>
-                          <th>
-                            Suprimer
-                          </th>
-        
+                    <!-- Fitrage -->
+                  <div class="mb-1 col-12">
+                
+                
+              </div>
+
+
+
+
+
+         <div class="table-responsive col-12">
+                  <table class="table">
+                    <thead class="thead-dark">
+                        <tr class="bg-white">
+                        <th scope="col">photos</th>
+                        <th scope="col">Noms</th>
+                        <th scope="col">Prenoms</th>
+                        <th scope="col">contact</th>
+                        <th scope="col">Email </th>
+                        <th scope="col">Inscrit le</th>
+                        <th scope="col">modifer</th> 
+                        <th scope="col">Supprimer</th>
                         </tr>
-                      </thead>
-                      @foreach($user as $u)
-                      <tbody>
+                    </thead>
+                    <tbody>
+                        @foreach($user as $users)
                         <tr>
-                          <td class="py-2">
-                            <img src="../images/User/{{$u->photo}}" alt="image" width="100%" height="40%" class="rounded-5"    data-bs-toggle="modal" data-bs-target="#exampleModal"/>
-                          
-                          </td>
-                          <td>
-                            {{$u->nom}}
-                          </td>
-                         
-                          <td>
-                          {{$u->prenom}}
-                          </td>
-                           <td>
-                          {{$u->role}}
-                          </td>
-                          <td>
-                          {{$u->email}}
-                          </td>
-                          <td>
-                          {{$u->contact}}
-                          </td> 
-                       <td>
-                               <a href="/changeNewUser/{{$users->id}}">  <button type="button" class="btn btn-outline-primary">Modifier</button> </a> 
-                          </td>
-                          <td>
-                               <a href="/deleteUs/{{$users->id}}">  <button type="button" class="btn btn-outline-danger">Suprimer</button> </a> 
-                          </td>
+                               <td class="table-user" >
+                               <img src="../images/User/{{$users->photo}}" alt="table-user" class="me-2 rounded-circle" />
+                              </td>
+                               
+                        <td class="fw-bold">{{$users->nom}}</td>
+                        <td>{{$users->prenom}}</td>
+                        <td>{{$users->contact}}</td>
+                        <td>{{$users->email}}</td>
+               
+                        <td>{{date('j M, Y', strtotime($users->created_at))}}</td>
+                        <td class="table-user">
+                        <a href="/changeNewUser/{{$users->id}}"> <img src="../dashStyle/assets/images/roudedEdit.gif" alt="table-user" class="me-2 rounded-circle " /></a> 
+                        </td>
+                         <td  class="table-user">
+                            <a href="/deleteUs/{{$users->id}}">  <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle" /></a> 
+                        </td>
                         </tr>
-                      </tbody>
-                      @endforeach
+                    </tbody>
+                    @endforeach
                     </table>
-                  </div>
+
+
+                </div>
                 </div>
               </div>
-</div>
-                            </div><!-- end col-->
-                      
-
-                 
-
-                </div> 
-
             </div>
 
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
+
+
+                     </div>
+                </div>
+            </div>
+
+
 
 @endsection
