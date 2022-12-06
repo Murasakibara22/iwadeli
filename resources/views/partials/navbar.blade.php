@@ -8,8 +8,11 @@
 					<div class="d-flex align-items-center justify-content-between">
 						<div class="logo order-lg-0"><a href="/" class="d-block"><img src="frontStyle/images/logo/logo.png" alt="" width="95"></a></div>
 
+
 						<div class="right-widget d-flex align-items-center order-lg-3">
-							<a href="contact-us-v4.html" class="contact-btn-one fs-16 fw-500 text-white tran3s d-none d-lg-block">Contactez nous</a>
+							<a href="/contactez-nous" class="contact-btn-one fs-16 fw-500 text-white tran3s d-none d-lg-block me-3">Contactez nous</a>
+
+							<a href="/login" class="contact-btn-one fs-14 fw-500 text-white bg-warning tran3s d-none d-lg-block">Login</a>
 						</div> <!-- /.right-widget -->
 
 						<nav class="navbar navbar-expand-lg order-lg-2">
@@ -29,11 +32,15 @@
 							        	<a class="nav-link " href="404.html" role="button"  aria-expanded="false">Tout sur l'App</a>
 						            </li>
 						    	</ul>
+
+
 						    	<!-- Mobile Content -->
 						    	<div class="mobile-content d-block d-lg-none">
 						    		<div class="d-flex flex-column align-items-center justify-content-center mt-70">
-						    			<a href="/contactez-nous" class="contact-btn-one fs-16 fw-500 text-white tran3s">Contactez nous</a>
+									<a href="/login" class="contact-btn-one bg-warning fs-16 fw-500 text-white tran3s mb-4">Login</a>
+						    			<a href="/contactez-nous" class="contact-btn-one fs-16 fw-500 text-white tran3s ">Contactez nous</a>
 						    		</div>
+									
 						    	</div> <!-- /.mobile-content -->
 						    </div>
 						</nav>
