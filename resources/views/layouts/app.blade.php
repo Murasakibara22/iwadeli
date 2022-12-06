@@ -2,10 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
-		<meta name="description" content="Jano creative multipurpose is a beautiful website template designed for SEO & Digital Agency websites.">
-      	<meta property="og:site_name" content="Jano">
-      	<meta property="og:url" content="https://heloshape.com/">
+		<meta name="keywords" content="Murasakibara Atsutshi">
+		<meta name="description" content="Murasakibara Atsutshi">
+      	<meta property="og:site_name" content="Murasakibara Atsutshi">
+      	<meta property="og:url" content="Murasakibara Atsutshi">
       	<meta property="og:type" content="website">
       	<meta property="og:title" content="iwa delivery">
 		
@@ -22,7 +22,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="#1d2b40">
 		<title>iwa</title>
 		<!-- Favicon -->
-		<link rel="icon" type="image/png" sizes="56x56" href="frontStyle/images/logo/logo.png">
+		<link rel="icon" type="image/png" sizes="56x56" href="{{ asset('frontStyle/images/logo/logo.png') }}">
 		<!-- Main style sheet -->
 		<link rel="stylesheet" type="text/css" href="{{ asset('frontStyle/css/style.css') }}" media="all">
 		<!-- responsive style sheet -->

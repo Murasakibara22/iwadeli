@@ -85,19 +85,19 @@
 						    		<li class="d-block d-lg-none"><div class="logo"><a href="index.html" class="d-block"><img src="frontStyle/images/logo/logo_01.png" alt="" width="95"></a></div></li>
 							       
 						            <li class="nav-item dropdown mega-dropdown-md">
-							        	<a class="nav-link " href="index.html" role="button"   aria-expanded="false">Accueil</a>
+							        	<a class="nav-link " href="/" role="button"   aria-expanded="false">Accueil</a>
 						            </li>
 									<li class="nav-item dropdown mega-dropdown-md">
-							        	<a class="nav-link " href="about-v2.html" role="button"  aria-expanded="false"> A propos </a>
+							        	<a class="nav-link " href="/about" role="button"  aria-expanded="false"> A propos </a>
 						            </li>
 									<li class="nav-item active dropdown mega-dropdown">
-							        	<a class="nav-link " href="404.html" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Tout sur l'App</a>
+							        	<a class="nav-link " href="/404-iwa" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Tout sur l'App</a>
 						            </li>
 						    	</ul>
 						    	<!-- Mobile Content -->
 						    	<div class="mobile-content d-block d-lg-none">
 						    		<div class="d-flex flex-column align-items-center justify-content-center mt-70">
-						    			<a href="contact-us-v2.html" class="contact-btn-one fs-16 fw-500 text-white tran3s">Contactez nous</a>
+						    			<a href="/contactez-nous" class="contact-btn-one fs-16 fw-500 text-white tran3s">Contactez nous</a>
 						    		</div>
 						    	</div> <!-- /.mobile-content -->
 						    </div>

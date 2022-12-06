@@ -17,4 +17,8 @@ class HomeController extends Controller
     public function contact(){
         return view('front.contact');
     }
+
+    public function notfound(){
+        return view('front.NotFound');
+    }
 }

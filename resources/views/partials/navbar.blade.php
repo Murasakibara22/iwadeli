@@ -6,7 +6,7 @@
 			<header class="theme-main-menu sticky-menu theme-menu-one">
 				<div class="inner-content position-relative">
 					<div class="d-flex align-items-center justify-content-between">
-						<div class="logo order-lg-0"><a href="index.html" class="d-block"><img src="frontStyle/images/logo/logo.png" alt="" width="95"></a></div>
+						<div class="logo order-lg-0"><a href="/" class="d-block"><img src="frontStyle/images/logo/logo.png" alt="" width="95"></a></div>
 
 						<div class="right-widget d-flex align-items-center order-lg-3">
 							<a href="contact-us-v4.html" class="contact-btn-one fs-16 fw-500 text-white tran3s d-none d-lg-block">Contactez nous</a>
@@ -18,9 +18,9 @@
 						 	</button>
 						    <div class="collapse navbar-collapse" id="navbarNav">
 						    	<ul class="navbar-nav">
-						    		<li class="d-block d-lg-none"><div class="logo"><a href="index.html" class="d-block"><img src="frontStyle/images/logo/logo_01.png" alt="" width="95"></a></div></li>
+						    		<li class="d-block d-lg-none"><div class="logo"><a href="index.html" class="d-block"><img src="frontStyle/images/logo/logo.png" alt="" width="95"></a></div></li>
 							        <li class="nav-item active dropdown mega-dropdown">
-							        	<a class="nav-link " href="index.html" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Accueil</a>
+							        	<a class="nav-link " href="/" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Accueil</a>
 						            </li>
 						            <li class="nav-item dropdown mega-dropdown-md">
 							        	<a class="nav-link " href="/about" role="button"   aria-expanded="false">A propos</a>

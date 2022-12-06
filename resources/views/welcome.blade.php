@@ -139,11 +139,10 @@
 								<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_10.svg" alt="" class="lazy-img shapes shape-two">
 								<div class="shapes shape-three"></div>
 								<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_11.svg" alt="" class="lazy-img shapes shape-four">
-								<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_12.svg" alt="" class="lazy-img shapes shape-five">
 								<div class="shapes shape-six"></div>
 								<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_13.svg" alt="" class="lazy-img shapes shape-seven">
 								<div class="card-one wow fadeInUp" data-wow-delay="0.25s">
-									<div class="icon d-flex align-items-center justify-content-center rounded-circle"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_06.svg" alt="" class="lazy-img"></div>
+									<div class="icon d-flex align-items-center justify-content-center rounded-circle"> </div>
 									<div class="name fs-18 fw-500 tx-dark mb-10">Gbagbo<span class="opacity-50">Président</span></div>
 									<p class="fs-18 m0">Notre objectif est de répondre à tous vos besoins....</p>
 								</div> <!-- /.card-one -->
@@ -261,12 +260,10 @@
 						</div>
 						<div class="col-xl-6 col-lg-5 col-md-8 col-sm-10 order-lg-first wow fadeInLeft">
 							<div class="img-meta-two d-inline-block position-relative pb-50">
-								<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/media/img_04.jpg" alt="" class="lazy-img rounded-3">
-								<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_15.svg" alt="" class="lazy-img shapes shape-one">
-								<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_16.svg" alt="" class="lazy-img shapes shape-two">
-								<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_17.svg" alt="" class="lazy-img shapes shape-three">
-								<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_18.svg" alt="" class="lazy-img shapes shape-four">
-								<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_19.svg" alt="" class="lazy-img shapes shape-five">
+								<img src="images/lazy.svg" data-src="frontStyle/images/media/img_04.jpg" alt="" class="lazy-img rounded-3">
+								<img src="images/lazy.svg" data-src="frontStyle/images/shape/shape_16.svg" alt="" class="lazy-img shapes shape-two">
+								<img src="images/lazy.svg" data-src="frontStyle/images/shape/shape_17.svg" alt="" class="lazy-img shapes shape-three">
+								<img src="images/lazy.svg" data-src="frontStyle/images/shape/shape_19.svg" alt="" class="lazy-img shapes shape-five">
 								<div class="card-one wow fadeInUp" data-wow-delay="0.25s">
 									<div class="icon d-flex align-items-center justify-content-center rounded-circle"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_08.svg" alt="" class="lazy-img"></div>
 									<h5 class="fw-500 m0">Charger du call center</h5>
@@ -391,10 +388,7 @@
 						</div>
 					</div>
 				</div>
-				<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_20.svg" alt="" class="lazy-img shapes shape-one" style="top:5%; left: 10%;">
-				<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_21.svg" alt="" class="lazy-img shapes shape-two" style="bottom:-4%; left: 18%;">
-				<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_22.svg" alt="" class="lazy-img shapes shape-three" style="bottom:-4%; right: 23%;">
-				<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_23.svg" alt="" class="lazy-img shapes shape-four" style="top:-3%; right: 14%;">
+
 			</div> <!-- /.wrapper -->
 
 

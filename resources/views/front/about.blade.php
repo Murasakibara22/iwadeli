@@ -32,14 +32,13 @@
 						<div class="quote-wrapper text-center wow fadeInUp">
 							<div class="row">
 								<div class="col-md-10 m-auto">
-									<div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto"><img src="images/lazy.svg" data-src="images/icon/icon_138.svg" alt="" class="lazy-img"></div>
+									<div class="icon rounded-circle d-flex align-items-center justify-content-center m-auto"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_138.svg" alt="" class="lazy-img"></div>
 									<p class="tx-dark mt-25 mb-30 fw-500">“Nous avons effectuer plus de 3500 livraison entre Août et Septembre 2022. entreprise la plus primée”</p>
 									<h6 class="fw-normal fst-italic tx-dark opacity-50 fs-20">Prumad</h6>
 								</div>
 							</div>
 						</div> <!-- /.quote-wrapper -->
 						<div class="shapes shape-two"></div>
-						<img src="images/lazy.svg" data-src="images/assets/sticker_02.png" alt="" class="lazy-img shapes shape-four">
 						<div class="shapes shape-five"></div>
 						<div class="shapes shape-six"></div>
 					</div> <!-- /.line-bg-wrapper -->
@@ -63,7 +62,7 @@
 										<h2 class="main-title tx-dark">IWA & <br> PRUMAD</h2>
 									</div>
 									<div class="d-flex mt-70 mb-40 lg-mt-40 lg-mb-10">
-										<img src="images/lazy.svg" data-src="images/shape/shape_164.svg" alt="" class="lazy-img d-none d-lg-block">
+										<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_164.svg" alt="" class="lazy-img d-none d-lg-block">
 										<p class="text-lg m0 ps-lg-5">Je ne sais pas quoi mettre , je ne sais pas quoi mettre , je ne sais pas quoi mettre, je ne sais pas quoi mettre , je ne sais pas quoi mettre.</p>
 									</div>
 									<div class="row justify-content-between">
@@ -86,18 +85,18 @@
 								<div class="img-gallery md-mt-60 position-relative">
 									<div class="row align-items-center">
 										<div class="col-6">
-											<img src="images/lazy.svg" data-src="images/assets/ils_03.jpg" alt="" class="lazy-img mt-40 mb-40 lg-mt-20 lg-mb-20">
-											<img src="images/lazy.svg" data-src="images/assets/lili2.jpg" alt="" class="lazy-img ms-auto mt-40 mb-40 lg-mt-20 lg-mb-20">
+											<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/assets/ils_03.jpg" alt="" class="lazy-img mt-40 mb-40 lg-mt-20 lg-mb-20">
+											<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/assets/lili2.jpg" alt="" class="lazy-img ms-auto mt-40 mb-40 lg-mt-20 lg-mb-20">
 										</div>
 										<div class="col-6">
-											<img src="images/lazy.svg" data-src="images/assets/lili.jpg" alt="" class="lazy-img mt-40 mb-40 lg-mt-20 lg-mb-20">
+											<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/assets/lili.jpg" alt="" class="lazy-img mt-40 mb-40 lg-mt-20 lg-mb-20">
 										</div>
 									</div>
 									<a class="fancybox video-icon rounded-circle tran3s d-flex align-items-center justify-content-center" data-fancybox="" href="https://www.youtube.com/didib">
 										<i class="fas fa-play"></i>
 									</a>
-									<img src="images/lazy.svg" data-src="images/shape/shape_165.svg" alt="" class="lazy-img shapes shape-one">
-									<img src="images/lazy.svg" data-src="images/shape/shape_163.svg" alt="" class="lazy-img shapes shape-two">
+									<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_165.svg" alt="" class="lazy-img shapes shape-one">
+									<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_163.svg" alt="" class="lazy-img shapes shape-two">
 									<div class="shapes shape-three"></div>
 								</div> <!-- /.img-gallery -->
 							</div>
@@ -127,7 +126,7 @@
 					<div class="row">
 						<div class="col-md-3 col-sm-6">
 							<div class="team-block-three position-relative mt-40 wow fadeInUp">
-								<img src="images/media/dev2.jpg" alt="" class="team-img w-100">
+								<img src="frontStyle/images/media/dev2.jpg" alt="" class="team-img w-100">
 								<div class="overlay-bg d-flex align-items-end">
 									<div class="hover-content tran3s">
 										<h6 class="name text-white">Loua Wilfried</h6>
@@ -144,7 +143,7 @@
 						</div>
 						<div class="col-md-3 col-sm-6">
 							<div class="team-block-three position-relative mt-40 wow fadeInUp" data-wow-delay="0.2s">
-								<img src="images/media/mark.jpg" alt="" class="team-img w-100">
+								<img src="frontStyle/images/media/mark.jpg" alt="" class="team-img w-100">
 								<div class="overlay-bg d-flex align-items-end">
 									<div class="hover-content tran3s">
 										<h6 class="name text-white">Rokia Zina</h6>
@@ -161,7 +160,7 @@
 						</div>
 						<div class="col-md-3 col-sm-6">
 							<div class="team-block-three position-relative mt-40 wow fadeInUp" data-wow-delay="0.3s">
-								<img src="images/media/dev.jpg" alt="" class="team-img w-100">
+								<img src="frontStyle/images/media/dev.jpg" alt="" class="team-img w-100">
 								<div class="overlay-bg d-flex align-items-end">
 									<div class="hover-content tran3s">
 										<h6 class="name text-white">Murasakibara</h6>
@@ -178,7 +177,7 @@
 						</div>
 						<div class="col-md-3 col-sm-6">
 							<div class="team-block-three position-relative mt-40 wow fadeInUp" data-wow-delay="0.4s">
-								<img src="images/media/devpp.jpg" alt="" class="team-img w-100">
+								<img src="frontStyle/images/media/devpp.jpg" alt="" class="team-img w-100">
 								<div class="overlay-bg d-flex align-items-end">
 									<div class="hover-content tran3s">
 										<h6 class="name text-white"> Mooo Smad</h6>
@@ -218,19 +217,19 @@
 									<div class="feedback_slider_eleven">
 										<div class="item">
 											<div class="feedback-block-twelve">
-												<div class="icon rounded-circle d-flex align-items-center justify-content-center"><img src="images/icon/icon_42.svg" alt=""></div>
+												<div class="icon rounded-circle d-flex align-items-center justify-content-center"><img src="frontStyle/images/icon/icon_42.svg" alt=""></div>
 												<p class="tx-dark mt-35 lg-mt-20">We’v 9,000 agents around the country, Find agents near your neighborhood.</p>
 											</div> <!-- /.feedback-block-twelve -->
 										</div>
 										<div class="item">
 											<div class="feedback-block-twelve">
-												<div class="icon rounded-circle d-flex align-items-center justify-content-center"><img src="images/icon/icon_42.svg" alt=""></div>
+												<div class="icon rounded-circle d-flex align-items-center justify-content-center"><img src="frontStyle/images/icon/icon_42.svg" alt=""></div>
 												<p class="tx-dark mt-35 lg-mt-20">We’v 9,000 agents around the country, Find agents near your neighborhood.</p>
 											</div> <!-- /.feedback-block-twelve -->
 										</div>
 										<div class="item">
 											<div class="feedback-block-twelve">
-												<div class="icon rounded-circle d-flex align-items-center justify-content-center"><img src="images/icon/icon_42.svg" alt=""></div>
+												<div class="icon rounded-circle d-flex align-items-center justify-content-center"><img src="frontStyle/images/icon/icon_42.svg" alt=""></div>
 												<p class="tx-dark mt-35 lg-mt-20">We’v 9,000 agents around the country, Find agents near your neighborhood.</p>
 											</div> <!-- /.feedback-block-twelve -->
 										</div>
@@ -240,19 +239,19 @@
 
 							<div class="col-xl-6 col-lg-5 col-md-6 ms-auto">
 								<div class="img-holder position-relative mt-25 wow fadeInRight">
-									<img src="images/lazy.svg" data-src="images/media/deli2.gif" alt="" class="lazy-img ms-auto">
+									<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/media/deli2.gif" alt="" class="lazy-img ms-auto">
 									<div class="rating-box bg-black text-white d-flex flex-column justify-content-center align-items-center">
 										<strong class="fw-500">4.8</strong>
 										<span>avg rating</span>
 									</div> <!-- /.rating-box -->
-									<img src="images/lazy.svg" data-src="images/shape/shape_163.svg" alt="" class="lazy-img shapes shape-one">
-									<img src="images/lazy.svg" data-src="images/shape/shape_168.svg" alt="" class="lazy-img shapes shape-two">
+									<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_163.svg" alt="" class="lazy-img shapes shape-one">
+									<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_168.svg" alt="" class="lazy-img shapes shape-two">
 								</div>
 							</div>
 						</div>
 					</div> <!-- /.line-bg-wrapper -->
 				</div>
-				<img src="images/lazy.svg" data-src="images/shape/shape_169.svg" alt="" class="lazy-img shapes shape-three">
+				<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_169.svg" alt="" class="lazy-img shapes shape-three">
 			</div> <!-- /.feedback-section-fourteen -->
 
 
@@ -271,7 +270,7 @@
 
 						<div class="row gx-xxl-5">
 							<div class="col-md-6 d-flex">
-								<article class="blog-meta-six d-flex flex-column position-relative zn2 mt-40 wow fadeInUp" style="background-image:url(images/media/livrer.jpg);">
+								<article class="blog-meta-six d-flex flex-column position-relative zn2 mt-40 wow fadeInUp" style="background-image:url(frontStyle/images/media/livrer.jpg);">
 									<div class="post-data position-relative d-flex flex-column h-100">
 										<div class="blog-header">
 											<div><a href="blog-details.html" class="tag text-uppercase fw-500 tran3s mb-20">Liraison</a></div>
@@ -285,7 +284,7 @@
 								</article> <!-- /.blog-meta-six -->
 							</div>
 							<div class="col-md-6 d-flex">
-								<article class="blog-meta-six d-flex flex-column position-relative zn2 mt-40 wow fadeInUp" style="background-image:url(images/menu/prumad.jpg);" data-wow-delay="0.2s">
+								<article class="blog-meta-six d-flex flex-column position-relative zn2 mt-40 wow fadeInUp" style="background-image:url(frontStyle/images/menu/prumad.jpg);" data-wow-delay="0.2s">
 									<div class="post-data position-relative d-flex flex-column h-100">
 										<div class="blog-header">
 											<div><a href="https://prumad.com" class="tag text-uppercase fw-500 tran3s mb-20">Prumad</a></div>
@@ -305,7 +304,7 @@
 						</div>
 					</div>
 				</div>
-				<img src="images/lazy.svg" data-src="images/shape/shape_163.svg" alt="" class="lazy-img shapes shape-one">
+				<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_163.svg" alt="" class="lazy-img shapes shape-one">
 			</div> <!-- /.blog-section-six -->
 
 
