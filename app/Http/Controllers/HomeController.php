@@ -21,4 +21,8 @@ class HomeController extends Controller
     public function notfound(){
         return view('front.NotFound');
     }
+
+    public function tarif(){
+        return view('front.tarification');
+    }
 }

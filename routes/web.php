@@ -25,6 +25,7 @@ Route::get('/',[HomeController::class,'index']);
 Route::get('/about',[HomeController::class,'store']);
 Route::get('/contactez-nous',[HomeController::class,'contact']);
 Route::get('/404-iwa',[HomeController::class,'notfound']);
+Route::get('/tarification',[HomeController::class,'tarif']);
 
 
 // Route::get('/get_all_note_livreur/{livreur_id}',[NoteController::class,'get_all_note_livreur'])->whereNumber('livreur_id');
