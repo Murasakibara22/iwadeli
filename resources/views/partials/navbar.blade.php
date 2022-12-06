@@ -12,7 +12,11 @@
 						<div class="right-widget d-flex align-items-center order-lg-3">
 							<a href="/contactez-nous" class="contact-btn-one fs-16 fw-500 text-white tran3s d-none d-lg-block me-3">Contactez nous</a>
 
+							@if (Auth::guest())
 							<a href="/login" class="contact-btn-one fs-14 fw-500 text-white bg-warning tran3s d-none d-lg-block">Login</a>
+							@else
+							<a href="/deconnexion" class="contact-btn-one fs-14 fw-500 text-white bg-danger tran3s d-none d-lg-block">Logout</a>
+							@endif
 						</div> <!-- /.right-widget -->
 
 						<nav class="navbar navbar-expand-lg order-lg-2">
@@ -37,7 +41,13 @@
 						    	<!-- Mobile Content -->
 						    	<div class="mobile-content d-block d-lg-none">
 						    		<div class="d-flex flex-column align-items-center justify-content-center mt-70">
+
+									@if (Auth::guest())
 									<a href="/login" class="contact-btn-one bg-warning fs-16 fw-500 text-white tran3s mb-4">Login</a>
+                     		  		 @else
+                          			  <a href="/deconnexion" class="contact-btn-one bg-danger fs-16 fw-500 text-white tran3s mb-4">Logout</a>
+                     		   		@endif
+
 						    			<a href="/contactez-nous" class="contact-btn-one fs-16 fw-500 text-white tran3s ">Contactez nous</a>
 						    		</div>
 									

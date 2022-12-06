@@ -74,33 +74,33 @@
 						<div class="col-lg-3 col-sm-6 wow fadeInUp">
 							<div class="card-style-one pe-xxl-5 position-relative mt-40">
 								<div class="icon d-flex align-items-center justify-content-center" style="background-color: rgba(255, 171, 51, 0.18);"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_01.svg" alt="" class="lazy-img"></div>
-								<h5 class="fw-500 mt-35 mb-25"><a href="about-v2.html" class="tran3s tx-dark">Sécurité <br></a></h5>
+								<h5 class="fw-500 mt-35 mb-25"><a href="/about" class="tran3s tx-dark">Sécurité <br></a></h5>
 								<p class="mb-25">détendez-vous, vaquez à vos occupations , Aucune inquiétude IWA s'en charge.</p>
-								<a href="about-v2.html"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_05.svg" alt="" class="lazy-img"></a>
+								<a href="/about"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_05.svg" alt="" class="lazy-img"></a>
 							</div> <!-- /.card-style-one -->
 						</div>
 						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
 							<div class="card-style-one pe-xxl-5 position-relative mt-40">
 								<div class="icon d-flex align-items-center justify-content-center" style="background-color: rgba(100, 219, 226, 0.18);"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_02.svg" alt="" class="lazy-img"></div>
-								<h5 class="fw-500 mt-35 mb-25"><a href="about-v2.html" class="tran3s tx-dark">Rapidité.<br></a></h5>
+								<h5 class="fw-500 mt-35 mb-25"><a href="/about" class="tran3s tx-dark">Rapidité.<br></a></h5>
 								<p class="mb-25">Avec iwa  recevez vos colis en un clin d'œil, et avec la livraison express recevez 2x plus vite vos colis.</p>
-								<a href="about-v2.html"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_05.svg" alt="" class="lazy-img"></a>
+								<a href="/about"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_05.svg" alt="" class="lazy-img"></a>
 							</div> <!-- /.card-style-one -->
 						</div>
 						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
 							<div class="card-style-one pe-xxl-5 position-relative mt-40">
 								<div class="icon d-flex align-items-center justify-content-center" style="background-color: rgba(255, 160, 194, 0.18);"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_03.svg" alt="" class="lazy-img"></div>
-								<h5 class="fw-500 mt-35 mb-25"><a href="about-v2.html" class="tran3s tx-dark">Fiabilité <br> </a></h5>
+								<h5 class="fw-500 mt-35 mb-25"><a href="/about" class="tran3s tx-dark">Fiabilité <br> </a></h5>
 								<p class="mb-25">Quelques soit les conditions, rassurez-vous le colis de départ est bien celui de destination.</p>
-								<a href="about-v2.html"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_05.svg" alt="" class="lazy-img"></a>
+								<a href="/about"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_05.svg" alt="" class="lazy-img"></a>
 							</div> <!-- /.card-style-one -->
 						</div>
 						<div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
 							<div class="card-style-one pe-xxl-5 position-relative mt-40">
 								<div class="icon d-flex align-items-center justify-content-center" style="background-color: rgba(246, 243, 255, 1);"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_04.svg" alt="" class="lazy-img"></div>
-								<h5 class="fw-500 mt-35 mb-25"><a href="about-v2.html" class="tran3s tx-dark">Assistance<br></a></h5>
+								<h5 class="fw-500 mt-35 mb-25"><a href="/about" class="tran3s tx-dark">Assistance<br></a></h5>
 								<p class="mb-25">Nos Assistants sont disponible pour répondre à vos besoins, quelque soit le moyens de communication utilisé.</p>
-								<a href="about-v2.html"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_05.svg" alt="" class="lazy-img"></a>
+								<a href="/about"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_05.svg" alt="" class="lazy-img"></a>
 							</div> <!-- /.card-style-one -->
 						</div>
 					</div>
@@ -130,7 +130,7 @@
 									<li>Je ne sais pas quoi mettre</li>
 								</ul>
 							</div> <!-- /.block-style-one -->
-							<a href="about-v2.html" class="more-btn tran3s fw-500 fs-18 wow fadeInUp">Découvrir plus<i class="bi bi-arrow-right"></i></a>
+							<a href="/about" class="more-btn tran3s fw-500 fs-18 wow fadeInUp">Découvrir plus<i class="bi bi-arrow-right"></i></a>
 						</div>
 						<div class="col-md-6 order-md-first wow fadeInLeft">
 							<div class="img-meta d-inline-block position-relative ps-3 ps-lg-5 pb-50 md-mt-50 sm-mt-80">
