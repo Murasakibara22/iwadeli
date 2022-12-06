@@ -23,6 +23,7 @@ use App\Http\Controllers\LivreurController;
 
 Route::get('/',[HomeController::class,'index']);
 Route::get('/about',[HomeController::class,'store']);
+Route::get('/contactez-nous',[HomeController::class,'contact']);
 
 
 // Route::get('/get_all_note_livreur/{livreur_id}',[NoteController::class,'get_all_note_livreur'])->whereNumber('livreur_id');

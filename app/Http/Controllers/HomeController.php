@@ -11,6 +11,10 @@ class HomeController extends Controller
     }
 
     public function store(){
-        return view('about');
+        return view('front.about');
+    }
+    
+    public function contact(){
+        return view('front.contact');
     }
 }
