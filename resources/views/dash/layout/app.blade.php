@@ -18,6 +18,7 @@
         <!-- App css -->
         <link href="{{ asset('dashStyle/assets/css/app-saas.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
 
+        @yield('styles')
         <!-- Icons css -->
         <link href="{{ asset('dashStyle/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     </head>
@@ -566,6 +567,6 @@
         <!-- CRM Dasboard Demo App js -->
         <script src="{{ asset('dashStyle/assets/js/pages/demo.crm-dashboard.js') }}"></script>
        
-
+        @yield('scripts')
     </body>
 </html>

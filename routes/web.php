@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\UserController;
@@ -176,6 +177,23 @@ Route::get('/contactdelete/{slug}', [ContactController::class ,'Contactdelete'])
 
 Route::delete('/contactdelete/{slug}', [ContactController::class ,'Contactdestroy']);
 
+
+
+
+//Blog
+Route::get('/addBlog', [BlogController::class , 'newBlog']);
+
+Route::post('/addBlog', [BlogController::class , 'addBlog'])->name('AddBlog');
+
+Route::get('/Blog_list', [BlogController::class , 'listAllBlog']);
+
+Route::get('/Blog_edit/{slug}', [BlogController::class , 'editBlog']);
+
+Route::put('/BlogEdit/{slug}', [BlogController::class , 'editBlogs'])->name('editBlogs');
+
+Route::get('Blogdelete/{slug}', [BlogController::class , 'deleteBlog']);
+
+Route::delete('/Blogdele/{slug}', [BlogController::class , 'destroyBlog']);
 
 
 

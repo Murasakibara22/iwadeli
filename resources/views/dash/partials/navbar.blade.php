@@ -422,6 +422,13 @@
                 </a>
             </li>
 
+            <li class="side-nav-item">
+                <a href="/addBlog" class="side-nav-link">
+                 <i class="uil-document-layout-center"></i>
+                    <span> Blogs </span>
+                </a>
+            </li>
+
         </ul>
         <!--- End Sidemenu -->
 
