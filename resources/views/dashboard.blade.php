@@ -41,7 +41,7 @@
                                             <div class="card-body">
                                                 <div class="row align-items-center">
                                                     <div class="col-6">
-                                                        <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Toutes les commandes</h5>
+                                                        <h5 class="text-muted fw-normal mt-0 text-truncate" title="Campaign Sent">Orders</h5>
                                                         <h3 class="my-2 py-1">{{$countAllOrder}}</h3>
                                                         <p class="mb-0 text-muted">
                                                             <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i> 3.27%</span>
@@ -98,20 +98,20 @@
                                                         <h5 class="text-muted fw-normal mt-0 text-truncate" title="Deals">Com.Valider</h5>
                                                         <h3 class="my-2 py-1">{{$comAllValidate}}</h3>
                                                         <p class="mb-0 text-muted">
-                                                            @if($resultPourcentageCVT <  $resultPourcentageCVH)
-                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i>{{sprintf("%.1f", $resultPourcentageCVT)}}%</span>
-                                                            @elseif($resultPourcentageCVT >  $resultPourcentageCVH)
-                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $resultPourcentageCVT)}}%</span>
+                                                            @if($result_Pourcentage_valider_todays <  $result_Pourcentage_valider_yesterday)
+                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i>{{sprintf("%.1f", $result_Pourcentage_valider_todays)}}%</span>
+                                                            @elseif($result_Pourcentage_valider_todays >  $result_Pourcentage_valider_yesterday)
+                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $result_Pourcentage_valider_todays)}}%</span>
                                                             @else
-                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $resultPourcentageCVT)}}%</span>
+                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $result_Pourcentage_valider_todays)}}%</span>
                                                             @endif
                                                         </p>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="text-end">
-                                                        @if($resultPourcentageCVT <  $resultPourcentageCVH)
+                                                        @if($result_Pourcentage_valider_todays <  $result_Pourcentage_valider_yesterday)
                                                             <div id="deals-chart" data-colors="#F73131">Baisse</div>
-                                                            @elseif($resultPourcentageCVT >  $resultPourcentageCVH)
+                                                            @elseif($result_Pourcentage_valider_todays >  $result_Pourcentage_valider_yesterday)
                                                             <div id="deals-chart" data-colors="#0acf97">Hausse</div>
                                                             @else
                                                             <div id="deals-chart" data-colors="#727cf5">Stable</div>
@@ -131,20 +131,20 @@
                                                         <h5 class="text-muted fw-normal mt-0 text-truncate" title="Booked Revenue">C.Terminer</h5>
                                                         <h3 class="my-2 py-1">{{$comAllTerminer}}</h3>
                                                         <p class="mb-0 text-muted">
-                                                            @if($resultPourcentageCTT <  $resultPourcentageCTH)
-                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i>{{sprintf("%.1f", $resultPourcentageCTT)}}%</span>
-                                                            @elseif($resultPourcentageCTT >  $resultPourcentageCTH)
-                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $resultPourcentageCTT)}}%</span>
+                                                            @if($result_Pourcentage_terminer_todays <  $result_Pourcentage_terminer_hier)
+                                                            <span class="text-danger me-2"><i class="mdi mdi-arrow-down-bold"></i>{{sprintf("%.1f", $result_Pourcentage_terminer_todays)}}%</span>
+                                                            @elseif($result_Pourcentage_terminer_todays >  $result_Pourcentage_terminer_hier)
+                                                            <span class="text-success me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $result_Pourcentage_terminer_todays)}}%</span>
                                                             @else
-                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $resultPourcentageCTT)}}%</span>
+                                                            <span class="text-secondary me-2"><i class="mdi mdi-arrow-up-bold"></i>{{sprintf("%.1f", $result_Pourcentage_terminer_todays)}}%</span>
                                                             @endif
                                                         </p>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="text-end">
-                                                        @if($resultPourcentageCTT <  $resultPourcentageCTH)
+                                                        @if($result_Pourcentage_terminer_todays <  $result_Pourcentage_terminer_hier)
                                                             <div id="booked-revenue-chart" data-colors="#F73131">Chute</div>
-                                                            @elseif($resultPourcentageCTT >  $resultPourcentageCTH)
+                                                            @elseif($result_Pourcentage_terminer_todays >  $result_Pourcentage_terminer_hier)
                                                             <div id="booked-revenue-chart" data-colors="#0acf97">Hausse</div>
                                                             @else
                                                             <div id="booked-revenue-chart" data-colors="#727cf5">stable</div>
