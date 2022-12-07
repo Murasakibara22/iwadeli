@@ -273,12 +273,12 @@
 								<article class="blog-meta-six d-flex flex-column position-relative zn2 mt-40 wow fadeInUp" style="background-image:url(frontStyle/images/media/livrer.jpg);">
 									<div class="post-data position-relative d-flex flex-column h-100">
 										<div class="blog-header">
-											<div><a href="blog-details.html" class="tag text-uppercase fw-500 tran3s mb-20">Liraison</a></div>
-											<a href="blog-details.html"><h4 class="tran3s blog-title">Tout savoir sur la tarification</h4></a>
+											<div><a href="/tarification" class="tag text-uppercase fw-500 tran3s mb-20">Liraison</a></div>
+											<a href="/tarification"><h4 class="tran3s blog-title">Tout savoir sur la tarification</h4></a>
 										</div> <!-- /.blog-header -->
 										<div class="blog-footer d-flex align-items-center justify-content-between mt-auto">
-											<div class="blog-date tran3s fw-500 tx-dark">Publier le - <a href="blog-details.html" class="fw-normal tran3s">18 Jul 2022</a></div>
-											<a href="blog-details.html" class="read-more tran3s"><i class="bi bi-arrow-up-right"></i></a>
+											<div class="blog-date tran3s fw-500 tx-dark">Publier le - <a href="/tarification" class="fw-normal tran3s">18 Jul 2022</a></div>
+											<a href="/tarification" class="read-more tran3s"><i class="bi bi-arrow-up-right"></i></a>
 										</div> <!-- /.blog-footer -->
 									</div> <!-- /.post-data -->
 								</article> <!-- /.blog-meta-six -->

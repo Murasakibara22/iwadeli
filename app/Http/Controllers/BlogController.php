@@ -159,13 +159,13 @@ class BlogController extends Controller
                              $blog  = Blog::where('slug',$slug)->first();
 
                              if(isset($blog)){
-                                    $doc_path = "images/blogs/.$blog->banner";
+                                    $doc_path = "images/blogs.$blog->banner";
                                     if (File::exists($doc_path)) {
                                         File::delete($doc_path);
                                     }
 
                                 $blog->delete();
-                                 return view('/Blog_list'->with('suprime',' Blog delete avec succes'));
+                                 return redirect('/Blog_list')->with('suprime',' Blog delete avec succes');
                              }else{
                                  return redirect('/Blog_list')->with('erreur', "Le Blog specifier est introuvable");
                              }
