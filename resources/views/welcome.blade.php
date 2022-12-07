@@ -303,7 +303,7 @@
 									<div class="post-data mt-25">
 										<a href="/tarification" class="post-tag fw-500 tx-dark text-uppercase mb-20" style="background-color: #FFEAC9;">Technologie</a>
 										<a href="/tarification" class="blog-title d-block"><h4 class="tran3s">Une bonne ergonomie à prix réduit est meilleure que jamais.</h4></a>
-										<a href="/tarification" class="read-btn mt-35"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_12.svg" alt="" class="lazy-img"></a>
+
 									</div> <!-- /.post-data -->
 								</article> <!-- /.blog-meta-one -->
 							</div>
@@ -313,7 +313,7 @@
 									<div class="post-data mt-25">
 										<a href="/tarification" class="post-tag fw-500 tx-dark text-uppercase mb-20" style="background-color: #CEEBF4;">Design</a>
 										<a href="/tarification" class="blog-title d-block"><h4 class="tran3s">Un bon design est la clé de l'entreprise.</h4></a>
-										<a href="/tarification" class="read-btn mt-35"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_12.svg" alt="" class="lazy-img"></a>
+								
 									</div> <!-- /.post-data -->
 								</article> <!-- /.blog-meta-one -->
 							</div>
@@ -323,7 +323,7 @@
 									<div class="post-data mt-25">
 										<a href="/tarification" class="post-tag fw-500 tx-dark text-uppercase mb-20" style="background-color: #FFDFDF;">Marketing</a>
 										<a href="/tarification" class="blog-title d-block"><h4 class="tran3s">La satisfaction du client est l'objectif de notre entreprise.</h4></a>
-										<a href="/tarification" class="read-btn mt-35"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_12.svg" alt="" class="lazy-img"></a>
+								
 									</div> <!-- /.post-data -->
 								</article> <!-- /.blog-meta-one -->
 							</div>

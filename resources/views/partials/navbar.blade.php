@@ -35,7 +35,7 @@
 							        	<a class="nav-link " href="/about" role="button"   aria-expanded="false">A propos</a>
 						            </li>
 									<li class="nav-item dropdown mega-dropdown-md">
-							        	<a class="nav-link " href="404.html" role="button"  aria-expanded="false">Tout sur l'App</a>
+							        	<a class="nav-link " href="/404-iwa" role="button"  aria-expanded="false">Tout sur l'App</a>
 						            </li>
 						    	</ul>
 
