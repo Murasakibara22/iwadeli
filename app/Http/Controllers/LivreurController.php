@@ -298,4 +298,29 @@ class LivreurController extends Controller
             }
         }
 
+
+        
+    //retourner un seul livreur 
+
+     /**
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function get_livreurs_det($id){
+         $livreur = Livreur::Where('id',$id)->first();
+
+            if(!is_null($livreur)){
+                return response()->json([
+                    "Le Livreur" => $livreur
+                ]);
+            }else{
+                return response()->json([
+                    "Status" => "Aucun livreur trouver pour ce id Specifier"
+                ]);
+            }
+        }
+
     }
+
+

@@ -52,6 +52,7 @@ Route::get('/getUsers', [UserController::class, 'getUser']);
 
 Route::get('/return_order_user/{user_id}', [OrderController::class, 'getUserOrder'])->middleware('auth:sanctum')->whereNumber('user_id');
 
+Route::get('/get_livreurs_details/{id}', [LivreurController::class, 'get_livreurs_det'])->middleware('auth:sanctum')->WhereNumber('id');
 
 //admin
 Route::middleware(['auth:sanctum', 'role:admin'])->group(function(){ 
@@ -87,6 +88,8 @@ Route::post('/comMonthOrder/{data}', [OrderController::class, 'precisetheMonthOr
 Route::post('/addLivreur', [LivreurController::class, 'createLivreur'])->middleware('auth:sanctum');//admin
 
 Route::get('/listLivreur', [LivreurController::class, 'listAll'])->middleware('auth:sanctum');//admin
+
+
 
 Route::get('/listLivreurOrder', [LivreurController::class, 'listOrderLivreur'])->middleware('auth:sanctum');//admin
 
