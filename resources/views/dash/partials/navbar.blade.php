@@ -353,20 +353,20 @@
 
             <li class="side-nav-item">
                 <a href="/listAllUs" class="side-nav-link">
-                    <i class="uil-calender"></i>
+                    <i class="ri-team-fill"></i>
                     <span> Utilisateurs Inscripts </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
                 <a href="/AllOrders" class="side-nav-link">
-                    <i class="uil-comments-alt"></i>
+                    <i class="ri-luggage-cart-fill"></i>
                     <span> Toutes les commandes </span>
                 </a>
             </li>
             <li class="side-nav-item">
                 <a href="/listAllCom" class="side-nav-link">
-                    <i class="uil-comments-alt"></i>
+                    <i class="ri-reddit-fill"></i>
                     <span class="badge bg-danger float-end">En Attente</span>
                     <span> Commandes </span>
                 </a>
@@ -375,7 +375,7 @@
             <li class="side-nav-item">
                 <a  
                     class="side-nav-link" href="/newLivreur">
-                    <i class="uil-briefcase"></i>
+                    <i class="ri-takeaway-fill"></i>
                     <span> Livreurs</span>
                    
                 </a>
@@ -384,7 +384,7 @@
             <li class="side-nav-item">
                 <a  
                     class="side-nav-link" href="/new_equipe">
-                    <i class="uil-briefcase"></i>
+                    <i class="ri-hand-coin-fill"></i>
                     <span> Nos Membres</span>
                    
                 </a>
@@ -392,14 +392,14 @@
 
             <li class="side-nav-item">
                 <a href="/listAllComValide" class="side-nav-link">
-                    <i class="uil-comments-alt"></i>
+                    <i class="ri-scan-2-fill"></i>
                     <span> Commandes En cour </span>
                 </a>
             </li>
 
             <li class="side-nav-item">
                 <a href="/listAllComTerminer" class="side-nav-link">
-                    <i class="uil-comments-alt"></i>
+                    <i class="ri-stack-fill"></i>
                     <span class="badge bg-success float-end">terminer</span>
                     <span> Commandes </span>
                 </a>
