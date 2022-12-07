@@ -114,24 +114,16 @@
 											<button><i class="bi bi-search"></i></button>
 										</form>
 									</div> <!-- /.blog-sidebar-search -->
-									<div class="blog-sidebar-category mb-60 md-mb-50">
-										<h4 class="sidebar-title">Tarifs à moto</h4>
-										<ul class="style-none">
-											<li><a href="">Cocody<span class="float-end">1.000(fcfa)</span></a></li>
-											<li><a href="">Palmeraie <span class="float-end">1.000(fcfa)</span></a></li>
-											<li><a href="">Extra-Commune <span class="float-end">1.500(fcfa)</span></a></li>
-											<li><a href="">Abidjan Extension <span class="float-end">2.000(fcfa)</span></a></li>
-											<li><a href="">modeste,Bassam,etc... <span class="float-end">2.000(fcfa)</span></a></li>
-										</ul>
-									</div> <!-- /.blog-sidebar-category -->
 
 									<div class="sidebar-recent-news mb-60 md-mb-50">
-										<h4 class="sidebar-title">News avec iwa</h4>
+										<h5 class="sidebar-title">News avec iwa</h5>
 										@foreach($blog as $blogs)
 										<div class="news-block d-flex align-items-center pt-20 pb-20 border-top">
-											<div><img src="frontStyle/images/lazy.svg" data-src="../images/blogs/{{$blogs->banner}}" alt="" class="lazy-img"></div>
+											<div><a href="/blog_details/{{$blogs->slug}}"><img src="frontStyle/images/lazy.svg" data-src="../images/blogs/{{$blogs->banner}}" alt="" class="lazy-img"></a></div>
 											<div class="post ps-4">
-												<h4 class="mb-5"><a href="/blog_details/{{$blogs->slug}}" class="title tran3s">{{$blogs->titre}}</a></h4>
+												<div class="text-truncate" style=" height:50px; width:100%; overflow:hidden;">
+													<h6 class="mb-4 "><a href="/blog_details/{{$blogs->slug}}" class="title tran3s">{{$blogs->titre}}</a></h6>
+												</div>
 												<div class="date">{{$blogs->date}}</div>
 											</div>
 										</div>
