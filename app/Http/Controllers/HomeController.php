@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Temoignage;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,22 @@ class HomeController extends Controller
     }
 
     public function tarif(){
-        return view('front.tarification');
+
+        $blog = Blog::OrderBy('id','DESC')->get();
+        return view('front.tarification',compact('blog'));
+    }
+
+    public function detailsBlogu($slug){
+
+
+        $blogu = Blog::Where('slug',$slug)->first();
+        if(!is_null($blogu)){
+            $blog = Blog::OrderBy('id','DESC')->get();
+            return view('front.blogDetails',compact('blog','blogu'));
+        }else{
+            return redirect()->back();
+        }
+
+     
     }
 }

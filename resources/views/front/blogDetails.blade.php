@@ -18,11 +18,11 @@
 					<div class="row">
 						<div class="col-xxl-8 col-lg-9 wow fadeInLeft">
 							<p class="blog-pubish-date">Restez tranquille, on vous <a href="#" class="fw-500"> livre tous</a></p>
-							<h2 class="blog-heading-one tx-dark">Tout savoir sur la Tarification.</h2>
+							<h2 class="blog-heading-one tx-dark">{{$blogu->titre}}</h2>
 						</div>
 					</div>
 				</div> <!-- /.container -->
-				<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/shape/shape_172.svg" alt="" class="lazy-img shapes shape-two">
+				<img src="frontStyle/images/lazy.svg" data-src="{{ url('../frontStyle/images/shape/shape_172.svg')}}" alt="" class="lazy-img shapes shape-two">
 			</div> <!-- /.fancy-feature-fiftyOne -->
 
 
@@ -39,20 +39,14 @@
 							<div class="col-lg-8">
 								<div class="blog-meta-wrapper pe-xxl-5">
 									<article class="blog-details-content">
-										<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/menu/tarif2.jpg" alt="" class="lazy-img image-meta w-100">
-										<p>Tomfoolery crikey bits and bobs brilliant bamboozled down the pub amongst brolly hanky panky, cack bonnet arse over tit burke bugger all mate bodge. cillum dolore eu fugiat  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Suspendisse interdum consectetur libero id faucibu nisl. Lacus vel facilisis volutpat est velit egestas.</p>
-										<p>Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum. Sit amet ris nullam eget felis. Enim praesent elementum facilisis leo. Ultricies leo integer.</p>
-										<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/menu/tarif.png" alt="" class="lazy-img image-meta w-100">
-										<h4>This response is important for our ability to from mistakes but it alsogives rise to self-criticism.</h4>
-										<p>One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in  future The same is true as we experienc the emotional of stress from our instances. We are quickly learn to fear and thus automatically. Lorem ipsum dolor sit amet, consectetur adipis elit quis extraction labore.</p>
-										<h2>Work Harder & Gain Succsess</h2>
-										<p>One touch of a red-hot stove is usually all we need to avoid that kind of discomfort in quis elit future. The same Duis aute irure dolor in reprehenderit .</p>
-										<p>is true as we experience the emotional sensation of stress from our firs social rejec ridicule.We quickly learn to fear and thus automatically. potentially stressful situation of wlir ext quiert all kinds, including the most common of all.</p>
+										<img src="frontStyle/images/lazy.svg" data-src="../images/blogs/{{$blogu->banner}}" alt="" class="lazy-img image-meta w-100">
+                                        {!!$blogu->description!!}
+										
+
 										<div class="bottom-widget d-sm-flex align-items-center justify-content-between">
 											<ul class="d-flex tags style-none pb-20">
 												<li>Tag:</li>
-												<li><a href="#">business</a>,</li>
-												<li><a href="#">makreting</a>,</li>
+												<li> date de creation</li>
 											</ul>
 											<ul class="d-flex share-icon align-items-center style-none pb-20">
 												<li>Partage:</li>
@@ -63,6 +57,11 @@
 										</div> <!-- /.bottom-widget -->
 									</article> <!-- /.blog-details-content -->
 
+
+
+
+
+									
 									<div class="blog-comment-area">
 										<h3 class="blog-inner-title tx-dark pb-15">Commentaires</h3>
 										<div class="comment d-flex">
@@ -114,20 +113,11 @@
 											<button><i class="bi bi-search"></i></button>
 										</form>
 									</div> <!-- /.blog-sidebar-search -->
-									<div class="blog-sidebar-category mb-60 md-mb-50">
-										<h4 class="sidebar-title">Tarifs à moto</h4>
-										<ul class="style-none">
-											<li><a href="">Cocody<span class="float-end">1.000(fcfa)</span></a></li>
-											<li><a href="">Palmeraie <span class="float-end">1.000(fcfa)</span></a></li>
-											<li><a href="">Extra-Commune <span class="float-end">1.500(fcfa)</span></a></li>
-											<li><a href="">Abidjan Extension <span class="float-end">2.000(fcfa)</span></a></li>
-											<li><a href="">modeste,Bassam,etc... <span class="float-end">2.000(fcfa)</span></a></li>
-										</ul>
-									</div> <!-- /.blog-sidebar-category -->
+								
 
 									<div class="sidebar-recent-news mb-60 md-mb-50">
 										<h4 class="sidebar-title">News avec iwa</h4>
-										@foreach($blog as $blogs)
+                                        @foreach($blog as $blogs)
 										<div class="news-block d-flex align-items-center pt-20 pb-20 border-top">
 											<div><img src="frontStyle/images/lazy.svg" data-src="../images/blogs/{{$blogs->banner}}" alt="" class="lazy-img"></div>
 											<div class="post ps-4">
@@ -138,7 +128,7 @@
                                         @endforeach
 									</div> <!-- /.sidebar-recent-news -->
 
-									<div class="sidebar-banner-add" style="background-image:url(frontStyle/images/logo/bg-apropos.jpg);">
+									<div class="sidebar-banner-add" style="background-image:url( {{ url('frontStyle/images/logo/bg-apropos.jpg') }} );">
 										<div class="banner-content">
 											<h4>Appelez <br>et soyez livrer Chap chap !</h4>
 											<p>Pro---pro---professionnalisme</p>

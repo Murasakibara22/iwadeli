@@ -33,6 +33,8 @@ Route::get('/tarification',[HomeController::class,'tarif']);
 //ajouter un contact ou un message
 Route::post('/addConta', [ContactController::class  , 'addContact'])->name('addContacts');
 
+Route::get('/blog_details/{slug}', [HomeController::class , 'detailsBlogu']);
+
 
 
 // Route::get('/get_all_note_livreur/{livreur_id}',[NoteController::class,'get_all_note_livreur'])->whereNumber('livreur_id');

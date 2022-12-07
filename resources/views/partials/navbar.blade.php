@@ -6,7 +6,7 @@
 			<header class="theme-main-menu sticky-menu theme-menu-one">
 				<div class="inner-content position-relative">
 					<div class="d-flex align-items-center justify-content-between">
-						<div class="logo order-lg-0"><a href="/dashboard" class="d-block"><img src="frontStyle/images/logo/logo.png" alt="" width="95"></a></div>
+						<div class="logo order-lg-0"><a href="/dashboard" class="d-block"><img src="{{ url('frontStyle/images/logo/logo.png') }}" alt="" width="95"></a></div>
 
 
 						<div class="right-widget d-flex align-items-center order-lg-3">
@@ -27,7 +27,7 @@
 						 	</button>
 						    <div class="collapse navbar-collapse" id="navbarNav">
 						    	<ul class="navbar-nav">
-						    		<li class="d-block d-lg-none"><div class="logo"><a href="/dashboard" class="d-block"><img src="frontStyle/images/logo/logo.png" alt="" width="95"></a></div></li>
+						    		<li class="d-block d-lg-none"><div class="logo"><a href="/dashboard" class="d-block"><img src="{{ url('frontStyle/images/logo/logo.png') }}" alt="" width="95"></a></div></li>
 							        <li class="nav-item active dropdown mega-dropdown">
 							        	<a class="nav-link " href="/" role="button" aria-expanded="false">Accueil</a>
 						            </li>
