@@ -22,7 +22,7 @@
 								<p class="text-lg mb-60 pt-50 pe-xl-5 lg-pt-30 lg-mb-40">Envoyez vos colis à quiconque sans bouger</p>
 								<form action="#" class="position-relative bg-white">
 									<label class="position-absolute fs-15">Adresse Email</label>
-									<input type="email" placeholder="Murasakibarasecure@gmail.com" class="fs-17 position-absolute w-100 tx-dark fw-500">
+									<input type="email" placeholder=" @gmail.com" class="fs-17 position-absolute w-100 tx-dark fw-500">
 									<button class="tran3s position-absolute">SOUSCRIRE</button>
 								</form>
 								<div class="pr-info fw-500 fs-20 tx-dark mt-35">Plus de <span class="fw-bold text-decoration-underline">25.000 clients</span> En Côte D'ivoire</div>
@@ -31,7 +31,7 @@
 						<div class="card-one shapes bg-white wow fadeInRight">
 							<div class="icon rounded-circle position-absolute fs-18 text-white"><i class="bi bi-check-lg"></i></div>
 							<h6 class="fw-500 tx-dark mb-15">Reçois  50% de reduction sur la Premiere Livraison</h6>
-							<a href="404.html" class="more-btn tran3s text-uppercase fw-500 fs-13">Télécharger</a>
+							<a href="/404-iwa" class="more-btn tran3s text-uppercase fw-500 fs-13">Télécharger</a>
 						</div>
 						<div class="illustration-holder">
 							<img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/assets/ils_04.png" alt="" class="lazy-img main-illustration w-100">
@@ -182,58 +182,21 @@
 
 					<div class="inner-content mt-100 lg-mt-60">
 						<div class="feedback_slider_one">
+							@foreach($temoignage as $temoignages)
 							<div class="item">
 								<div class="feedback-block-one pt-45 align-items-end d-sm-flex">
 									<div class="img-meta position-relative">
-										<img src="frontStyle/images/media/img_02.png" alt="" class="m-auto">
+										<img src="../images/Temoignage/{{$temoignages->photo}}" alt="" class="m-auto">
 									</div>
 									<div class="text-wrapper">
 										<div class="icon d-flex align-items-center justify-content-center rounded-circle mb-15" style="background-color:#825EFF;"><img src="frontStyle/images/icon/icon_07.svg" alt=""></div>
-										<div class="rating h3 fw-bold tx-dark">Very solid, 8.3 out 10</div>
-										<p class="text-lg pt-35 pb-20">We’v 9,000 agents across are country, Find agents near your neighborhood.</p>
-										<h6>Martin Jonas, <span class="opacity-25">Côte D'ivoire</span></h6>
+										<div class="rating h3 fw-bold tx-dark">{{$temoignages->nom}}</div>
+										<p class="text-lg pt-35 pb-20">{{$temoignages->message}}</p>
+										<h6>{{ date('j M Y', strtotime($temoignages->created_at)) }}<span class="opacity-25"> Côte D'ivoire</span></h6>
 									</div> <!-- /.text-wrapper -->
 								</div> <!-- /.feedback-block-one -->
 							</div>
-							<div class="item">
-								<div class="feedback-block-one pt-45 align-items-end d-sm-flex">
-									<div class="img-meta position-relative">
-										<img src="frontStyle/images/media/img_03.png" alt="" class="m-auto">
-									</div>
-									<div class="text-wrapper">
-										<div class="icon d-flex align-items-center justify-content-center rounded-circle mb-15" style="background-color:#08CE97;"><img src="frontStyle/images/icon/icon_07.svg" alt=""></div>
-										<div class="rating h3 fw-bold tx-dark">Very solid, 7.2 out 10</div>
-										<p class="text-lg pt-35 pb-20">We’v 9,000 agents across are country, Find agents near your neighborhood.</p>
-										<h6>Martin Jonas, <span class="opacity-25">Côte D'ivoire</span></h6>
-									</div> <!-- /.text-wrapper -->
-								</div> <!-- /.feedback-block-one -->
-							</div>
-							<div class="item">
-								<div class="feedback-block-one pt-45 align-items-end d-sm-flex">
-									<div class="img-meta position-relative">
-										<img src="frontStyle/images/media/img_02.png" alt="" class="m-auto">
-									</div>
-									<div class="text-wrapper">
-										<div class="icon d-flex align-items-center justify-content-center rounded-circle mb-15" style="background-color:#FF8A3A;"><img src="frontStyle/images/icon/icon_07.svg" alt=""></div>
-										<div class="rating h3 fw-bold tx-dark">Very solid, 9.1 out 10</div>
-										<p class="text-lg pt-35 pb-20">We’v 9,000 agents across are country, Find agents near your neighborhood.</p>
-										<h6>Martin Jonas, <span class="opacity-25">Côte D'ivoire</span></h6>
-									</div> <!-- /.text-wrapper -->
-								</div> <!-- /.feedback-block-one -->
-							</div>
-							<div class="item">
-								<div class="feedback-block-one pt-45 align-items-end d-sm-flex">
-									<div class="img-meta position-relative">
-										<img src="frontStyle/images/media/img_03.png" alt="" class="m-auto">
-									</div>
-									<div class="text-wrapper">
-										<div class="icon d-flex align-items-center justify-content-center rounded-circle mb-15" style="background-color:#08CE97;"><img src="frontStyle/images/icon/icon_07.svg" alt=""></div>
-										<div class="rating h3 fw-bold tx-dark">Very solid, 10 out 10</div>
-										<p class="text-lg pt-35 pb-20">We’v 9,000 agents across are country, Find agents near your neighborhood.</p>
-										<h6>Martin Jonas, <span class="opacity-25">Côte D'ivoire</span></h6>
-									</div> <!-- /.text-wrapper -->
-								</div> <!-- /.feedback-block-one -->
-							</div>
+						@endforeach
 						</div> <!-- /.feedback_slider_one -->
 					</div> <!-- /.inner-content -->
 				</div> <!-- /.bg-wrapper -->
@@ -329,38 +292,38 @@
 								</div> <!-- /.title-style-one -->
 							</div>
 							<div class="col-lg-6 col-sm-5 ms-auto d-flex justify-content-center justify-content-sm-end">
-								<a href="blog-v2.html" class="btn-one fw-500">En savoir plus</a>
+								<a href="https://prumad.com" class="btn-one fw-500">En savoir plus</a>
 							</div>
 						</div>
 
 						<div class="row pt-50 lg-pt-30">
 							<div class="col-lg-4 col-sm-6 d-flex wow fadeInUp">
 								<article class="blog-meta-one tran3s mt-30">
-									<figure class="post-img m0"><a href="blog-details.html" class="w-100 d-block"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/blog/app.gif" alt="" class="lazy-img w-100 tran4s"></a></figure>
+									<figure class="post-img m0"><a href="/tarification" class="w-100 d-block"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/blog/app.gif" alt="" class="lazy-img w-100 tran4s"></a></figure>
 									<div class="post-data mt-25">
-										<a href="blog-details.html" class="post-tag fw-500 tx-dark text-uppercase mb-20" style="background-color: #FFEAC9;">Technologie</a>
-										<a href="blog-details.html" class="blog-title d-block"><h4 class="tran3s">Une bonne ergonomie à prix réduit est meilleure que jamais.</h4></a>
-										<a href="blog-details.html" class="read-btn mt-35"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_12.svg" alt="" class="lazy-img"></a>
+										<a href="/tarification" class="post-tag fw-500 tx-dark text-uppercase mb-20" style="background-color: #FFEAC9;">Technologie</a>
+										<a href="/tarification" class="blog-title d-block"><h4 class="tran3s">Une bonne ergonomie à prix réduit est meilleure que jamais.</h4></a>
+										<a href="/tarification" class="read-btn mt-35"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_12.svg" alt="" class="lazy-img"></a>
 									</div> <!-- /.post-data -->
 								</article> <!-- /.blog-meta-one -->
 							</div>
 							<div class="col-lg-4 col-sm-6 d-flex wow fadeInUp" data-wow-delay="0.1s">
 								<article class="blog-meta-one tran3s mt-30">
-									<figure class="post-img m0"><a href="blog-details.html" class="w-100 d-block"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/blog/design.gif" alt="" class="lazy-img w-100 tran4s"></a></figure>
+									<figure class="post-img m0"><a href="/tarification" class="w-100 d-block"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/blog/design.gif" alt="" class="lazy-img w-100 tran4s"></a></figure>
 									<div class="post-data mt-25">
-										<a href="blog-details.html" class="post-tag fw-500 tx-dark text-uppercase mb-20" style="background-color: #CEEBF4;">Design</a>
-										<a href="blog-details.html" class="blog-title d-block"><h4 class="tran3s">Un bon design est la clé de l'entreprise.</h4></a>
-										<a href="blog-details.html" class="read-btn mt-35"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_12.svg" alt="" class="lazy-img"></a>
+										<a href="/tarification" class="post-tag fw-500 tx-dark text-uppercase mb-20" style="background-color: #CEEBF4;">Design</a>
+										<a href="/tarification" class="blog-title d-block"><h4 class="tran3s">Un bon design est la clé de l'entreprise.</h4></a>
+										<a href="/tarification" class="read-btn mt-35"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_12.svg" alt="" class="lazy-img"></a>
 									</div> <!-- /.post-data -->
 								</article> <!-- /.blog-meta-one -->
 							</div>
 							<div class="col-lg-4 col-sm-6 d-flex wow fadeInUp" data-wow-delay="0.2s">
 								<article class="blog-meta-one tran3s mt-30">
-									<figure class="post-img m0"><a href="blog-details.html" class="w-100 d-block"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/blog/marke.gif" alt="" class="lazy-img w-100 tran4s"></a></figure>
+									<figure class="post-img m0"><a href="/tarification" class="w-100 d-block"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/blog/marke.gif" alt="" class="lazy-img w-100 tran4s"></a></figure>
 									<div class="post-data mt-25">
-										<a href="blog-details.html" class="post-tag fw-500 tx-dark text-uppercase mb-20" style="background-color: #FFDFDF;">Marketing</a>
-										<a href="blog-details.html" class="blog-title d-block"><h4 class="tran3s">La satisfaction du client est l'objectif de notre entreprise.</h4></a>
-										<a href="blog-details.html" class="read-btn mt-35"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_12.svg" alt="" class="lazy-img"></a>
+										<a href="/tarification" class="post-tag fw-500 tx-dark text-uppercase mb-20" style="background-color: #FFDFDF;">Marketing</a>
+										<a href="/tarification" class="blog-title d-block"><h4 class="tran3s">La satisfaction du client est l'objectif de notre entreprise.</h4></a>
+										<a href="/tarification" class="read-btn mt-35"><img src="frontStyle/images/lazy.svg" data-src="frontStyle/images/icon/icon_12.svg" alt="" class="lazy-img"></a>
 									</div> <!-- /.post-data -->
 								</article> <!-- /.blog-meta-one -->
 							</div>
@@ -384,7 +347,7 @@
 								<h2 class="main-title fw-bold tx-dark m0">Prêt à vous faire livrer ? C'est juste une question <span> d'un clic</span></h2>
 							</div> <!-- /.title-style-one -->
 							<p class="text-lg tx-dark pt-40 pb-35 lg-pt-30 lg-pb-20 wow fadeInUp" data-wow-delay="0.1s">essayez l'application</p>
-							<a href="404.html" class="btn-two fs-18 fw-500 wow fadeInUp" data-wow-delay="0.2s">Télécharger</a>
+							<a href="/404-iwa" class="btn-two fs-18 fw-500 wow fadeInUp" data-wow-delay="0.2s">Télécharger</a>
 						</div>
 					</div>
 				</div>
@@ -429,7 +392,7 @@
 			</div> <!-- /.fancy-short-banner-one -->
 
 		
-
+		
 
 			
 			

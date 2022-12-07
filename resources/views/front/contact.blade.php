@@ -62,7 +62,7 @@
 
 
 
-			<!-- 
+				<!-- 
 			=============================================
 				Theme Main Menu
 			============================================== 
@@ -70,10 +70,17 @@
 			<header class="theme-main-menu sticky-menu theme-menu-one">
 				<div class="inner-content position-relative">
 					<div class="d-flex align-items-center justify-content-between">
-						<div class="logo order-lg-0"><a href="index.html" class="d-block"><img src="frontStyle/images/logo/logo.png" alt="" width="95"></a></div>
+						<div class="logo order-lg-0"><a href="/dashboard" class="d-block"><img src="frontStyle/images/logo/logo.png" alt="" width="95"></a></div>
+
 
 						<div class="right-widget d-flex align-items-center order-lg-3">
-							<a href="contact-us-v4.html" class="contact-btn-one fs-16 fw-500 text-white tran3s d-none d-lg-block">Contactez nous</a>
+							<a href="/contactez-nous" class="contact-btn-one fs-16 fw-500 text-white tran3s d-none d-lg-block me-3">Contactez nous</a>
+
+							@if (Auth::guest())
+							<a href="/login" class="contact-btn-one fs-14 fw-500 text-white bg-warning tran3s d-none d-lg-block">Login</a>
+							@else
+							<a href="/deconnexion" class="contact-btn-one fs-14 fw-500 text-white bg-danger tran3s d-none d-lg-block">Logout</a>
+							@endif
 						</div> <!-- /.right-widget -->
 
 						<nav class="navbar navbar-expand-lg order-lg-2">
@@ -82,23 +89,32 @@
 						 	</button>
 						    <div class="collapse navbar-collapse" id="navbarNav">
 						    	<ul class="navbar-nav">
-						    		<li class="d-block d-lg-none"><div class="logo"><a href="index.html" class="d-block"><img src="frontStyle/images/logo/logo_01.png" alt="" width="95"></a></div></li>
-							       
+						    		<li class="d-block d-lg-none"><div class="logo"><a href="/dashboard" class="d-block"><img src="frontStyle/images/logo/logo.png" alt="" width="95"></a></div></li>
+							        <li class="nav-item  dropdown mega-dropdown">
+							        	<a class="nav-link " href="/" role="button"  aria-expanded="false">Accueil</a>
+						            </li>
 						            <li class="nav-item dropdown mega-dropdown-md">
-							        	<a class="nav-link " href="/" role="button"   aria-expanded="false">Accueil</a>
+							        	<a class="nav-link " href="/about" role="button"   aria-expanded="false">A propos</a>
 						            </li>
 									<li class="nav-item dropdown mega-dropdown-md">
-							        	<a class="nav-link " href="/about" role="button"  aria-expanded="false"> A propos </a>
-						            </li>
-									<li class="nav-item active dropdown mega-dropdown">
-							        	<a class="nav-link " href="/404-iwa" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Tout sur l'App</a>
+							        	<a class="nav-link " href="404.html" role="button"  aria-expanded="false">Tout sur l'App</a>
 						            </li>
 						    	</ul>
+
+
 						    	<!-- Mobile Content -->
 						    	<div class="mobile-content d-block d-lg-none">
 						    		<div class="d-flex flex-column align-items-center justify-content-center mt-70">
-						    			<a href="/contactez-nous" class="contact-btn-one fs-16 fw-500 text-white tran3s">Contactez nous</a>
+
+									@if (Auth::guest())
+									<a href="/login" class="contact-btn-one bg-warning fs-16 fw-500 text-white tran3s mb-4">Login</a>
+                     		  		 @else
+                          			  <a href="/deconnexion" class="contact-btn-one bg-danger fs-16 fw-500 text-white tran3s mb-4">Logout</a>
+                     		   		@endif
+
+						    			<a href="/contactez-nous" class="contact-btn-one fs-16 fw-500 text-white tran3s ">Contactez nous</a>
 						    		</div>
+									
 						    	</div> <!-- /.mobile-content -->
 						    </div>
 						</nav>
@@ -106,7 +122,19 @@
 				</div> <!-- /.inner-content -->
 			</header> <!-- /.theme-main-menu -->
 
+			@if ( session('success'))
+						  <div class="alert alert-success">
+  							  Message Envoyez
+  						</div>
+				@endif
 
+
+				 <!--si le message est envoyer ou non -->
+				 @if ( session('error'))
+					<div class="alert alert-danger">
+  							  Envoie du Message echoué
+  						</div>
+					@endif
 
 
 			<!-- 
@@ -144,7 +172,7 @@
 							<div class="address-block-two text-center mb-40 wow fadeInUp">
 								<div class="icon border rounded-circle d-flex align-items-center justify-content-center m-auto"><img src="frontStyle/images/icon/icon_180.svg" alt=""></div>
 								<h5 class="title">Live Chat</h5>
-								<p>Chat Assistance <br><a href="#" class="webaddress">www.jiams.fly.dev</a></p>
+								<p>Entreprise <br><a href="https://prumad.com/" class="webaddress">prumad.com</a></p>
 							</div> <!-- /.address-block-two -->
 						</div>
 					</div>
@@ -156,30 +184,43 @@
 							<div class="form-wrapper pt-60 lg-pt-40 pb-85 lg-pb-50 w-100">
 								<div class="form-style-five">
 									<h3 class="form-title font-recoleta fw-normal pb-30 lg-pb-20">Envoyez un Message.</h3>
-									<form action="inc/contact.php" id="contact-form" data-toggle="validator">
+									<form action="{{ route('addContacts') }}"  method="POST">
+											@csrf
+                    						 @method('POST')
+
 										<div class="messages"></div>
 										<div class="row controls">
 											<div class="col-12">
 												<div class="input-group-meta form-group mb-30">
 													<label>Nom*</label>
-													<input type="text" placeholder="Joackim" name="name" required="required" data-error="Nom est obligatoire.">
+													<input type="text"  name="nom" required="required" data-error="Nom est obligatoire.">
 													<div class="help-block with-errors"></div>
 												</div>
 											</div>
 											<div class="col-12">
 												<div class="input-group-meta form-group mb-45">
 													<label>Email*</label>
-													<input type="email" placeholder="joackimcoulibaly5@gmail.com" name="email" required="required" data-error=" email est obligatoire.">
+													<input type="email" placeholder="Ex @gmail.com" name="email" required="required" data-error=" email est obligatoire.">
 													<div class="help-block with-errors"></div>
 												</div>
 											</div>
 											<div class="col-12">
 												<div class="input-group-meta form-group mb-45">
-													<textarea placeholder="Votre message*" name="message" required="required" data-error="Please,leave us a message."></textarea>
+													<label>Sujet*</label>
+													<input type="text"  name="sujet" required="required" data-error=" Un Sujet est obligatoire.">
 													<div class="help-block with-errors"></div>
 												</div>
 											</div>
-											<div class="col-12"><button class="btn-twentyTwo w-100 fw-500 tran3s text-uppercase">ENVOYEZ</button></div>
+											<div class="col-12">
+												<div class="input-group-meta form-group mb-45">
+													<textarea placeholder="Votre message*" name="Comment" required="required" data-error="Entrer un Message"></textarea>
+													<div class="help-block with-errors"></div>
+												</div>
+											</div>
+
+											<input type="hidden" name="token" value="{{ csrf_token() }}" />
+
+											<div class="col-12"><button class="btn-twentyTwo w-100 fw-500 tran3s text-uppercase" type="Submit">ENVOYEZ</button></div>
 										</div>
 									</form>
 								</div> <!-- /.form-style-five -->
@@ -189,7 +230,7 @@
 							<div class="map-area-two h-100 w-100">
 								<div class="mapouter">
 									<div class="gmap_canvas">
-										<iframe class="gmap_iframe" src="https://www.google.com/maps/@5.3533691,-3.9855004,11.13z?authuser=0&hl=fr"></iframe>
+													<iframe class="gmap_iframe" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2942.9859959432706!2d-3.9659280383953632!3d5.377997127723891!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sfr!2sci!4v1670408646757!5m2!1sfr!2sci" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 									</div>
 								</div>
 							</div>

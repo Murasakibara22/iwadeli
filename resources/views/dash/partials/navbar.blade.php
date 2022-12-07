@@ -8,7 +8,7 @@
         <!-- Topbar Logo -->
         <div class="logo-topbar">
             <!-- Logo light -->
-            <a href="/dashboard" class="logo-light">
+            <a href="/" class="logo-light">
                 <span class="logo-lg">
                     <img src="../logo/logo.png" alt="logo" height="22">
                 </span>
@@ -18,7 +18,7 @@
             </a>
 
             <!-- Logo Dark -->
-            <a href="/dashboard" class="logo-dark">
+            <a href="/" class="logo-dark">
                 <span class="logo-lg">
                     <img src="../logo/logo.png" alt="dark logo" height="22">
                 </span>
@@ -216,6 +216,12 @@
          
 
             <li class="notification-list d-none d-sm-inline-block">
+                <a class="nav-link" href="/">
+                    <i class="ri-home-3-line noti-icon"></i>
+                </a>
+            </li>
+
+            <li class="notification-list d-none d-sm-inline-block">
                 <a class="nav-link" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
                     <i class="ri-settings-3-line noti-icon"></i>
                 </a>
@@ -293,7 +299,7 @@
 <div class="leftside-menu">
 
     <!-- Logo Light -->
-    <a href="/dashboard" class="logo logo-light">
+    <a href="/" class="logo logo-light">
         <span class="logo-lg">
             <img src="../logo/logo.png" alt="logo" height="60">
         </span>
@@ -303,7 +309,7 @@
     </a>
 
     <!-- Logo Dark -->
-    <a href="/dashboard" class="logo logo-dark">
+    <a href="/" class="logo logo-dark">
         <span class="logo-lg">
             <img src="../logo/logo.png" alt="dark logo" height="60">
         </span>
@@ -408,6 +414,14 @@
                     <span> Témoignages </span>
                 </a>
             </li>
+
+            <li class="side-nav-item">
+                <a href="/contact_list" class="side-nav-link">
+                    <i class="ri-mail-send-fill"></i>
+                    <span> Messages </span>
+                </a>
+            </li>
+
         </ul>
         <!--- End Sidemenu -->
 

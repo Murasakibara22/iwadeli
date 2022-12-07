@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\FiltreController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LivreurController;
 use App\Http\Controllers\TemoignageController;
 
@@ -27,6 +28,10 @@ Route::get('/about',[HomeController::class,'store']);
 Route::get('/contactez-nous',[HomeController::class,'contact']);
 Route::get('/404-iwa',[HomeController::class,'notfound']);
 Route::get('/tarification',[HomeController::class,'tarif']);
+
+//ajouter un contact ou un message
+Route::post('/addConta', [ContactController::class  , 'addContact'])->name('addContacts');
+
 
 
 // Route::get('/get_all_note_livreur/{livreur_id}',[NoteController::class,'get_all_note_livreur'])->whereNumber('livreur_id');
@@ -161,6 +166,18 @@ Route::put('/temoignagEdit/{slug}', [TemoignageController::class , 'editTemoigna
 Route::get('temoignagedelet/{slug}', [TemoignageController::class , 'deleteTemoignage']);
 
 Route::delete('/temoignagedestroy/{slug}', [TemoignageController::class , 'destroyTemoignage']);
+
+
+
+//lister tous les contact
+Route::get('/contact_list', [ContactController::class ,'listContact']);
+
+Route::get('/contactdelete/{slug}', [ContactController::class ,'Contactdelete']);
+
+Route::delete('/contactdelete/{slug}', [ContactController::class ,'Contactdestroy']);
+
+
+
 
 
 /**PAGE DE TOUTES LES COMMANDES */

@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-
-        return view('welcome');
+        $temoignage = Temoignage::OrderBy('id','DESC')->take(4)->get();
+        return view('welcome',compact('temoignage'));
     }
 
     public function store(){
