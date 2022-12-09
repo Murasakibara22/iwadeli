@@ -53,10 +53,19 @@ class OrderController extends Controller
       public function getUserOrder($user_id){
         $order = Order::where('id_users',$user_id)->get();
 
-        if($order && $order->count() > 0){
+        if($order && $order->count() > 0 ){
+          $data = array();
+          foreach($order as $orders){
+            if(!is_null($orders->id_livreurs)){
+             array_push($data,$orders);
+            }
+          }
+
           return response()->json([
-            'commande' => $order
+            'commande' => $data
           ]);
+
+         
         }else{
           return response()->json([
             'message' => "l'utilisateur n'a aucune commande"
