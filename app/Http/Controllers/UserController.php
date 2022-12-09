@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Intervention\Image\Image;
 use Image as InterventionImage;
@@ -233,5 +234,29 @@ class UserController extends Controller
             }else{
             return redirect( '/listAllUs')->with( 'Nodetails','No Details found. Try to search again !' );	
             }	
+        }
+
+
+
+
+        //retourner la derniere commande d'un utilisateur 
+        public function get_order_last($user_id){
+
+            $commande = Order::query()
+                        ->select('orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.id_users','orders.id_livreurs','orders.nature','orders.terminate','orders.status','orders.created_at','orders.updated_at')
+                        ->join('users','orders.id_users','=','users.id')
+                        ->where('users.id',$user_id)
+                        ->latest()
+                        ->first();
+
+            if(!is_null($commande)){
+                return response()->json([
+                    "commande" => $commande
+                ]);
+            }else{
+                return response()->json([
+                    "commande" => "Aucune commande disponible pour ce utilisateur"
+                ]);
+            }
         }
 }

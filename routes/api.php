@@ -52,6 +52,8 @@ Route::get('/getUsers', [UserController::class, 'getUser']);
 
 Route::get('/return_order_user/{user_id}', [OrderController::class, 'getUserOrder'])->middleware('auth:sanctum')->whereNumber('user_id');
 
+Route::get('/return_latest_order_user/{user_id}', [UserController::class, 'get_order_last'])->middleware('auth:sanctum')->whereNumber('user_id'); //la derniere commande d'un utilisateur
+
 Route::get('/get_livreurs_details/{id}', [LivreurController::class, 'get_livreurs_det'])->middleware('auth:sanctum')->WhereNumber('id');
 
 //admin
