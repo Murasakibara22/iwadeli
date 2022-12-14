@@ -51,7 +51,12 @@ class OrderController extends Controller
       //liste des commandes d'un utilisateur 
 
       public function getUserOrder($user_id){
-        $order = Order::where('id_users',$user_id)->get();
+        $order = Order::query()
+                ->select('orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.nature','orders.terminate','orders.status','orders.id_livreurs','orders.created_at','livreurs.nom_livreurs','livreurs.prenom_livreurs','livreurs.contact','livreurs.photo')
+                ->join('livreurs','orders.id_livreurs','=','livreurs.id')
+                ->where('id_users',$user_id)
+                ->where('orders.status',1)
+                ->get();
 
         if($order && $order->count() > 0 ){
           $data = array();
