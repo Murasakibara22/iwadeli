@@ -311,13 +311,9 @@ class LivreurController extends Controller
          $livreur = Livreur::Where('id',$id)->first();
 
             if(!is_null($livreur)){
-                return response()->json([
-                    "Le Livreur" => $livreur
-                ]);
+                return $livreur ;
             }else{
-                return response()->json([
-                    "Status" => "Aucun livreur trouver pour ce id Specifier"
-                ]);
+                return "Aucun livreur trouver pour ce id Specifier";
             }
         }
 

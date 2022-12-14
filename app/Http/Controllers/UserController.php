@@ -249,14 +249,9 @@ class UserController extends Controller
                         ->latest()
                         ->first();
 
-            if(!is_null($commande)){
-                return response()->json([
-                    "commande" => $commande
-                ]);
-            }else{
-                return response()->json([
-                    "commande" => "Aucune commande disponible pour ce utilisateur"
-                ]);
-            }
+          
+                return $commande ;
+            
+              
         }
 }
