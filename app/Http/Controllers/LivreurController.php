@@ -111,6 +111,75 @@ class LivreurController extends Controller
              ]);
      }
 
+//////////////////////////
+///***APP LIVREUR ICI *///
+//////////////////////////
+
+//Toute les commande en Cour pour un livreur cible
+     public function order_in_livreur($id){
+
+        $exist = Livreur::where('id', $id)->first();
+
+        if(is_null($exist)){
+            return response()->json([
+                "status" => " l'id specifier ne correspond a aucun livreur"
+            ]);
+        }
+
+        $order = Order::query()
+            ->select('orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.montant','orders.nature','orders.code','orders.created_at','orders.id_users','orders.id_livreurs','users.nom','users.prenom', 'users.contact')
+            ->join('users','orders.id_users','=','users.id')
+            ->where('orders.id_livreurs', $id)
+            ->where('orders.terminate', 0)
+            ->get();
+
+            return $order;
+     }
+
+
+
+     //Toute les commande Terminer pour un livreur cible
+     public function order_livreur_terminate($id){
+
+        $exist = Livreur::where('id', $id)->first();
+
+        if(is_null($exist)){
+            return response()->json([
+                "status" => " l'id specifier ne correspond a aucun livreur"
+            ]);
+        }
+
+        $order = Order::query()
+            ->select('orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.montant','orders.nature','orders.code','orders.created_at','orders.id_users','orders.id_livreurs','users.nom','users.prenom', 'users.contact')
+            ->join('users','orders.id_users','=','users.id')
+            ->where('orders.id_livreurs', $id)
+            ->where('orders.terminate', 1)
+            ->get();
+
+            return $order;
+     }
+
+
+      //Toute les commande Refuser pour un livreur cible
+      public function order_livreur_refused($id){
+
+        $exist = Livreur::where('id', $id)->first();
+
+        if(is_null($exist)){
+            return response()->json([
+                "status" => " l'id specifier ne correspond a aucun livreur"
+            ]);
+        }
+
+        $order = Order::query()
+            ->select('orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.montant','orders.nature','orders.code','orders.created_at','orders.id_users','orders.id_livreurs','users.nom','users.prenom', 'users.contact')
+            ->join('users','orders.id_users','=','users.id')
+            ->where('orders.id_livreurs', $id)
+            ->where('orders.refus', 1)
+            ->get();
+
+            return $order;
+     }
 
      
 
@@ -316,6 +385,8 @@ class LivreurController extends Controller
                 return "Aucun livreur trouver pour ce id Specifier";
             }
         }
+
+
 
     }
 

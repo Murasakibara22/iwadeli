@@ -19,6 +19,7 @@ class CreateLivreursTable extends Migration
             $table->string('prenom_livreurs');
             $table->string('contact');
             $table->string('photo');
+            $table->string('mdp');
             $table->timestamps();
         });
     }

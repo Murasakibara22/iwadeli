@@ -55,7 +55,7 @@ public function connecte(Request $request)
 
   public function me(Request $request)
     {
-    return $request->user();
+         return $request->user();
     }
   
 

@@ -20,7 +20,9 @@ class CreateOrdersTable extends Migration
             $table->string('nature')->default('moto');
             $table->string('lieudelivraison');
             $table->string('montant');
+            $table->string('code')->unique();
             $table->Boolean('status')->default(0);
+            $table->Boolean('refus')->default(0);
             $table->Boolean('terminate')->default(0);
             $table->string('contactdudestinataire');
             $table->timestamps();

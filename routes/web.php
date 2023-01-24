@@ -87,6 +87,9 @@ Route::middleware(['auth', 'roles:admin'])->group(function(){
   //Terminer une commande
   Route::put('/valideCommTer',[OrderController::class,'TerminateCommWithLivreur'])->name('TerminateCommWithLivreurs');
 
+  //Annuler une commande
+  Route::put('/refuserComm/{id}',[OrderController::class,'refus_order'])->name('RefuserCommande');
+
   //delete une commande
   Route::get('/deleteCommande/{id}',[OrderController::class,'deleteCommande'])->whereNumber('id');
   Route::delete('/destroyCommande/{id}',[OrderController::class,'destroyCommande'])->name('destroyCommandes')->whereNumber('id');

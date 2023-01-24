@@ -35,6 +35,8 @@ class OrderController extends Controller
           }else{
             $order->nature = "moto";
           }
+
+          $order->code = rand(100000, 999999);
   
   
           $order->save();
@@ -209,7 +211,7 @@ class OrderController extends Controller
 
       //liste des commandes non valide
       public function listAllC(){
-        $commande = Order::where('id_livreurs',null)->OrderBy('created_at','DESC')->get();
+        $commande = Order::where('id_livreurs',null)->where('refus',0)->OrderBy('created_at','DESC')->get();
         $livreur = Livreur::all();
         return view('AdminPages.Commande.list',compact('commande','livreur'));
       }
@@ -247,7 +249,7 @@ class OrderController extends Controller
 
       //liste des commandes valide
       public function listAllCV(){
-        $commande = Order::Where('terminate',0)->where('status',1)->OrderBy('created_at','DESC')->get();
+        $commande = Order::Where('terminate',0)->where('status',1)->where('refus',0)->OrderBy('created_at','DESC')->get();
         return view('AdminPages.Commande.listCV',compact('commande'));
       }
 
@@ -276,7 +278,7 @@ class OrderController extends Controller
       //commande terminer la vue
 
       public function listAllComTerm(){
-        $commande =  Order::Where('terminate',1)->OrderBy('updated_at','DESC')->get();
+        $commande =  Order::Where('terminate',1)->where('refus',0)->OrderBy('updated_at','DESC')->get();
         return view('AdminPages.Commande.listCT',compact('commande'));
       }
 
@@ -335,7 +337,7 @@ class OrderController extends Controller
     public function PagesAllCOmmandes(){
       $livreur = Livreur::OrderBy('created_at','ASC')->get();
 
-      $commande = Order::OrderBy('created_at','DESC')->get();
+      $commande = Order::OrderBy('created_at','DESC')->where('refus',0)->get();
       if($commande && $commande->count() > 0 ){
         return view('AdminPages.Commande.listAll',compact('commande','livreur'));
       }else{
@@ -351,5 +353,54 @@ class OrderController extends Controller
       }else{
         return redirect()->back()->with('NotFound', "La commande selectionner n'existe pas");
       }
+    }
+
+
+    public function terminate_order(Request $request, $id){
+      
+      $exist = Order::where('id', $id)->where('code', $request->code)->first();
+
+        if(!is_null($exist)){
+          $exist->terminate = 1;
+          $exist->update();
+
+          return response()->json([
+            "status" => "OTP valide, votre commande a bien ete terminer"
+          ]);
+        }
+
+        return response()->json([
+          "status" => "OTP erroner"
+        ]);
+
+    }
+
+
+
+
+
+
+
+
+
+    //web refuser une commande 
+    public function refus_order($id){
+
+      $order = Order::find($id);
+
+      if(is_null($order)){
+        return redirect()->back()->with('notFoundOrder', "Commade Non trouver");
+      }
+
+      $order->refus = 1 ;
+      $order->status = 0 ;
+      $order->terminate = 0 ;
+
+     
+
+      // dd($order);
+      $order->update();
+
+      return redirect()->back()->with('AnnulerSuccess', "La Commade a ete Annuler avec succes");
     }
 }

@@ -45,6 +45,13 @@
 
                     @endif
 
+                    @if ( session('notFoundOrder'))
+                    <div class="alert alert-warning mt-1">
+                    Commade Non trouver
+                    </div>
+
+                    @endif
+
                     <!--  -->
                   
 
@@ -238,10 +245,10 @@
                                 </td>
                      @else
                                  <td>
-                                <span class="badge badge-secondary-lighten ">Terminer </span>
+                                <span class="badge badge-danger-lighten ">anuler </span>
                                 </td>
                                  <td>
-                                <button type="submit" class="btn btn-secondary" disabled><i class="mdi mdi"> valider</i> </button> 
+                                <button type="submit" class="btn btn-dangeer" disabled><i class="mdi mdi"> valider</i> </button> 
                                 </td>
                      @endif
                      <!-- Terminer une commande -->
@@ -250,21 +257,18 @@
 
                                
 
-                     @if($commandes->terminate  == 0  && $commandes->status  == 1)
-                     <form action=" {{ route('TerminateCommWithLivreurs') }}"  method="POST">
+                     @if($commandes->refus == 0 && $commandes->terminate == 0)
+                     <form action=" {{ route('RefuserCommande',$commandes->id) }}"  method="POST">
                             @csrf
                             @method('PUT')
-                            
-
-                              <input type="hidden" value="{{$commandes->id}}"  name="id_com">
 
                                     <td>
-                                    <button type="submit" class="btn btn-success"><i class="mdi mdi"> Terminer</i> </button> 
+                                    <button type="submit" class="btn btn-danger"><i class="mdi mdi"> Annuler</i> </button> 
                                     </td>
                         </form>
                         @else
                                      <td>
-                                    <button type="submit" class="btn btn-success" disabled><i class="mdi mdi"> Terminer</i> </button> 
+                                    <button type="submit" class="btn btn-danger" disabled><i class="mdi mdi"> Annuler</i> </button> 
                                     </td>
                         @endif
 

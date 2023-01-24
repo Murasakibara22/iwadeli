@@ -146,17 +146,20 @@
                             {{$commandes->nature}}
                         </td>
    <!-- Terminer une commande -->
-                        <form action=" {{ route('TerminateCommWithLivreurs') }}"  method="POST">
+   @if( $commandes->refus  == 0 && $commandes->terminate == 0)
+                     <form action=" {{ route('RefuserCommande',$commandes->id) }}"  method="POST">
                             @csrf
                             @method('PUT')
-                            
-
-                              <input type="hidden" value="{{$commandes->id}}"  name="id_com">
 
                                     <td>
-                                    <button type="submit" class="btn btn-success"><i class="mdi mdi"> Terminer</i> </button> 
+                                    <button type="submit" class="btn btn-danger"><i class="mdi mdi"> Annuler</i> </button> 
                                     </td>
                         </form>
+                        @else
+                                     <td>
+                                    <button type="submit" class="btn btn-danger" disabled><i class="mdi mdi"> Annuler</i> </button> 
+                                    </td>
+                        @endif
                          <td class="table-user">
                             <a href="/deleteCommande/{{$commandes->id}}"> <img src="../dashStyle/assets/images/rondDelete.gif" alt="table-user" class="me-2 rounded-circle " /> </a> 
                         </td>

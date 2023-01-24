@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\LivreurController;
 use App\Http\Controllers\OrderControllerCopie;
+use App\Http\Controllers\AuthLivreurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +31,31 @@ Route::post('/connexion', [AuthController::class, 'connecte']);
 Route::post('/inscription', [AuthController::class, 'enreg']);
 
 
+////////////////////////////////////////////////////////////
+////////////////***LIVREUR APPLICATION *///////////////////
+//////////////////////////////////////////////////////////
+
+
+Route::post('/enregistre_livreur',[AuthLivreurController::class,'enreg_livreur']);
+Route::post('/connexion_livreur',[AuthLivreurController::class,'connecte_livreur']);
+Route::post('/moi_livreur',[AuthLivreurController::class,'me_livreur'])->middleware('auth:sanctum');//
+Route::post('/Logout_livreur', [AuthLivreurController::class, 'Logout_livreur'])->middleware('auth:sanctum');//deconnexion coter livreur
+Route::post('/change_password_livreur/{livreur_id}', [AuthLivreurController::class,'updatePasswordLivreur'])->middleware('auth:sanctum')->whereNumber('livreur_id');
+Route::put('/terminate_order_s/{id}', [OrderController::class, 'terminate_order'])->middleware('auth:sanctum');//Terminer une commande
+
+
+//App Livreur ICI
+Route::get('/livreur_order_e/{id}',[LivreurController::class,'order_in_livreur'])->whereNumber('id');//Toute les commande en Cour pour un livreur cible
+
+Route::get('/livreur_order_terminer/{id}',[LivreurController::class,'order_livreur_terminate'])->whereNumber('id');//Toute les commande Terminer par un livreur cible
+
+Route::get('/livreur_order_refuser/{id}',[LivreurController::class,'order_livreur_refused'])->whereNumber('id');//Toute les commande Refuser par un livreur cible
+
 Route::post('/note_livreur/{livreur_id}',[NoteController::class, 'createNote'])->whereNumber('livreur_id'); //notez un livreur avec des etoiles
 
+////////////////////////////////////////////////////////////
+////////////////*** END LIVREUR APPLICATION *///////////////////
+//////////////////////////////////////////////////////////
 
 Route::post('/add', [OrderController::class, 'create']);//recuperer l'id du livreur et l'envoyer en base de Order (lorsque l'admin accepte avec l'id du livreur)
 

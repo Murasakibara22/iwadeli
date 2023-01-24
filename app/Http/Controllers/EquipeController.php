@@ -91,8 +91,7 @@ class EquipeController extends Controller
             $equipe->nom = $request->nom;
             $equipe->prenom = $request->prenom;
             $equipe->email = $request->email;
-            $equipe->contact = $request->contact;
-            $equipe->slug   = Str::slug("$request->token".Hash::make($request->nom),"-");  
+            $equipe->contact = $request->contact; 
             if($request->hasfile('photo')){
                 $img = request()->file('photo');
                     $messi = md5($img->getClientOriginalExtension().time().$request->email).".".$img->getClientOriginalExtension();
@@ -100,8 +99,7 @@ class EquipeController extends Controller
                     $target = 'images/Equipe/'.$messi;
                     InterventionImage::make($source)->fit(252,282)->save($target);
                     $equipe->photo   =  $messi;
-            }else{
-                $equipe->photo   = "default.jpg";
+
             }
             if($request->fonction){
                 $equipe->fonction = $request->fonction;

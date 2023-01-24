@@ -4,11 +4,15 @@ namespace App\Models;
 
 use App\Models\Note;
 use App\Models\Order;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Livreur extends Model
+class Livreur extends Model 
 {
+
+    use HasApiTokens;
+
     use HasFactory;
 
     protected $fillable = [
@@ -16,7 +20,17 @@ class Livreur extends Model
         'nom_livreurs',
         'prenom_livreurs',
         'contact',
+        'mdp',
         'photo'
+    ];
+
+     /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'mdp',
     ];
 
     public function orders(){
