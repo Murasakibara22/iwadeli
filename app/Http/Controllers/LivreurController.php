@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\Image;
 use Illuminate\Support\Carbon;
 use Image as InterventionImage;
+use Illuminate\Support\Facades\DB;
 
 class LivreurController extends Controller
 {
@@ -17,14 +18,14 @@ class LivreurController extends Controller
         $validatedData = $request->validate([
             'nom_livreurs' => 'required',
             'prenom_livreurs' =>'required',
-            'contact' => 'required',
-            'photo'=> 'required',     
+            'contact' => 'required',     
     ]);
 
 
         $livreur   = new Livreur;
         $livreur->nom_livreurs = $request->nom_livreurs;
         $livreur->prenom_livreurs = $request->prenom_livreurs;
+        $livreur->mdp = $request->mdp;
         $livreur->contact = $request->contact;
         if (request()->file('photo')) {
             $img = request()->file('photo');
@@ -37,7 +38,6 @@ class LivreurController extends Controller
             $livreur->photo   = "default.jpg";
         }
     
-
         $livreur->save();
 
        return 200 ;
@@ -126,11 +126,11 @@ class LivreurController extends Controller
             ]);
         }
 
-        $order = Order::query()
-            ->select('orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.montant','orders.nature','orders.code','orders.created_at','orders.id_users','orders.id_livreurs','users.nom','users.prenom', 'users.contact')
+        $order = Order::select('orders.id','orders.status','orders.terminate','orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.montant','orders.nature','orders.code','orders.created_at','orders.id_users','orders.id_livreurs','users.nom','users.prenom', 'users.contact')
             ->join('users','orders.id_users','=','users.id')
             ->where('orders.id_livreurs', $id)
             ->where('orders.terminate', 0)
+            ->OrderBy('created_at','DESC')
             ->get();
 
             return $order;
@@ -150,7 +150,7 @@ class LivreurController extends Controller
         }
 
         $order = Order::query()
-            ->select('orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.montant','orders.nature','orders.code','orders.created_at','orders.id_users','orders.id_livreurs','users.nom','users.prenom', 'users.contact')
+            ->select('orders.id','orders.status','orders.terminate','orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.montant','orders.nature','orders.code','orders.created_at','orders.id_users','orders.id_livreurs','users.nom','users.prenom', 'users.contact')
             ->join('users','orders.id_users','=','users.id')
             ->where('orders.id_livreurs', $id)
             ->where('orders.terminate', 1)
@@ -172,7 +172,7 @@ class LivreurController extends Controller
         }
 
         $order = Order::query()
-            ->select('orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.montant','orders.nature','orders.code','orders.created_at','orders.id_users','orders.id_livreurs','users.nom','users.prenom', 'users.contact')
+            ->select('orders.id','orders.status','orders.terminate','orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.montant','orders.nature','orders.code','orders.created_at','orders.id_users','orders.id_livreurs','users.nom','users.prenom', 'users.contact')
             ->join('users','orders.id_users','=','users.id')
             ->where('orders.id_livreurs', $id)
             ->where('orders.refus', 1)

@@ -54,7 +54,7 @@ class OrderController extends Controller
 
       public function getUserOrder($user_id){
         $order = Order::query()
-                ->select('orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.nature','orders.terminate','orders.status','orders.id_livreurs','orders.created_at','livreurs.nom_livreurs','livreurs.prenom_livreurs','livreurs.contact','livreurs.photo')
+                ->select('orders.details','orders.lieudedepart','orders.lieudelivraison','orders.contactdudestinataire','orders.montant','orders.code','orders.nature','orders.terminate','orders.status','orders.id_livreurs','orders.created_at','livreurs.nom_livreurs','livreurs.prenom_livreurs','livreurs.contact','livreurs.photo')
                 ->join('livreurs','orders.id_livreurs','=','livreurs.id')
                 ->where('id_users',$user_id)
                 ->where('orders.status',1)
@@ -365,20 +365,15 @@ class OrderController extends Controller
           $exist->update();
 
           return response()->json([
-            "status" => "OTP valide, votre commande a bien ete terminer"
-          ]);
+            "succes" => "OTP valide, votre commande a bien ete terminer"
+          ], 200);
         }
 
         return response()->json([
-          "status" => "OTP erroner"
-        ]);
+          "erreur" => "OTP erroner"
+        ],400);
 
     }
-
-
-
-
-
 
 
 

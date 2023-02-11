@@ -24,7 +24,7 @@ class AuthLivreurController extends Controller
                     'prenom_livreurs' => $validatedData['prenom_livreurs'],
                     'contact' => $validatedData['contact'],
                    // 'role' => $validatedData['role'],
-                        'mdp' => Hash::make($validatedData['mdp']),
+                        'mdp' => $validatedData['mdp'],
                         'photo' => "default.jpg"
             ]);
 
@@ -43,7 +43,7 @@ class AuthLivreurController extends Controller
     public function connecte_livreur(Request $request)
  {
 
-    $livreur = Livreur::where('contact', $request['contact'])->first();
+    $livreur = Livreur::where('contact', $request['contact'])->where('mdp', $request['mdp'])->first();
         
 
                 if(!isset($livreur)){

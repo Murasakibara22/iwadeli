@@ -110,6 +110,16 @@
                                                                 <input name="contact" type="text" id="example-palaceholder" class="form-control" value="+225">
                                                             </div>
 
+                                                            <div class="mb-3">
+                                                                <label for="password" class="form-label">Show/Hide Password</label>
+                                                                <div class="input-group input-group-merge">
+                                                                    <input name="mdp" type="password" id="password" class="form-control" placeholder="Entrer le mot de passe">
+                                                                    <div class="input-group-text" data-password="false">
+                                                                        <span class="password-eye"></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
 
                                                             <div class="mb-3">
                                                             <label for="example-fileinput" class="form-label">Joindre une photo de profile (FACULTATIF)</label>

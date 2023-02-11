@@ -20,7 +20,6 @@ class Livreur extends Model
         'nom_livreurs',
         'prenom_livreurs',
         'contact',
-        'mdp',
         'photo'
     ];
 
